@@ -1,0 +1,781 @@
+Using pre-set license
+Built from '2020.3/release' branch; Version is '2020.3.1f1 (77a89f25062f) revision 7841951'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 17763.805; Version 1809; 64bit' Language: 'it' Physical Memory: 32575 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.1f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/alfan/Documents/GitHub/OGD_Project2021/OGD_Game
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+55008
+Successfully changed project path to: C:/Users/alfan/Documents/GitHub/OGD_Project2021/OGD_Game
+C:/Users/alfan/Documents/GitHub/OGD_Project2021/OGD_Game
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 69.50 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.1f1 (77a89f25062f)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/alfan/Documents/GitHub/OGD_Project2021/OGD_Game/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1660 Ti (ID=0x2191)
+    Vendor:   
+    VRAM:     5991 MB
+    Driver:   27.21.14.6109
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56120
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002770 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 71.85 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.545 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.001680 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 92.77 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.250 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 0.81 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1806 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.5 MB.
+System memory in use after: 84.5 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 2248.
+Total: 5.512500 ms (FindLiveObjects: 0.560600 ms CreateObjectMapping: 0.269200 ms MarkObjects: 4.411200 ms  DeleteObjects: 0.268400 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/HexSpriteTiles_Setup
+  artifactKey: Guid(422544a25c32ceb43b258a675373793d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup using Guid(422544a25c32ceb43b258a675373793d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '331dc4f205897f3ad1e71962912bbc6b') in 0.010077 seconds
+  Import took 0.015076 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000304 seconds.
+  path: Assets/HexSpriteTiles_Setup/Scenes/SampleScene.unity
+  artifactKey: Guid(99c9720ab356a0642a771bea13969a05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Scenes/SampleScene.unity using Guid(99c9720ab356a0642a771bea13969a05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04a4fa5ac06ce2c6a90cbb332a325e87') in 0.020424 seconds
+  Import took 0.025483 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000293 seconds.
+  path: Assets/HexSpriteTiles_Setup/Scenes
+  artifactKey: Guid(4f704ae4b4f98ae41a0bce26658850c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Scenes using Guid(4f704ae4b4f98ae41a0bce26658850c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb29fbe63954fd2e1fff1b5075afda30') in 0.005344 seconds
+  Import took 0.010441 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 133.769289 seconds.
+  path: Assets/HexSpriteTiles_Setup/SpriteSets
+  artifactKey: Guid(45ec15ee8ce24de4b8a88cee1f253900) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/SpriteSets using Guid(45ec15ee8ce24de4b8a88cee1f253900) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be681b90e89c036bbabc1aa1ec7bf332') in 0.005785 seconds
+  Import took 0.011250 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.308202 seconds.
+  path: Assets/HexSpriteTiles_Setup/SpriteSets/BigRock.png
+  artifactKey: Guid(ebd0fad1f8519ac4fad952408262c97c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/SpriteSets/BigRock.png using Guid(ebd0fad1f8519ac4fad952408262c97c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d17bb8e7f7a0bb0b39763266f4838b8') in 0.185824 seconds
+  Import took 0.191085 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/HexSpriteTiles_Setup/SpriteSets/HexTile_Sheet_1A.png
+  artifactKey: Guid(ac1645b9b895a8c4a9f8d5b744dcf28b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/SpriteSets/HexTile_Sheet_1A.png using Guid(ac1645b9b895a8c4a9f8d5b744dcf28b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da493f342ad47cec9ac37e19acaf1120') in 0.274928 seconds
+  Import took 0.279221 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000283 seconds.
+  path: Assets/HexSpriteTiles_Setup/SpriteSets/HexTile_Sheet_1A_backup.png
+  artifactKey: Guid(da9d6752771285a40a1b383e61336090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/SpriteSets/HexTile_Sheet_1A_backup.png using Guid(da9d6752771285a40a1b383e61336090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0b3f1dedf57283d4c24ce1385544e43') in 0.252082 seconds
+  Import took 0.257064 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000416 seconds.
+  path: Assets/HexSpriteTiles_Setup/SpriteSets/ExtraProps.png
+  artifactKey: Guid(14aefffd3622c7347aad64f2bed35801) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/SpriteSets/ExtraProps.png using Guid(14aefffd3622c7347aad64f2bed35801) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d451dc56a597df35f1dad2bb753c28b') in 1.036957 seconds
+  Import took 1.044406 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000356 seconds.
+  path: Assets/HexSpriteTiles_Setup/SpriteSets/HexTile_Sheet_BLANK.png
+  artifactKey: Guid(8199c5ef781b3b842a2432aad7077b72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/SpriteSets/HexTile_Sheet_BLANK.png using Guid(8199c5ef781b3b842a2432aad7077b72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf74dc838154252d841aef8296967b9f') in 0.234209 seconds
+  Import took 0.240119 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 103.139019 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes
+  artifactKey: Guid(e933c4ce5e2d30e40af6210143579d6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes using Guid(e933c4ce5e2d30e40af6210143579d6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6cfc53a1ebbde20fc32451b6459017b') in 0.005688 seconds
+  Import took 0.012081 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.053707 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexPalette_Blank.prefab
+  artifactKey: Guid(18910458c712c2c46a546ebaa637fc53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexPalette_Blank.prefab using Guid(18910458c712c2c46a546ebaa637fc53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '183c8d38c573e8e32d33a0eb45137429') in 0.024747 seconds
+  Import took 0.030207 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000239 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_31.asset
+  artifactKey: Guid(3dd8cca2b3af95240ad8e047bd2b9c52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_31.asset using Guid(3dd8cca2b3af95240ad8e047bd2b9c52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0aab10bb3ebbf6afd3993aa4d0a8495f') in 0.079216 seconds
+  Import took 0.084498 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000224 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_47.asset
+  artifactKey: Guid(12acfb00e4d7381488e02094de454674) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_47.asset using Guid(12acfb00e4d7381488e02094de454674) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e88fedbbfed8c2b65082353c2e0a869e') in 0.017672 seconds
+  Import took 0.022342 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000283 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_29.asset
+  artifactKey: Guid(e5fdfd134bc5c6c4487564e91edef32a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_29.asset using Guid(e5fdfd134bc5c6c4487564e91edef32a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2589350791ff2cb59555e1a9cbf83b63') in 0.016754 seconds
+  Import took 0.021906 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_38.asset
+  artifactKey: Guid(e84282925628c124780daca54f3e7bc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_38.asset using Guid(e84282925628c124780daca54f3e7bc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a15c68425dda7476dc279682654265a') in 0.019474 seconds
+  Import took 0.024468 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000320 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_53.asset
+  artifactKey: Guid(2ce586f732854a9418012b73c4033288) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_53.asset using Guid(2ce586f732854a9418012b73c4033288) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b60554ef7ad208da3dc16f4b69315525') in 0.018203 seconds
+  Import took 0.023097 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000379 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_0.asset
+  artifactKey: Guid(7e7f67fdd393ac544a98bd24ff8f14d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_0.asset using Guid(7e7f67fdd393ac544a98bd24ff8f14d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ea521aec7b61238be6ac0a086894064') in 0.019919 seconds
+  Import took 0.025442 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000416 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_28.asset
+  artifactKey: Guid(a67bd92ff0dbd794ab173e17c50bb8ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_28.asset using Guid(a67bd92ff0dbd794ab173e17c50bb8ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07d8e39a8ffecd8505e9bd65d26860e9') in 0.017629 seconds
+  Import took 0.023316 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000225 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_48.asset
+  artifactKey: Guid(5dc856f79cebec54c8a2886dee522e51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_48.asset using Guid(5dc856f79cebec54c8a2886dee522e51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '046cac63a8e154ee1038f16c1f5dc69b') in 0.021900 seconds
+  Import took 0.027673 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000274 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_16.asset
+  artifactKey: Guid(c0729448d6b13b945a409b898d2930f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_16.asset using Guid(c0729448d6b13b945a409b898d2930f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f746888bd43ea546e5c2f4c8143ff5e') in 0.017761 seconds
+  Import took 0.022625 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000254 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_35.asset
+  artifactKey: Guid(c64da7c2bc6ebea43ad84e2ce114eb34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_35.asset using Guid(c64da7c2bc6ebea43ad84e2ce114eb34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd3898c8a7e5962df14b65b351650ff4') in 0.020695 seconds
+  Import took 0.027061 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_8.asset
+  artifactKey: Guid(56a55ce20d1b7684daa52ffb7841277c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_8.asset using Guid(56a55ce20d1b7684daa52ffb7841277c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55dec297013957012e9bbe2c4a0e6cf5') in 0.016774 seconds
+  Import took 0.021768 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_22.asset
+  artifactKey: Guid(89c61bba129d3b340965409303e76054) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_22.asset using Guid(89c61bba129d3b340965409303e76054) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88a13c11df146db7b8e56a74a0a2dd66') in 0.019382 seconds
+  Import took 0.024130 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_7.asset
+  artifactKey: Guid(fde271316ec1933499fdf2f5c8193a70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_7.asset using Guid(fde271316ec1933499fdf2f5c8193a70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28dd488dd0cec64f0111bc8b0fd922b1') in 0.018293 seconds
+  Import took 0.023789 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000320 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_21.asset
+  artifactKey: Guid(5e91353867c143f46b86e42d8c6b9c47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_21.asset using Guid(5e91353867c143f46b86e42d8c6b9c47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73fe47a7b2b48815eb0c8de0dc36c371') in 0.022245 seconds
+  Import took 0.027481 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000279 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_19.asset
+  artifactKey: Guid(acc87c72f567a994b870a1c3987b709a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_19.asset using Guid(acc87c72f567a994b870a1c3987b709a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4e6e737c429d4c225c8d9d5a49def1d') in 0.018223 seconds
+  Import took 0.023565 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000252 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_43.asset
+  artifactKey: Guid(93f97f72d49f72c419a2c66d40bff5d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_43.asset using Guid(93f97f72d49f72c419a2c66d40bff5d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b173e636a304366a19ce4a21cd0ad7c3') in 0.020290 seconds
+  Import took 0.026274 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000271 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_27.asset
+  artifactKey: Guid(e6aae5aeaedf0534f9b7ad5088b6a580) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_27.asset using Guid(e6aae5aeaedf0534f9b7ad5088b6a580) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c7d127c49e5b6ed090746d0dd06a9a0') in 0.018804 seconds
+  Import took 0.024601 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_14.asset
+  artifactKey: Guid(1f683450dd00d6a4797e1ffd14224f56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_14.asset using Guid(1f683450dd00d6a4797e1ffd14224f56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0aa14937c14bf24e337c8d901c9f34ca') in 0.018966 seconds
+  Import took 0.025273 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000229 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_5.asset
+  artifactKey: Guid(b86726698d5846847847e4c0c18fb366) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_5.asset using Guid(b86726698d5846847847e4c0c18fb366) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d38e933e300158e522978150a913d2c') in 0.018725 seconds
+  Import took 0.024927 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_9.asset
+  artifactKey: Guid(20246a90f5f4ed44eb9b6e880827c255) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_9.asset using Guid(20246a90f5f4ed44eb9b6e880827c255) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c8251eb2711a61a2b5b416f7392b038') in 0.018246 seconds
+  Import took 0.023977 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000319 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_42.asset
+  artifactKey: Guid(94c0585b308895d4b9d452aacd51a4d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_42.asset using Guid(94c0585b308895d4b9d452aacd51a4d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd03ce5b538ee07ef07225a95850d1735') in 0.016529 seconds
+  Import took 0.020612 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000377 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_55.asset
+  artifactKey: Guid(5e43fee120a26db45a78e780f9d0bf0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_55.asset using Guid(5e43fee120a26db45a78e780f9d0bf0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '108262a99147a29af4df23a5ca1fc7ec') in 0.019038 seconds
+  Import took 0.024712 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000308 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_25.asset
+  artifactKey: Guid(bdaa6054c3d7bf84fa94f7a3ba7afdda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_25.asset using Guid(bdaa6054c3d7bf84fa94f7a3ba7afdda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad41ed3ee0e633ee668d9f0a5287eed0') in 0.019106 seconds
+  Import took 0.025151 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000308 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_33.asset
+  artifactKey: Guid(d491f794ce748f74e9e9b31f0db87e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_33.asset using Guid(d491f794ce748f74e9e9b31f0db87e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f71c82145198bb63b215ec7eea384d2') in 0.018851 seconds
+  Import took 0.024592 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000371 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_54.asset
+  artifactKey: Guid(45e46da3af3a9b942bfa1c16821a28a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_54.asset using Guid(45e46da3af3a9b942bfa1c16821a28a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20a54d207ed0ab85222e23bb67c4e2e9') in 0.018449 seconds
+  Import took 0.023047 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000273 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_20.asset
+  artifactKey: Guid(0f7be247a798aed4e8f4f4b80d53e196) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_20.asset using Guid(0f7be247a798aed4e8f4f4b80d53e196) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64a6c730a6761c46ccf2f574df199bac') in 0.024488 seconds
+  Import took 0.030468 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000262 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_36.asset
+  artifactKey: Guid(0847c1de4e460db44a46f9e80f1214a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_36.asset using Guid(0847c1de4e460db44a46f9e80f1214a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c96377fcbc51348392ad7b4a1e53337') in 0.022971 seconds
+  Import took 0.028151 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000314 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_1.asset
+  artifactKey: Guid(8159beeb24e86ef48af9c5d32499d627) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_1.asset using Guid(8159beeb24e86ef48af9c5d32499d627) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33a39f09d1534d87140d35d2395dd848') in 0.016433 seconds
+  Import took 0.022029 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000303 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_24.asset
+  artifactKey: Guid(ac65fd268ee5f654caa80d3de6fec5e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_24.asset using Guid(ac65fd268ee5f654caa80d3de6fec5e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ac65ddd7d2c91cf75aad2143d6a71b6') in 0.017321 seconds
+  Import took 0.022547 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_56.asset
+  artifactKey: Guid(57ef125d103b7a149a183d4149a538c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_56.asset using Guid(57ef125d103b7a149a183d4149a538c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11d5094e479067e0bd5812546b42f3ff') in 0.019712 seconds
+  Import took 0.024535 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000325 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_41.asset
+  artifactKey: Guid(57771bb8b4a143d48a1e4977e4f5da7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_41.asset using Guid(57771bb8b4a143d48a1e4977e4f5da7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd9d7d50dfc95d900b9e51049ddf748c') in 0.018116 seconds
+  Import took 0.023815 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_49.asset
+  artifactKey: Guid(f570949cdbe5cee43a95ac972755bcce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_49.asset using Guid(f570949cdbe5cee43a95ac972755bcce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5437a8e2f9ede17a36d4392c5a0a3dec') in 0.017978 seconds
+  Import took 0.023825 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_6.asset
+  artifactKey: Guid(2b8c2b9b06b0296499ea76924390ffd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_6.asset using Guid(2b8c2b9b06b0296499ea76924390ffd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76fb91bb151ba74ee0917319646b01f7') in 0.020465 seconds
+  Import took 0.026171 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001521 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_23.asset
+  artifactKey: Guid(89372a8eda8c78e4ab9778b277dd611e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_23.asset using Guid(89372a8eda8c78e4ab9778b277dd611e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3a3b3050a8862ee8abebe7b0a3e33ea') in 0.030383 seconds
+  Import took 0.040726 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_45.asset
+  artifactKey: Guid(de9a93975e060294fb45d4ed69a052c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_45.asset using Guid(de9a93975e060294fb45d4ed69a052c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1584c9661410e824af91ba569274e22c') in 0.023313 seconds
+  Import took 0.028630 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000308 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_18.asset
+  artifactKey: Guid(e27b328bec2ec564495383e5378f6ce6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_18.asset using Guid(e27b328bec2ec564495383e5378f6ce6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a8b514354bf8d9f1945f3c60d0388e7') in 0.019665 seconds
+  Import took 0.025211 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_12.asset
+  artifactKey: Guid(8b03d3313f5ed4b41b58576f8e7071f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_12.asset using Guid(8b03d3313f5ed4b41b58576f8e7071f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9accf033fc4a88a170e7c13fa09cb1c') in 0.020611 seconds
+  Import took 0.026169 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000312 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_32.asset
+  artifactKey: Guid(9aea4e93a1724054485d59e77ec8e360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_32.asset using Guid(9aea4e93a1724054485d59e77ec8e360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '749e945b7e5095f515dce4688a770fc7') in 0.018157 seconds
+  Import took 0.023771 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000354 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_51.asset
+  artifactKey: Guid(6142e07302b5b1248935d4e445939d69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_51.asset using Guid(6142e07302b5b1248935d4e445939d69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38c2247cfd6df9d46aaf248dfd03c7ae') in 0.018456 seconds
+  Import took 0.024508 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000361 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_37.asset
+  artifactKey: Guid(d31ba6d2f0bf1cd4cb1d1b5b1c6c60cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_37.asset using Guid(d31ba6d2f0bf1cd4cb1d1b5b1c6c60cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bedb33c4e38a5da60632b6b6c464d9df') in 0.019218 seconds
+  Import took 0.024005 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000363 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_30.asset
+  artifactKey: Guid(efa0746e22137b84d80d07546f16f6ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_30.asset using Guid(efa0746e22137b84d80d07546f16f6ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0419ef82806bc72c7ae6bdca9cabe6c') in 0.020766 seconds
+  Import took 0.026976 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000313 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_11.asset
+  artifactKey: Guid(64d247b2bc4e78d4fb6a5268c4c4e930) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_11.asset using Guid(64d247b2bc4e78d4fb6a5268c4c4e930) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5149b2ed5af8c4d81aded9ac9b40b0f6') in 0.020881 seconds
+  Import took 0.025643 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_4.asset
+  artifactKey: Guid(9e5cd1888a26c634c8f3984b2719f3dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_4.asset using Guid(9e5cd1888a26c634c8f3984b2719f3dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79135c0dea2bd578b854b3678b7dcc42') in 0.019706 seconds
+  Import took 0.025678 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000327 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_34.asset
+  artifactKey: Guid(6454893e84d58bf4798aa400d8f7f884) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_34.asset using Guid(6454893e84d58bf4798aa400d8f7f884) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8e34ef2538325db6ae11689339403c5') in 0.019471 seconds
+  Import took 0.024517 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000317 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_44.asset
+  artifactKey: Guid(5db65c36fc0937d4c8c61abbb501ccae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_44.asset using Guid(5db65c36fc0937d4c8c61abbb501ccae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a934e5cdc9de6caa292aebb0172fb30c') in 0.019733 seconds
+  Import took 0.024984 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000380 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_46.asset
+  artifactKey: Guid(663393c1afc5871469ac09277480a019) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_46.asset using Guid(663393c1afc5871469ac09277480a019) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2aee8b0902c1b526f1d57f618b4f9944') in 0.020143 seconds
+  Import took 0.025315 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000284 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_17.asset
+  artifactKey: Guid(a1d2b613f41fab147822d2f745b45349) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_17.asset using Guid(a1d2b613f41fab147822d2f745b45349) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '587ebfaad117bd12fa0e75f549170b0c') in 0.019629 seconds
+  Import took 0.025054 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000304 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_2.asset
+  artifactKey: Guid(3a55a6ef722978149a260ffb86757e3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_2.asset using Guid(3a55a6ef722978149a260ffb86757e3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77d12f1cb7b4cd47d3b26d5c11287e28') in 0.018881 seconds
+  Import took 0.024602 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000277 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_39.asset
+  artifactKey: Guid(be593d0cc6724164ba4766f3bdd88857) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_39.asset using Guid(be593d0cc6724164ba4766f3bdd88857) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd459cbd10f4cb6ae1e4b0eab3cbeccea') in 0.018848 seconds
+  Import took 0.024717 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_50.asset
+  artifactKey: Guid(8ae7b2687777af34199872a5c4716b4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_50.asset using Guid(8ae7b2687777af34199872a5c4716b4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ccd45ce669ffd851a58601b3dbd995b2') in 0.018004 seconds
+  Import took 0.023464 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000322 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_3.asset
+  artifactKey: Guid(71be31d7bce3ed441971c7f80862ad6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_3.asset using Guid(71be31d7bce3ed441971c7f80862ad6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfa090600cd546f6e2a4dde2f2f49229') in 0.018980 seconds
+  Import took 0.024493 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_10.asset
+  artifactKey: Guid(db462c207fe8f604e9b763d154761daa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_10.asset using Guid(db462c207fe8f604e9b763d154761daa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '686a1448d49325a3e1dbc48e48f891d3') in 0.016174 seconds
+  Import took 0.021777 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000339 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_15.asset
+  artifactKey: Guid(d523dcb7c47833c42a12660784c7c82b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_15.asset using Guid(d523dcb7c47833c42a12660784c7c82b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd34cffc8a97f4c27614292d9150444f9') in 0.015151 seconds
+  Import took 0.020531 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000273 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_40.asset
+  artifactKey: Guid(c2afde80fd432204f92a671c6277e84c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_40.asset using Guid(c2afde80fd432204f92a671c6277e84c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81665323e3a1978f351da337905b226c') in 0.016736 seconds
+  Import took 0.022297 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000262 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_13.asset
+  artifactKey: Guid(3b58c0b4df653b64ca98929bba2e0310) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_13.asset using Guid(3b58c0b4df653b64ca98929bba2e0310) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b7162db15bd6b3f1073f42f4d8ff980') in 0.016762 seconds
+  Import took 0.021896 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000252 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_52.asset
+  artifactKey: Guid(7512d662760adfd42b5652b4923e1412) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_52.asset using Guid(7512d662760adfd42b5652b4923e1412) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f28ae05a849d237d3262a40b4bc8fa92') in 0.022753 seconds
+  Import took 0.028465 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000309 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_26.asset
+  artifactKey: Guid(93688ab3127926843a3c3c16e7bf974b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_26.asset using Guid(93688ab3127926843a3c3c16e7bf974b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32c198b18314896fe259e436846ae8e1') in 0.016715 seconds
+  Import took 0.022051 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 137.369258 seconds.
+  path: Assets/Scenes
+  artifactKey: Guid(38b96cc3a78848a4585c093caf9db79e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes using Guid(38b96cc3a78848a4585c093caf9db79e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1123de3cfaca8bdd56f8a0862610130') in 0.005216 seconds
+  Import took 0.010516 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.744239 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '843fd1ca81cfc1706e1cdb210696cdce') in 0.005286 seconds
+  Import took 0.010900 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002232 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.87 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.639 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.91 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1801 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.5 MB.
+System memory in use after: 88.5 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2616.
+Total: 3.818500 ms (FindLiveObjects: 0.304600 ms CreateObjectMapping: 0.079900 ms MarkObjects: 3.249500 ms  DeleteObjects: 0.182700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1204.901704 seconds.
+  path: Assets/HexSpriteTiles_Setup/Misc
+  artifactKey: Guid(ad65da6a5e8ddf94a937cc7f70751b12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Misc using Guid(ad65da6a5e8ddf94a937cc7f70751b12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d9be24640bbfb3be52fb108bc9c6d27') in 0.011076 seconds
+  Import took 0.016540 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000898 seconds.
+  path: Assets/HexSpriteTiles_Setup/Misc
+  artifactKey: Guid(ad65da6a5e8ddf94a937cc7f70751b12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Misc using Guid(ad65da6a5e8ddf94a937cc7f70751b12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d9be24640bbfb3be52fb108bc9c6d27') in 0.004239 seconds
+  Import took 0.010257 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.051761 seconds.
+  path: Assets/HexSpriteTiles_Setup/Misc/PPP_HexWorld.asset
+  artifactKey: Guid(f1eb0871f05333e4f8c3dd330eaffa03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Misc/PPP_HexWorld.asset using Guid(f1eb0871f05333e4f8c3dd330eaffa03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81e2d7863f9896544e9ee6ec450937f4') in 0.007601 seconds
+  Import took 0.013035 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000274 seconds.
+  path: Assets/HexSpriteTiles_Setup/Misc/PPP_Myprofile.asset
+  artifactKey: Guid(83d43f6408985004b89285215021d743) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Misc/PPP_Myprofile.asset using Guid(83d43f6408985004b89285215021d743) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e5b2cca2b07887dd6dfbb2952f4f8fc') in 0.005398 seconds
+  Import took 0.009717 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.978936 seconds.
+  path: Assets/HexSpriteTiles_Setup/Materials
+  artifactKey: Guid(3112bd05c93e8a24b87a35eb21ee3f0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HexSpriteTiles_Setup/Materials using Guid(3112bd05c93e8a24b87a35eb21ee3f0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66add20978679b777450e3a7800777e8') in 0.005555 seconds
+  Import took 0.010762 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2027.723875 seconds.
+  path: Assets
+  artifactKey: Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets using Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6374019befeac6ce670f13ba9960efb') in 0.006967 seconds
+  Import took 0.012250 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 25.476610 seconds.
+  path: Assets/Scripts
+  artifactKey: Guid(78501201697aa894ab8cef0116b7209a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts using Guid(78501201697aa894ab8cef0116b7209a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e19e3f97432f2d5c4b9a9468913c1510') in 0.005387 seconds
+  Import took 0.009835 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 76.991491 seconds.
+  path: Assets/Scripts/Graph.cs
+  artifactKey: Guid(09f3d2a0209efc441b048a8cdc128f7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Graph.cs using Guid(09f3d2a0209efc441b048a8cdc128f7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7bdd7fe909909de4d8b705cd5efa87f') in 0.013644 seconds
+  Import took 0.019385 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002180 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.79 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.587 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.91 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1802 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.6 MB.
+System memory in use after: 88.6 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2621.
+Total: 4.708100 ms (FindLiveObjects: 0.402800 ms CreateObjectMapping: 0.074500 ms MarkObjects: 4.005400 ms  DeleteObjects: 0.222300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001478 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.85 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.519 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.49 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1802 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.6 MB.
+System memory in use after: 88.6 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2625.
+Total: 3.559700 ms (FindLiveObjects: 0.306700 ms CreateObjectMapping: 0.070600 ms MarkObjects: 2.972900 ms  DeleteObjects: 0.207800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 170.627899 seconds.
+  path: Assets/Scripts/Graph.cs
+  artifactKey: Guid(09f3d2a0209efc441b048a8cdc128f7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Graph.cs using Guid(09f3d2a0209efc441b048a8cdc128f7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '677db07779335a2db4f2b69c897a510f') in 0.008698 seconds
+  Import took 0.013888 seconds .
+
