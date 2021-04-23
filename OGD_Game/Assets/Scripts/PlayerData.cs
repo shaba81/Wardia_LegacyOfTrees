@@ -11,7 +11,6 @@ public class PlayerData : Manager<PlayerData>
 
     private void Start()
     {
-        Debug.Log("START");
         Money = 250;
     }
 
