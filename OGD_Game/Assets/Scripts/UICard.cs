@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UICard : MonoBehaviour
 {
     public Image icon;
-    public Text name;
+    public new Text name;
     public Text cost;
 
     private UIShop shopRef;
@@ -25,7 +26,16 @@ public class UICard : MonoBehaviour
 
     public void OnClick()
     {
-        //Tell the shop!
-        shopRef.OnCardClick(this, myData);
+        if (SceneManager.GetActiveScene().name == "GameScene")
+        {
+            shopRef.OnCardClick(this, myData);
+        }
+        else //U can only find cards in the deck-making scene other than in the actual gamescene.
+        {
+            //If its clicked in the "All Cards Panel"
+            //  If Unlocked:
+            //      - Ask if u want to add it to the deck
+            //          - Add it
+        }
     }
 }

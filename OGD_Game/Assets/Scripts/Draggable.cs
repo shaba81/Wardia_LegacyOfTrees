@@ -48,12 +48,13 @@ public class Draggable : MonoBehaviour
         Tile tileUnder = GetTileUnder();
         if (tileUnder != null)
         {
+            Debug.Log("CI SIAMO");
             tileUnder.SetHighlight(true, !GridManager.Instance.GetNodeForTile(tileUnder).IsOccupied);
 
             if (previousTile != null && tileUnder != previousTile)
             {
                 //We are over a different tile.
-                previousTile.SetHighlight(false, false);
+                //previousTile.SetHighlight(false, false);
             }
 
             previousTile = tileUnder;
@@ -117,7 +118,7 @@ public class Draggable : MonoBehaviour
         RaycastHit2D hit =
             Physics2D.Raycast(cam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 100, releaseMask);
 
-        if (hit != null && hit.collider != null)
+        if (hit.collider != null)
         {
             //Released over something!
             Tile t = hit.collider.GetComponent<Tile>();

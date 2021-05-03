@@ -15,11 +15,11 @@ C:/Users/alfan/Documents/GitHub/OGD_Project2021/OGD_Game
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-56443
+57620
 Successfully changed project path to: C:/Users/alfan/Documents/GitHub/OGD_Project2021/OGD_Game
 C:/Users/alfan/Documents/GitHub/OGD_Project2021/OGD_Game
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 58.92 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 76.11 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.1f1 (77a89f25062f)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/Resources/UnitySubsystems
@@ -35,748 +35,348 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56028
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56080
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002887 seconds.
+Registered in 0.003346 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 52.35 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 65.41 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.963 seconds
+- Completed reload, in  2.286 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.001446 seconds.
+Registered in 0.001658 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 53.72 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 71.92 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.424 seconds
+- Completed reload, in  1.637 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 0.65 ms, found 1 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 0.45 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1820 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1821 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 85.4 MB.
 System memory in use after: 85.4 MB.
 
-Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 2265.
-Total: 3.475700 ms (FindLiveObjects: 0.277200 ms CreateObjectMapping: 0.066600 ms MarkObjects: 2.928100 ms  DeleteObjects: 0.201700 ms)
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 2266.
+Total: 3.598000 ms (FindLiveObjects: 0.281700 ms CreateObjectMapping: 0.072500 ms MarkObjects: 3.018400 ms  DeleteObjects: 0.221700 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Prefabs/GreenTile.prefab
-  artifactKey: Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GreenTile.prefab using Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e48969ae31777f6ac473be4cedb1ffa') in 0.161713 seconds
-  Import took 0.166442 seconds .
+  path: Assets/Scenes/GameScene.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/GameScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc8367a77a0fb03cf26fdcca1636e0e5') in 0.019114 seconds
+  Import took 0.023993 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.132725 seconds.
-  path: Assets/Prefabs/GreenTile.prefab
-  artifactKey: Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GreenTile.prefab using Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e69991e603e80419409b5757c80f28f0') in 0.017515 seconds
-  Import took 0.022624 seconds .
+  Time since last request: 3.706721 seconds.
+  path: Assets/Scenes/New Scene.unity
+  artifactKey: Guid(bd8a481390d6f054eae106b36823a633) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/New Scene.unity using Guid(bd8a481390d6f054eae106b36823a633) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82b3a54762252738b6c51d8c68b0367b') in 0.005470 seconds
+  Import took 0.010572 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 146.536993 seconds.
-  path: Assets/Prefabs/GreenTile.prefab
-  artifactKey: Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GreenTile.prefab using Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fc2cee1e7680c38c1250184db905a76') in 0.017132 seconds
-  Import took 0.021911 seconds .
+  Time since last request: 11.710352 seconds.
+  path: Assets/Scenes/New SceneTemplate.scenetemplate
+  artifactKey: Guid(840ca7d14963a574989174bd47c4d66e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/New SceneTemplate.scenetemplate using Guid(840ca7d14963a574989174bd47c4d66e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '190e494cb69a4d7d13216b7d601933c3') in 0.060514 seconds
+  Import took 0.065390 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 47.068541 seconds.
-  path: Assets/Prefabs/GreenTile.prefab
-  artifactKey: Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GreenTile.prefab using Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '250dc53230b4caa242b99febdf4266b4') in 0.015995 seconds
-  Import took 0.020482 seconds .
+  Time since last request: 52.651827 seconds.
+  path: Assets/Scenes/DeckMakingScene.unity
+  artifactKey: Guid(88e6380e6441eb14d9fff8da1ea0820a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/DeckMakingScene.unity using Guid(88e6380e6441eb14d9fff8da1ea0820a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fe511a33118db358cbc2d83e4895f47') in 0.005804 seconds
+  Import took 0.011525 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 355.911840 seconds.
-  path: Assets/Prefabs/GreenTile.prefab
-  artifactKey: Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GreenTile.prefab using Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b4d24f14c18607eba4f51276f058014') in 0.015329 seconds
-  Import took 0.019919 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.629417 seconds.
-  path: Assets/Prefabs/GreenTile.prefab
-  artifactKey: Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GreenTile.prefab using Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2af3ea727a2e49082a097306936b04ae') in 0.018427 seconds
-  Import took 0.024233 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 154.647766 seconds.
-  path: Assets/Sprites/TilePalette/Square_Tiles.prefab
-  artifactKey: Guid(5155456bd0a43a847a5b940147693c2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/TilePalette/Square_Tiles.prefab using Guid(5155456bd0a43a847a5b940147693c2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d983da0a13e536b77f0c8916fbb1b79') in 0.006955 seconds
-  Import took 0.011109 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 217.753055 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '485ce623e664a5ca44fc3c9e196712b8') in 0.015185 seconds
-  Import took 0.019643 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 209.486497 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '261dce8bad22810acd1d58dd531c3eb4') in 0.019054 seconds
-  Import took 0.024121 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.184157 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '294d1147a8afe6a426a3ae40e64d40be') in 0.037538 seconds
-  Import took 0.042024 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.988420 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f2ea11d68530e223720b325ab44417c') in 0.018388 seconds
-  Import took 0.022731 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.328284 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c40bbe91c07d258d16e643e38694d32f') in 0.017878 seconds
-  Import took 0.022732 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.688533 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6fb634255ab7989b968a2cde9ec2d18') in 0.018309 seconds
-  Import took 0.022963 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.791352 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '240ccd0147750f81487ffa3efa538736') in 0.014792 seconds
-  Import took 0.019795 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.202193 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fca4a4797934f60844de8f3ec9fd0bb5') in 0.014822 seconds
-  Import took 0.019170 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.750379 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13f9a4588cbe8654856af1a56612a9be') in 0.015349 seconds
-  Import took 0.019666 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.796972 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd51be41eeba179e16bdbc1f74c4d0a4') in 0.015222 seconds
-  Import took 0.019912 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.868310 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35620b31716a57b1f14b3cd28625aba1') in 0.013874 seconds
-  Import took 0.018269 seconds .
+  Time since last request: 452.790048 seconds.
+  path: Assets/Prefabs/EntityCard.prefab
+  artifactKey: Guid(040816f60b594d84fb2fa0bc29ea1e3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/EntityCard.prefab using Guid(040816f60b594d84fb2fa0bc29ea1e3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f58e83fec0bb1c5a4f656f1938df4594') in 0.049013 seconds
+  Import took 0.054471 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001471 seconds.
+Registered in 0.002045 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.69 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.60 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.284 seconds
+- Completed reload, in  1.535 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.52 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1815 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 88.5 MB.
-System memory in use after: 88.5 MB.
-
-Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2276.
-Total: 4.047700 ms (FindLiveObjects: 0.351700 ms CreateObjectMapping: 0.094700 ms MarkObjects: 3.423100 ms  DeleteObjects: 0.175500 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 423.228193 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '304ff735cf6d5c884fe36fcb97538276') in 0.081699 seconds
-  Import took 0.086543 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.704541 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12620d249a0c8fe9a7ff8ce27eb7ea60') in 0.020782 seconds
-  Import took 0.026338 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.655390 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '593c67f0ac1acf9d84d17d8490477324') in 0.014134 seconds
-  Import took 0.018581 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.838916 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6829404470087361cbb18f825e9a7397') in 0.015497 seconds
-  Import took 0.020329 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.801889 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79b3a49876906a8aee129e537f9163c4') in 0.017030 seconds
-  Import took 0.022038 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.201865 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc31e2484c0486ad71dee3f4886924b7') in 0.017042 seconds
-  Import took 0.021815 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.638455 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91ffabd8b524bfb741bf4db0ede0987a') in 0.015836 seconds
-  Import took 0.020273 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.015717 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9072be3982b6ac02d181a64ad8647a1') in 0.014654 seconds
-  Import took 0.019421 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.818432 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dabd35b661819e50371644d1343afd57') in 0.016671 seconds
-  Import took 0.021886 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.998314 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a57f7140d8574e2455b6b6d83509fcf') in 0.016243 seconds
-  Import took 0.021558 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.218468 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d3fd9ca5e6676d3e124e399456267ea') in 0.015043 seconds
-  Import took 0.019363 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.484572 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd52527da05aee3e99ce36ed43ec5468f') in 0.020810 seconds
-  Import took 0.025305 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.196135 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fefdee204a649660b61d3fb5373c059c') in 0.014929 seconds
-  Import took 0.019179 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.012595 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c46dee4b75148b5180f05e5d3d466e50') in 0.015797 seconds
-  Import took 0.020354 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.795892 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1411e2a4b7788ad9f147abd6f25b2cee') in 0.016277 seconds
-  Import took 0.020918 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.993477 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fac29dda17eae56bdd4131b176f6bcb') in 0.016484 seconds
-  Import took 0.020684 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.816946 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01b0495f16b3eb7185eb98c3af994559') in 0.014591 seconds
-  Import took 0.018974 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.807556 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02c416cfda6eee3779b15ba2d2dbd2b3') in 0.014701 seconds
-  Import took 0.018959 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.221619 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19efd6815455647b79d4003c30a3ce22') in 0.014890 seconds
-  Import took 0.019456 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.410998 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae0733f67985244652eb0b5de85ecbf3') in 0.016020 seconds
-  Import took 0.021972 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.610312 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71ed9ebe5603e1ed2808f439db095d44') in 0.016933 seconds
-  Import took 0.022801 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.594143 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31ecf7432d914db63461dea81659de9d') in 0.015710 seconds
-  Import took 0.020000 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.388314 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13c7df76f26f39525c18dd3471d91405') in 0.016318 seconds
-  Import took 0.021107 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.990770 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d0f84635b1d47263402135de2fce23c') in 0.016105 seconds
-  Import took 0.020869 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.025129 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd13cc2b364d6dbe28ad2e96a65dd5436') in 0.017036 seconds
-  Import took 0.021629 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.443901 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe04e59d6a57fbe268c0b717a4c3e96d') in 0.016433 seconds
-  Import took 0.020743 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.798080 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3aa23fca06dff3fb923b08d17aebaf1') in 0.014686 seconds
-  Import took 0.019483 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.441167 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52ed86ff06d68a70b7d61dee0e05d74c') in 0.015909 seconds
-  Import took 0.020769 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.199657 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a5d5b3e7df2f79417ab0fd3b7b26ac7') in 0.017205 seconds
-  Import took 0.021773 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.992808 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b5fc0da1cce0afe6b9812bb77bd37e5') in 0.018047 seconds
-  Import took 0.023021 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.595941 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72355055d027ff02ef58369775d7270d') in 0.016219 seconds
-  Import took 0.021321 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.793124 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0a223d7a56ba5a3be7e1c1def773398') in 0.018249 seconds
-  Import took 0.022604 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.803311 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'acb6d0f6cb460699939f53716aeb6589') in 0.016762 seconds
-  Import took 0.021812 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.184605 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a814848ae414cbc0b72e50b3f4c56f51') in 0.017516 seconds
-  Import took 0.022389 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.189365 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3733963be2e379e32a3028e949ed266') in 0.015522 seconds
-  Import took 0.020615 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.234259 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '028afc1a8945905b4b917b4ef64337b3') in 0.018996 seconds
-  Import took 0.023569 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.984453 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a5b4f55158c56d9b83ad80704b8fc8f') in 0.014920 seconds
-  Import took 0.019662 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.817561 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '584427fbd35f99cbd43b491a0429a241') in 0.015835 seconds
-  Import took 0.020197 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.995939 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71341214b1b1a50cc2ad4bad4ae1745c') in 0.014817 seconds
-  Import took 0.019235 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.794341 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07aa4ccbf0d1d4dd9de1f9c2c87fddf1') in 0.017149 seconds
-  Import took 0.021787 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.996898 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a85f7214c6589ee0c82db57ca151aa6') in 0.015620 seconds
-  Import took 0.020334 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 432.342436 seconds.
-  path: Assets/Prefabs/GreenTile.prefab
-  artifactKey: Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GreenTile.prefab using Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c1e96119c1c2837b0cda3d673bfce1a') in 0.015396 seconds
-  Import took 0.020462 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.668305 seconds.
-  path: Assets/Prefabs/GreenTile.prefab
-  artifactKey: Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GreenTile.prefab using Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50aaa6d31e1d28809d79b8706bf3de4d') in 0.017499 seconds
-  Import took 0.022510 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.744543 seconds.
-  path: Assets/Prefabs/GreenTile.prefab
-  artifactKey: Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GreenTile.prefab using Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a72382a076badc5b77a061b1d1acc6d') in 0.018549 seconds
-  Import took 0.023023 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.193129 seconds.
-  path: Assets/Prefabs/GreenTile.prefab
-  artifactKey: Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GreenTile.prefab using Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe5ed0912f453793d1de4c9e241fdc77') in 0.015411 seconds
-  Import took 0.019959 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.797829 seconds.
-  path: Assets/Prefabs/GreenTile.prefab
-  artifactKey: Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GreenTile.prefab using Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2661b7b20b03f59a2985a4bf150c05d4') in 0.015859 seconds
-  Import took 0.020228 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 37.540358 seconds.
-  path: Assets/Prefabs/GreenTile.prefab
-  artifactKey: Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GreenTile.prefab using Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfab556efdbedb23776c7b70da8b956f') in 0.016400 seconds
-  Import took 0.021386 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 24.701477 seconds.
-  path: Assets/Prefabs/GreenTile.prefab
-  artifactKey: Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GreenTile.prefab using Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3961cbcb786ccf97c08f6d8faa3a0ef') in 0.015415 seconds
-  Import took 0.020522 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 112.708439 seconds.
-  path: Assets/Prefabs/GreenTile.prefab
-  artifactKey: Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GreenTile.prefab using Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '999c5c6d04de1330f20206684f8420af') in 0.016647 seconds
-  Import took 0.021045 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001556 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.71 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.206 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.69 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1815 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 88.6 MB.
-System memory in use after: 88.6 MB.
-
-Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2281.
-Total: 2.951100 ms (FindLiveObjects: 0.320400 ms CreateObjectMapping: 0.065300 ms MarkObjects: 2.397700 ms  DeleteObjects: 0.166200 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 48.684146 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a7a707842d6e7082861c083f74e9000') in 0.076591 seconds
-  Import took 0.081138 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 8.861034 seconds.
-  path: Assets/Prefabs/GreenTile.prefab
-  artifactKey: Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GreenTile.prefab using Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ca75f5bf7cb012163333f2cb0b29a8f') in 0.016385 seconds
-  Import took 0.020901 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 12.490870 seconds.
-  path: Assets/Prefabs/GreenTile.prefab
-  artifactKey: Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GreenTile.prefab using Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc173e1a9c9e6e2c2ff41feca0cba26a') in 0.017301 seconds
-  Import took 0.022199 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.015434 seconds.
-  path: Assets/Prefabs/GreenTile.prefab
-  artifactKey: Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GreenTile.prefab using Guid(8c54b331416ba4847b53e6f1c9c323ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13db5094b374295fbff5acd342813b1f') in 0.018508 seconds
-  Import took 0.023299 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 12.318737 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eaa3664a6f39f66b10b7adcd61079e7e') in 0.020584 seconds
-  Import took 0.024903 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.125730 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fadd7f5c59f294e9366f8e7c338e4236') in 0.018380 seconds
-  Import took 0.022707 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.205335 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c218b5f586a34e21907bbc13ebd4cfab') in 0.017337 seconds
-  Import took 0.022215 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.191581 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63022dc704743bfeb5c1110813d1e2fa') in 0.015556 seconds
-  Import took 0.019960 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.655343 seconds.
-  path: Assets/Prefabs/DarkTile.prefab
-  artifactKey: Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DarkTile.prefab using Guid(d255640b0bfe57043addc21853e9cfba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38fcbdced564f62fcfcf211c453c5eed') in 0.018664 seconds
-  Import took 0.023393 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001674 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.71 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.190 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.83 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1815 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 88.6 MB.
-System memory in use after: 88.6 MB.
-
-Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2286.
-Total: 2.942800 ms (FindLiveObjects: 0.263600 ms CreateObjectMapping: 0.058000 ms MarkObjects: 2.414100 ms  DeleteObjects: 0.205200 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001410 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 0.55 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1816 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.5 MB.
+System memory in use after: 85.5 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2272.
+Total: 3.526400 ms (FindLiveObjects: 0.403300 ms CreateObjectMapping: 0.167400 ms MarkObjects: 2.773800 ms  DeleteObjects: 0.180100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001519 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.03 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.217 seconds
+- Completed reload, in  1.696 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.89 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1816 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.5 MB.
+System memory in use after: 85.5 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2276.
+Total: 3.730400 ms (FindLiveObjects: 0.449500 ms CreateObjectMapping: 0.196500 ms MarkObjects: 2.907500 ms  DeleteObjects: 0.175300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002131 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.67 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.446 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.80 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1816 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.6 MB.
+System memory in use after: 85.6 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2280.
+Total: 3.737900 ms (FindLiveObjects: 0.519400 ms CreateObjectMapping: 0.213600 ms MarkObjects: 2.826800 ms  DeleteObjects: 0.176000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001837 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.93 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.635 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.86 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1816 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.6 MB.
+System memory in use after: 85.6 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2284.
+Total: 3.613000 ms (FindLiveObjects: 0.350600 ms CreateObjectMapping: 0.159700 ms MarkObjects: 2.843200 ms  DeleteObjects: 0.257100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002013 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.84 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.518 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.82 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1816 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.6 MB.
+System memory in use after: 85.6 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2288.
+Total: 3.601600 ms (FindLiveObjects: 0.301600 ms CreateObjectMapping: 0.078500 ms MarkObjects: 3.036400 ms  DeleteObjects: 0.182800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002159 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.83 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.779 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.88 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1816 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.6 MB.
+System memory in use after: 85.6 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2292.
+Total: 4.409400 ms (FindLiveObjects: 0.402600 ms CreateObjectMapping: 0.218200 ms MarkObjects: 3.607400 ms  DeleteObjects: 0.178800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001977 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.99 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.466 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.72 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1816 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.6 MB.
+System memory in use after: 85.6 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2296.
+Total: 3.859400 ms (FindLiveObjects: 0.351200 ms CreateObjectMapping: 0.090800 ms MarkObjects: 3.226400 ms  DeleteObjects: 0.189300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001897 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.76 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.495 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.87 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1816 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.6 MB.
+System memory in use after: 85.6 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2300.
+Total: 3.486900 ms (FindLiveObjects: 0.341100 ms CreateObjectMapping: 0.083800 ms MarkObjects: 2.884900 ms  DeleteObjects: 0.175400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001227 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.54 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.619 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.49 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1816 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.6 MB.
+System memory in use after: 85.6 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2304.
+Total: 4.280800 ms (FindLiveObjects: 0.298200 ms CreateObjectMapping: 0.070600 ms MarkObjects: 3.663700 ms  DeleteObjects: 0.246000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002007 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.94 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.569 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.86 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1816 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.7 MB.
+System memory in use after: 85.6 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2308.
+Total: 4.279500 ms (FindLiveObjects: 0.716500 ms CreateObjectMapping: 0.208200 ms MarkObjects: 3.176400 ms  DeleteObjects: 0.176300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001676 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.85 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.520 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.68 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1815 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 88.6 MB.
-System memory in use after: 88.6 MB.
+Unloading 1816 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.7 MB.
+System memory in use after: 85.7 MB.
 
-Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2290.
-Total: 3.124200 ms (FindLiveObjects: 0.276900 ms CreateObjectMapping: 0.066200 ms MarkObjects: 2.607500 ms  DeleteObjects: 0.172200 ms)
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2312.
+Total: 3.491800 ms (FindLiveObjects: 0.302000 ms CreateObjectMapping: 0.078500 ms MarkObjects: 2.927500 ms  DeleteObjects: 0.181900 ms)
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
