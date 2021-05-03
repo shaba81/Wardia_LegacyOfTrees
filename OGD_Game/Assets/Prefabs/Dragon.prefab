@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1383211916485890508}
   - component: {fileID: 8661754912465729694}
-  - component: {fileID: 5586735644812149107}
   - component: {fileID: 1472285263204419528}
+  - component: {fileID: 5586735644812149107}
   m_Layer: 0
   m_Name: Dragon
   m_TagString: Untagged
@@ -84,26 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5586735644812149107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2391766038641825038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0f4385d92e63f4478f42fffbc843459, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  barPrefab: {fileID: 9001919181559767783, guid: 73699f5e031aaaf42bcfc521411eaa14, type: 3}
-  spriteRender: {fileID: 8661754912465729694}
-  animator: {fileID: 0}
-  baseDamage: 1
-  baseHealth: 3
-  range: 1
-  attackSpeed: 1
-  movementSpeed: 1
 --- !u!61 &1472285263204419528
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -130,3 +110,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.83, y: 1.27}
   m_EdgeRadius: 0
+--- !u!114 &5586735644812149107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2391766038641825038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0f4385d92e63f4478f42fffbc843459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barPrefab: {fileID: 9001919181559767783, guid: 73699f5e031aaaf42bcfc521411eaa14, type: 3}
+  spriteRender: {fileID: 8661754912465729694}
+  animator: {fileID: 0}
+  baseDamage: 1
+  baseHealth: 3
+  range: 1
+  attackSpeed: 1
+  movementSpeed: 1

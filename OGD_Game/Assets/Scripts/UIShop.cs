@@ -26,7 +26,7 @@ public class UIShop : MonoBehaviour
             if (!allCards[i].gameObject.activeSelf)
                 allCards[i].gameObject.SetActive(true);
 
-            allCards[i].Setup(cachedDb.allEntities[Random.Range(0, cachedDb.allEntities.Count)], this);
+            allCards[i].Setup(cachedDb.allEntities[i], this);
         }
     }
 

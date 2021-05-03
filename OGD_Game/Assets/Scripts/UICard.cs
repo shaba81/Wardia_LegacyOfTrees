@@ -10,8 +10,10 @@ public class UICard : MonoBehaviour
     public Image icon;
     public new Text name;
     public Text cost;
+    public bool clickable = true;
 
     private UIShop shopRef;
+    private DeckManager deckmanagerRef;
     private EntitiesDatabaseSO.EntityData myData;
 
     public void Setup(EntitiesDatabaseSO.EntityData myData, UIShop shopRef)
@@ -24,18 +26,39 @@ public class UICard : MonoBehaviour
         this.shopRef = shopRef;
     }
 
+    public void AltSetup(EntitiesDatabaseSO.EntityData myData, DeckManager deckref)
+    {
+        icon.sprite = myData.icon;
+        name.text = myData.name;
+        cost.text = myData.cost.ToString();
+
+        this.myData = myData;
+        this.shopRef = null;
+        this.deckmanagerRef = deckref;
+    }
+
     public void OnClick()
     {
-        if (SceneManager.GetActiveScene().name == "GameScene")
+        if (clickable)
         {
-            shopRef.OnCardClick(this, myData);
+            if (SceneManager.GetActiveScene().name == "GameScene")
+            {
+                shopRef.OnCardClick(this, myData);
+            }
+            else //U can only find cards in the deck-making scene other than in the actual gamescene.
+            {
+                //If its clicked in the "All Cards Panel"
+                //  If Unlocked:
+                //      - Ask if u want to add it to the deck
+                //          - Add it
+                deckmanagerRef.AddCard(this, myData);
+            }
         }
-        else //U can only find cards in the deck-making scene other than in the actual gamescene.
+        if (!clickable)
         {
-            //If its clicked in the "All Cards Panel"
-            //  If Unlocked:
-            //      - Ask if u want to add it to the deck
-            //          - Add it
+            //maybe remove card
         }
+
+
     }
 }
