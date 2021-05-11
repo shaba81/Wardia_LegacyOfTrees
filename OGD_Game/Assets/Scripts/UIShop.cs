@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class UIShop : MonoBehaviour
 {
-    public List<UICard> allCards;
+    public List<UICard> unitsCards;
+    public List<UICard> buildingCards;
     public Text money;
 
     private EntitiesDatabaseSO cachedDb;
@@ -21,12 +22,12 @@ public class UIShop : MonoBehaviour
 
     public void GenerateCard()
     {
-        for (int i = 0; i < allCards.Count; i++)
+        for (int i = 0; i < unitsCards.Count; i++)
         {
-            if (!allCards[i].gameObject.activeSelf)
-                allCards[i].gameObject.SetActive(true);
+            if (!unitsCards[i].gameObject.activeSelf)
+                unitsCards[i].gameObject.SetActive(true);
 
-            allCards[i].Setup(cachedDb.allEntities[i], this);
+            unitsCards[i].Setup(cachedDb.allEntities[i], this);
         }
     }
 

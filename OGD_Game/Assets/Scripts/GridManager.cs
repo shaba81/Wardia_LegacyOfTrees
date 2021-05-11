@@ -109,7 +109,6 @@ public class GridManager : Manager<GridManager>
 
         foreach (Edge e in allEdges)
         {
-            Debug.Log(e);
             Debug.DrawLine(e.from.worldPosition, e.to.worldPosition, Color.black, 100);
         }
 

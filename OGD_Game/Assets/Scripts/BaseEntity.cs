@@ -46,8 +46,8 @@ public class BaseEntity : MonoBehaviour
      
         currentNode.SetOccupied(true);
 
-        healthbar = Instantiate(barPrefab, this.transform);
-        healthbar.Setup(this.transform, baseHealth);
+        //healthbar = Instantiate(barPrefab, this.transform);
+        //healthbar.Setup(this.transform, baseHealth);
     }
 
     protected void Start()

@@ -54,7 +54,7 @@ public class Draggable : MonoBehaviour
             if (previousTile != null && tileUnder != previousTile)
             {
                 //We are over a different tile.
-                //previousTile.SetHighlight(false, false);
+                previousTile.SetHighlight(false, false);
             }
 
             previousTile = tileUnder;

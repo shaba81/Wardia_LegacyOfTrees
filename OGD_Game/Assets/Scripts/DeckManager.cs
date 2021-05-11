@@ -7,6 +7,7 @@ public class DeckManager : MonoBehaviour
 
     public List<UICard> deckCards;
     public List<UICard> allCards;
+    public List<GameObject> cursors;
 
     public EntitiesDatabaseSO cardsDb;
     public EntitiesDatabaseSO deckDb;
@@ -48,6 +49,7 @@ public class DeckManager : MonoBehaviour
     {
         if(index < 4)
         {
+            cursors[index].SetActive(false);
             Debug.Log(index);
             deckDb.allEntities[index] = myData;
             deckCards[index].gameObject.SetActive(true);
@@ -55,6 +57,10 @@ public class DeckManager : MonoBehaviour
             deckCards[index].clickable = false;
 
             index++;
+            if(index != 4)
+            {
+                cursors[index].SetActive(true);
+            } 
         }
     }
 
@@ -70,11 +76,13 @@ public class DeckManager : MonoBehaviour
 
     public void ResetDeck()
     {
-        for (int i = 0; i < deckCards.Count; i++)
+        if (index != 4)
         {
-                deckCards[i].gameObject.SetActive(false);
+            cursors[index].SetActive(false);  
         }
         index = 0;
+        cursors[index].SetActive(true);
+
 
         //in deck database initialize the default deck.
     }
