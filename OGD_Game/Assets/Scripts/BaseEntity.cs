@@ -33,7 +33,7 @@ public class BaseEntity : MonoBehaviour
     protected bool canAttack = true;
     protected float waitBetweenAttack;
 
-    public void Setup(Team team, Node currentNode)
+    public void Setup(Team team, /*Node currentNode*/ Vector3 pos)
     {
         myTeam = team;
         if (myTeam == Team.Team2)
@@ -41,10 +41,10 @@ public class BaseEntity : MonoBehaviour
             spriteRender.flipY = true;
         }
 
-        this.currentNode = currentNode;
-        transform.position = currentNode.worldPosition;
+        //this.currentNode = currentNode;
+        transform.position = pos;
      
-        currentNode.SetOccupied(true);
+        //currentNode.SetOccupied(true);
 
         //healthbar = Instantiate(barPrefab, this.transform);
         //healthbar.Setup(this.transform, baseHealth);

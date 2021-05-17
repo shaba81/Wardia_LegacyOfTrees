@@ -25,6 +25,9 @@ public class Draggable : MonoBehaviour
 
     public void OnStartDrag()
     {
+        if (TurnManager.Instance.gameState != GameState.Placing)
+            return;
+
         Debug.Log(this.name + " start drag");
 
         oldPosition = this.transform.position;
@@ -48,7 +51,6 @@ public class Draggable : MonoBehaviour
         Tile tileUnder = GetTileUnder();
         if (tileUnder != null)
         {
-            Debug.Log("CI SIAMO");
             tileUnder.SetHighlight(true, !GridManager.Instance.GetNodeForTile(tileUnder).IsOccupied);
 
             if (previousTile != null && tileUnder != previousTile)
@@ -82,6 +84,7 @@ public class Draggable : MonoBehaviour
 
         spriteRenderer.sortingOrder = oldSortingOrder;
 
+        
         IsDragging = false;
     }
 
@@ -99,11 +102,15 @@ public class Draggable : MonoBehaviour
                 if (!candidateNode.IsOccupied)
                 {
                     //Let's move this unity to that node
-                    thisEntity.CurrentNode.SetOccupied(false);
+                    if(thisEntity.CurrentNode != null)
+                    {
+                        thisEntity.CurrentNode.SetOccupied(false);
+
+                    }
                     thisEntity.SetCurrentNode(candidateNode);
                     candidateNode.SetOccupied(true);
                     thisEntity.transform.position = candidateNode.worldPosition;
-
+                    TurnManager.Instance.SetGameState(GameState.Buying);
                     return true;
                 }
             }

@@ -8,6 +8,7 @@ public class GameManager : Manager<GameManager>
 
     public Transform team1Parent;
     public Transform team2Parent;
+    public Transform spawnTransform;
 
     public Action OnRoundStart;
     public Action OnRoundEnd;
@@ -24,7 +25,9 @@ public class GameManager : Manager<GameManager>
         newEntity.gameObject.name = entityData.name;
         team1Entities.Add(newEntity);
 
-        newEntity.Setup(Team.Team1, GridManager.Instance.GetFreeNode(Team.Team1));
+        newEntity.Setup(Team.Team1, /*GridManager.Instance.GetFreeNode(Team.Team1)*/ spawnTransform.position);
+
+        TurnManager.Instance.SetGameState(GameState.Placing);
     }
 
     public List<BaseEntity> GetEntitiesAgainst(Team against)
@@ -45,7 +48,7 @@ public class GameManager : Manager<GameManager>
         Destroy(entity.gameObject);
     }
 
-
+    /*
     public void DebugFight()
     {
         for (int i = 0; i < unitsPerTeam; i++)
@@ -58,6 +61,7 @@ public class GameManager : Manager<GameManager>
             newEntity.Setup(Team.Team2, GridManager.Instance.GetFreeNode(Team.Team2));
         }
     }
+    */
 }
 
 public enum Team

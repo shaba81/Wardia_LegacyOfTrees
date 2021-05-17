@@ -8,6 +8,7 @@ public class Tile : MonoBehaviour
     public SpriteRenderer highlightSprite;
     public Color validColor;
     public Color wrongColor;
+    public bool hasTree = false;
 
     public void SetHighlight(bool active, bool valid)
     {
