@@ -84,10 +84,10 @@ public class BaseEntity : MonoBehaviour
         if (direction.sqrMagnitude <= 0.005f)
         {
             transform.position = nextNode.worldPosition;
-            animator.SetBool("walking", false);
+            //animator.SetBool("walking", false);
             return true;
         }
-        animator.SetBool("walking", true);
+        //animator.SetBool("walking", true);
 
         this.transform.position += direction.normalized * movementSpeed * Time.deltaTime;
         return false;
@@ -137,6 +137,8 @@ public class BaseEntity : MonoBehaviour
     public void SetCurrentNode(Node node)
     {
         currentNode = node;
+        
+        
     }
 
     public void TakeDamage(int amount)

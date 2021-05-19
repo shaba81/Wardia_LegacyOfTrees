@@ -23,12 +23,18 @@ public class Draggable : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+    private void Update()
+    {
+
+        
+    }
+
     public void OnStartDrag()
     {
         if (TurnManager.Instance.gameState != GameState.Placing)
             return;
 
-        Debug.Log(this.name + " start drag");
+        //Debug.Log(this.name + " start drag");
 
         oldPosition = this.transform.position;
         oldSortingOrder = spriteRenderer.sortingOrder;
@@ -42,7 +48,7 @@ public class Draggable : MonoBehaviour
         if (!IsDragging)
             return;
 
-        Debug.Log(this.name + " dragging");
+       // Debug.Log(this.name + " dragging");
 
         Vector3 newPosition = cam.ScreenToWorldPoint(Input.mousePosition) + dragOffset;
         newPosition.z = 0;
@@ -56,7 +62,7 @@ public class Draggable : MonoBehaviour
             if (previousTile != null && tileUnder != previousTile)
             {
                 //We are over a different tile.
-                previousTile.SetHighlight(false, false);
+                //previousTile.SetHighlight(false, false);
             }
 
             previousTile = tileUnder;
@@ -68,7 +74,7 @@ public class Draggable : MonoBehaviour
         if (!IsDragging)
             return;
 
-        Debug.Log(this.name + " end drag");
+        //Debug.Log(this.name + " end drag");
 
         if (!TryRelease())
         {
@@ -78,7 +84,7 @@ public class Draggable : MonoBehaviour
 
         if (previousTile != null)
         {
-            previousTile.SetHighlight(false, false);
+            //previousTile.SetHighlight(false, false);
             previousTile = null;
         }
 
@@ -128,6 +134,7 @@ public class Draggable : MonoBehaviour
         if (hit.collider != null)
         {
             //Released over something!
+            //Debug.Log("Found Tile");
             Tile t = hit.collider.GetComponent<Tile>();
             return t;
         }

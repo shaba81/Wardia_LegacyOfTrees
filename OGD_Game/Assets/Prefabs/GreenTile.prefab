@@ -216,6 +216,7 @@ MonoBehaviour:
   highlightSprite: {fileID: 3301255772320461721}
   validColor: {r: 0, g: 1, b: 0.9384773, a: 0}
   wrongColor: {r: 1, g: 0.2971698, b: 0.2971698, a: 0}
+  hasTree: 0
 --- !u!1 &5932884224953885307
 GameObject:
   m_ObjectHideFlags: 0

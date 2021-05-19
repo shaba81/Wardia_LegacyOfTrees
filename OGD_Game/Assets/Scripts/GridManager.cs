@@ -72,6 +72,21 @@ public class GridManager : Manager<GridManager>
         return null;
     }
 
+    public Tile GetTileForNode(Node n)
+    {
+        var allNodes = graph.Nodes;
+
+        for (int i = 0; i < allTiles.Count; i++)
+        {
+            if (allTiles[i].transform.GetSiblingIndex() == n.index)
+            {
+                return allTiles[i];
+            }
+        }
+
+        return null;
+    }
+
     private void InitializeGraph()
     {
         graph = new Graph();

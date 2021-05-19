@@ -11,7 +11,7 @@ public class PlayerData : Manager<PlayerData>
 
     private void Start()
     {
-        Money = 250;
+        Money = 0;
     }
 
     public bool CanAfford(int amount)
@@ -22,6 +22,12 @@ public class PlayerData : Manager<PlayerData>
     public void SpendMoney(int amount)
     {
         Money -= amount;
+        OnUpdate?.Invoke();
+    }
+
+    public void GiveMoney()
+    {
+        Money += 2;
         OnUpdate?.Invoke();
     }
 }

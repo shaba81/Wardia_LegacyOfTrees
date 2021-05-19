@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GameState { Buying, Placing, EndTurn, Wait}
+public enum GameState { Start, Buying, Placing, EndTurn, Wait}
 /*
  * Buying State --> Keep in that state until satisfied or can't afford
  * Placing State --> When a troop is picked, back to buying state when it's placed.

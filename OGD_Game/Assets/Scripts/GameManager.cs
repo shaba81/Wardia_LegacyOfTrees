@@ -16,18 +16,20 @@ public class GameManager : Manager<GameManager>
 
     List<BaseEntity> team1Entities = new List<BaseEntity>();
     List<BaseEntity> team2Entities = new List<BaseEntity>();
+    public List<TreeEntity> trees = new List<TreeEntity>();
 
-    int unitsPerTeam = 6;
+    //int unitsPerTeam = 6;
 
     public void OnEntityBought(EntitiesDatabaseSO.EntityData entityData)
     {
-        BaseEntity newEntity = Instantiate(entityData.prefab, team1Parent);
-        newEntity.gameObject.name = entityData.name;
-        team1Entities.Add(newEntity);
+            BaseEntity newEntity = Instantiate(entityData.prefab, team1Parent);
+            newEntity.gameObject.name = entityData.name;
+            team1Entities.Add(newEntity);
 
-        newEntity.Setup(Team.Team1, /*GridManager.Instance.GetFreeNode(Team.Team1)*/ spawnTransform.position);
+            newEntity.Setup(Team.Team1, /*GridManager.Instance.GetFreeNode(Team.Team1)*/ spawnTransform.position);
 
-        TurnManager.Instance.SetGameState(GameState.Placing);
+            TurnManager.Instance.SetGameState(GameState.Placing);
+        
     }
 
     public List<BaseEntity> GetEntitiesAgainst(Team against)
@@ -36,6 +38,32 @@ public class GameManager : Manager<GameManager>
             return team2Entities;
         else
             return team1Entities;
+    }
+
+    public int GetTreesConquered(Team team)
+    {
+        int amount = 0;
+
+        foreach(TreeEntity t in trees)
+        {
+            if (t.GetConquerer() == team)
+                amount += 1;
+        }
+
+        return amount;
+    }
+
+    public List<BaseEntity> GetMyEntities(Team myTeam)
+    {
+        if (myTeam == Team.Team1)
+            return team1Entities;
+        else
+            return team2Entities;
+    }
+
+    public void StartActions ()
+    {
+        OnRoundStart?.Invoke();
     }
 
     public void UnitDead(BaseEntity entity)
@@ -67,5 +95,6 @@ public class GameManager : Manager<GameManager>
 public enum Team
 {
     Team1,
-    Team2
+    Team2,
+    None
 }

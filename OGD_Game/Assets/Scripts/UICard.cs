@@ -41,11 +41,11 @@ public class UICard : MonoBehaviour
     {
         if (clickable)
         {
-            if (SceneManager.GetActiveScene().name == "GameScene")
+            if (SceneManager.GetActiveScene().name == "GameScene" && TurnManager.Instance.gameState == GameState.Buying)
             {
                 shopRef.OnCardClick(this, myData);
             }
-            else //U can only find cards in the deck-making scene other than in the actual gamescene.
+            else if (SceneManager.GetActiveScene().name == "DeckMakingScene") //U can only find cards in the deck-making scene other than in the actual gamescene.
             {
                 //If its clicked in the "All Cards Panel"
                 //  If Unlocked:

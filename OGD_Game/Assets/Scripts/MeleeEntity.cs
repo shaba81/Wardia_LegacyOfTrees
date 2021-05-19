@@ -6,11 +6,14 @@ public class MeleeEntity : BaseEntity
 {
     protected override void OnRoundStart()
     {
-        FindTarget();
+        //FindTarget();
+        Debug.Log("Action on round start");
+
     }
 
     public void Update()
     {
+        
         if (!HasEnemy)
         {
             FindTarget();
