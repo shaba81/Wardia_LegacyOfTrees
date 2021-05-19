@@ -11,7 +11,7 @@ public class TurnHandler : MonoBehaviour
 
     private void Awake()
     {
-        myTeam = Team.Team1;
+        myTeam = GameManager.Instance.myTeam;
         tm = TurnManager.Instance;
         tm.OnStateChange += HandleOnStateChange;
         tm.SetGameState(GameState.Start);

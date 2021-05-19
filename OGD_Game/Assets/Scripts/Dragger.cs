@@ -1,60 +1,46 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Draggable : MonoBehaviour
+public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    public LayerMask releaseMask;
-    public Vector3 dragOffset = new Vector3(0, -0.4f, 0);
 
-    private Camera cam;
-    private SpriteRenderer spriteRenderer;
+    Camera mainCamera;
+    float zAxis = 0;
+    Vector3 clickOffset = new Vector3(0, -0.4f, 0);
 
     private Vector3 oldPosition;
-    private int oldSortingOrder;
+    public LayerMask releaseMask;
     private Tile previousTile = null;
 
-    public bool IsDragging = false;
-
-    private void Start()
+    // Use this for initialization
+    void Start()
     {
-        cam = Camera.main;
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        mainCamera = Camera.main;
+        if (mainCamera.GetComponent<Physics2DRaycaster>() == null)
+            mainCamera.gameObject.AddComponent<Physics2DRaycaster>();
     }
 
-    private void Update()
-    {
-
-        
-    }
-
-    public void OnStartDrag()
+    public void OnBeginDrag(PointerEventData eventData)
     {
         if (TurnManager.Instance.gameState != GameState.Placing)
             return;
 
-        //Debug.Log(this.name + " start drag");
-
         oldPosition = this.transform.position;
-        oldSortingOrder = spriteRenderer.sortingOrder;
-
-        spriteRenderer.sortingOrder = 20;
-        IsDragging = true;
+        zAxis = transform.position.z;
+        clickOffset = transform.position - mainCamera.ScreenToWorldPoint(new Vector3(eventData.position.x, eventData.position.y, zAxis)) + new Vector3(0, 3, 0);
+        transform.position = new Vector3(transform.position.x, transform.position.y, zAxis);
     }
 
-    public void OnDragging()
+    public void OnDrag(PointerEventData eventData)
     {
-        if (!IsDragging)
-            return;
+        //Use Offset To Prevent Sprite from Jumping to where the finger is
+        Vector3 tempVec = mainCamera.ScreenToWorldPoint(eventData.position);
+        tempVec.z = zAxis; //Make sure that the z zxis never change
 
-       // Debug.Log(this.name + " dragging");
 
-        Vector3 newPosition = cam.ScreenToWorldPoint(Input.mousePosition) + dragOffset;
-        newPosition.z = 0;
-        this.transform.position = newPosition;
+        transform.position = tempVec;
 
-        Tile tileUnder = GetTileUnder();
+        Tile tileUnder = GetTileUnder(transform.position);
         if (tileUnder != null)
         {
             tileUnder.SetHighlight(true, !GridManager.Instance.GetNodeForTile(tileUnder).IsOccupied);
@@ -69,14 +55,11 @@ public class Draggable : MonoBehaviour
         }
     }
 
-    public void OnEndDrag()
+    public void OnEndDrag(PointerEventData eventData)
     {
-        if (!IsDragging)
-            return;
+        transform.position = new Vector3(transform.position.x, transform.position.y, -1);
 
-        //Debug.Log(this.name + " end drag");
-
-        if (!TryRelease())
+        if (!TryRelease(transform.position))
         {
             //Nothing was found, return to original position.
             this.transform.position = oldPosition;
@@ -87,17 +70,12 @@ public class Draggable : MonoBehaviour
             previousTile.SetHighlight(false, false);
             previousTile = null;
         }
-
-        spriteRenderer.sortingOrder = oldSortingOrder;
-
-        
-        IsDragging = false;
     }
 
-    private bool TryRelease()
+    private bool TryRelease(Vector3 position)
     {
         //Released over something!
-        Tile t = GetTileUnder();
+        Tile t = GetTileUnder(position);
         if (t != null)
         {
             //It's a tile!
@@ -108,7 +86,7 @@ public class Draggable : MonoBehaviour
                 if (!candidateNode.IsOccupied)
                 {
                     //Let's move this unity to that node
-                    if(thisEntity.CurrentNode != null)
+                    if (thisEntity.CurrentNode != null)
                     {
                         thisEntity.CurrentNode.SetOccupied(false);
 
@@ -126,10 +104,10 @@ public class Draggable : MonoBehaviour
         return false;
     }
 
-    public Tile GetTileUnder()
+    public Tile GetTileUnder(Vector3 pos)
     {
         RaycastHit2D hit =
-            Physics2D.Raycast(cam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 100, releaseMask);
+            Physics2D.Raycast(pos, Vector2.zero, 100, releaseMask);
 
         if (hit.collider != null)
         {
@@ -141,4 +119,5 @@ public class Draggable : MonoBehaviour
 
         return null;
     }
+
 }

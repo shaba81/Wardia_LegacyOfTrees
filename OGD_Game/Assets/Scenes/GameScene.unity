@@ -3686,6 +3686,7 @@ MonoBehaviour:
   team1Parent: {fileID: 881228966}
   team2Parent: {fileID: 1964990617}
   spawnTransform: {fileID: 1544871645}
+  myTeam: 0
   trees: []
 --- !u!4 &827809807
 Transform:

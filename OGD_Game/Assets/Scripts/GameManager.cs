@@ -14,6 +14,8 @@ public class GameManager : Manager<GameManager>
     public Action OnRoundEnd;
     public Action<BaseEntity> OnUnitDied;
 
+    public Team myTeam = Team.Team1;
+
     List<BaseEntity> team1Entities = new List<BaseEntity>();
     List<BaseEntity> team2Entities = new List<BaseEntity>();
     public List<TreeEntity> trees = new List<TreeEntity>();
@@ -26,7 +28,7 @@ public class GameManager : Manager<GameManager>
             newEntity.gameObject.name = entityData.name;
             team1Entities.Add(newEntity);
 
-            newEntity.Setup(Team.Team1, /*GridManager.Instance.GetFreeNode(Team.Team1)*/ spawnTransform.position);
+            newEntity.Setup(myTeam, /*GridManager.Instance.GetFreeNode(Team.Team1)*/ spawnTransform.position);
 
             TurnManager.Instance.SetGameState(GameState.Placing);
         
@@ -53,9 +55,9 @@ public class GameManager : Manager<GameManager>
         return amount;
     }
 
-    public List<BaseEntity> GetMyEntities(Team myTeam)
+    public List<BaseEntity> GetMyEntities(Team team)
     {
-        if (myTeam == Team.Team1)
+        if (team == Team.Team1)
             return team1Entities;
         else
             return team2Entities;

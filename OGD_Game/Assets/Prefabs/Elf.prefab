@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 5114737696634363076}
   - component: {fileID: 7638955367732856241}
   - component: {fileID: 122413920864576778}
-  - component: {fileID: 4884067479175297072}
-  - component: {fileID: 2584476594701526422}
+  - component: {fileID: 4426540601617506411}
   m_Layer: 0
   m_Name: Elf
   m_TagString: Untagged
@@ -132,7 +131,7 @@ MonoBehaviour:
   range: 1
   attackSpeed: 1
   movementSpeed: 1
---- !u!114 &4884067479175297072
+--- !u!114 &4426540601617506411
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,64 +140,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5114737696634363077}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fcfada052d6c55479c42d93c91c53d2, type: 3}
+  m_Script: {fileID: 11500000, guid: b2a5bab4802d2d54b8610197f5501ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   releaseMask:
     serializedVersion: 2
     m_Bits: 64
-  dragOffset: {x: 0, y: -0.4, z: 0}
-  IsDragging: 0
---- !u!114 &2584476594701526422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5114737696634363077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4884067479175297072}
-          m_TargetAssemblyTypeName: Draggable, Assembly-CSharp
-          m_MethodName: OnStartDrag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4884067479175297072}
-          m_TargetAssemblyTypeName: Draggable, Assembly-CSharp
-          m_MethodName: OnDragging
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4884067479175297072}
-          m_TargetAssemblyTypeName: Draggable, Assembly-CSharp
-          m_MethodName: OnEndDrag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
