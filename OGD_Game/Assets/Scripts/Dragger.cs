@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -12,12 +13,35 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
     public LayerMask releaseMask;
     private Tile previousTile = null;
 
+    private BaseEntity thisEntity;
+    private List<Tile> eligibleTiles = new List<Tile>();
+
     // Use this for initialization
     void Start()
     {
         mainCamera = Camera.main;
         if (mainCamera.GetComponent<Physics2DRaycaster>() == null)
             mainCamera.gameObject.AddComponent<Physics2DRaycaster>();
+
+        //light eligible nodes
+        thisEntity = GetComponent<BaseEntity>();
+        foreach (Node n in thisEntity.GetEligibleNodes())
+        {
+            Tile t = GridManager.Instance.GetTileForNode(n);
+            eligibleTiles.Add(t);
+
+        }
+
+        foreach (Tile t in eligibleTiles)
+        {
+            t.SetEligibleHighlight(true);
+        }
+    }
+
+    private void Update()
+    {
+
+
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -43,12 +67,20 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         Tile tileUnder = GetTileUnder(transform.position);
         if (tileUnder != null)
         {
-            tileUnder.SetHighlight(true, !GridManager.Instance.GetNodeForTile(tileUnder).IsOccupied);
+            if (eligibleTiles.Contains(tileUnder))
+            {
+
+                tileUnder.SetHighlight(true, !GridManager.Instance.GetNodeForTile(tileUnder).IsOccupied);
+            }
+            else
+            {
+                tileUnder.SetHighlight(true, false);
+            }
 
             if (previousTile != null && tileUnder != previousTile)
             {
                 //We are over a different tile.
-                //previousTile.SetHighlight(false, false);
+                previousTile.SetHighlight(false, false);
             }
 
             previousTile = tileUnder;
@@ -79,12 +111,14 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         if (t != null)
         {
             //It's a tile!
-            BaseEntity thisEntity = GetComponent<BaseEntity>();
+            thisEntity = GetComponent<BaseEntity>();
             Node candidateNode = GridManager.Instance.GetNodeForTile(t);
             if (candidateNode != null && thisEntity != null)
             {
                 if (!candidateNode.IsOccupied)
                 {
+                    if (!thisEntity.CheckDrop(candidateNode))
+                        return false;
                     //Let's move this unity to that node
                     if (thisEntity.CurrentNode != null)
                     {
@@ -96,6 +130,10 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
                     candidateNode.SetOccupied(true);
                     thisEntity.transform.position = candidateNode.worldPosition;
                     TurnManager.Instance.SetGameState(GameState.Buying);
+                    foreach (Tile _t in eligibleTiles)
+                    {
+                        _t.SetEligibleHighlight(false);
+                    }
                     this.enabled = false;
                     return true;
                 }

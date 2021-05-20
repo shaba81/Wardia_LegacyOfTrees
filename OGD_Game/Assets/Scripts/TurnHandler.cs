@@ -50,6 +50,11 @@ public class TurnHandler : MonoBehaviour
             tm.SetGameState(GameState.Buying);
         }
 
+        if(tm.gameState == GameState.Placing)
+        {
+            //light eligible nodes
+        }
+
 
         
     }

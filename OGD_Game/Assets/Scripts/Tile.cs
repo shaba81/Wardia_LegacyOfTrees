@@ -6,6 +6,7 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     public SpriteRenderer highlightSprite;
+    public SpriteRenderer highlightEligibleSprite;
     public Color validColor;
     public Color wrongColor;
     public bool hasTree = false;
@@ -19,6 +20,11 @@ public class Tile : MonoBehaviour
         highlightSprite.color = valid ? validColor : wrongColor;
 
         
+    }
+
+    public void SetEligibleHighlight(bool valid)
+    {
+        highlightEligibleSprite.gameObject.SetActive(valid);
     }
 
     public void Conquer(Team team)

@@ -24,11 +24,11 @@ public class TreeEntity : MonoBehaviour
     {
         if(team == Team.Team1)
         {
-            parent.SetHighlight(true, true);
+            //parent.SetHighlight(true, true);
 
         } else if (team == Team.Team2)
         {
-            parent.SetHighlight(true, false);
+            //parent.SetHighlight(true, false);
         }
 
         isConquered = true;

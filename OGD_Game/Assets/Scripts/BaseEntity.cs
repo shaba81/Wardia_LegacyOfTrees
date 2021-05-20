@@ -23,6 +23,8 @@ public class BaseEntity : MonoBehaviour
     protected Node startingNode;
     public bool isFirstTurn = true;
 
+    private List<Node> eligibleNodes = new List<Node>();
+
     public Node CurrentNode => currentNode;
     public Node StartingtNode => startingNode;
 
@@ -58,6 +60,22 @@ public class BaseEntity : MonoBehaviour
         GameManager.Instance.OnRoundStart += OnRoundStart;
         GameManager.Instance.OnRoundEnd += OnRoundEnd;
         GameManager.Instance.OnUnitDied += OnUnitDied;
+
+        eligibleNodes = GridManager.Instance.GetFirstRow();
+        foreach(TreeEntity t in GameManager.Instance.trees)
+        {
+            if (t.GetConquerer() == GameManager.Instance.myTeam)
+            {
+                Node tempNode = GridManager.Instance.GetNodeForTile(t.parent);
+                eligibleNodes.Add(tempNode);
+                foreach(Node n in GridManager.Instance.Neighbors(tempNode))
+                {
+                    if(!eligibleNodes.Contains(n))
+                        eligibleNodes.Add(n);
+                }
+
+            }
+        }
     }
 
     protected virtual void OnRoundStart() { }
@@ -83,7 +101,7 @@ public class BaseEntity : MonoBehaviour
 
     protected void MoveTowards(Node nextNode)
     {
-        if(nextNode == startingNode)
+        if (nextNode == startingNode)
         {
             transform.position = nextNode.worldPosition;
             return;
@@ -111,7 +129,7 @@ public class BaseEntity : MonoBehaviour
         {
             destination = startingNode;
         }
-        if(destination.IsOccupied)
+        if (destination.IsOccupied)
         {
             return false;
         }
@@ -162,6 +180,21 @@ public class BaseEntity : MonoBehaviour
         startingNode = node;
 
 
+    }
+
+    public List<Node> GetEligibleNodes()
+    {
+        return eligibleNodes;
+    }
+
+    public bool CheckDrop(Node node)
+    {
+        if (eligibleNodes.Contains(node))
+        {
+            return true;
+        }
+
+        return false;
     }
 
     public void TakeDamage(int amount)

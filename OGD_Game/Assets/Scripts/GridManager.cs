@@ -52,6 +52,44 @@ public class GridManager : Manager<GridManager>
         return graph.nextNode(from);
     }
 
+    public List<Node> GetFirstRow()
+    {
+        List<Node> row = new List<Node>();
+        int startIndex = startPositionPerTeam[GameManager.Instance.myTeam];
+        row.Add(graph.Nodes[startIndex]);
+        int[] indexesTeam1 = { 0, 5, 11, 16, 22 };
+        int[] indexesTeam2 = { 4, 10, 15, 21, 26};
+
+
+
+        if (startIndex == 0)
+        {
+            foreach (int index in indexesTeam1)
+            {
+                if (!graph.Nodes[index].IsOccupied)
+                    row.Add(graph.Nodes[index]);
+            }
+        }
+        else
+        {
+            foreach (int index in indexesTeam2)
+            {
+                if (!graph.Nodes[index].IsOccupied)
+                    row.Add(graph.Nodes[index]);
+            }
+        }
+
+
+
+        return row;
+
+    }
+
+    public List<Node> Neighbors(Node from)
+    {
+        return graph.Neighbors(from);
+    }
+
     public List<Node> GetPath(Node from, Node to)
     {
         return graph.GetShortestPath(from, to);
