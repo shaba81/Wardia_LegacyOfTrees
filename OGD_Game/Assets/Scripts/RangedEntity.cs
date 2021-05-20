@@ -27,7 +27,7 @@ public class RangedEntity : BaseEntity
         }
         else
         {
-            GetInRange();
+            Move();
         }
     }
 }

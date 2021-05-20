@@ -92,9 +92,11 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
 
                     }
                     thisEntity.SetCurrentNode(candidateNode);
+                    thisEntity.SetStartingNode(candidateNode);
                     candidateNode.SetOccupied(true);
                     thisEntity.transform.position = candidateNode.worldPosition;
                     TurnManager.Instance.SetGameState(GameState.Buying);
+                    this.enabled = false;
                     return true;
                 }
             }

@@ -47,6 +47,11 @@ public class GridManager : Manager<GridManager>
         return graph.Nodes[currentIndex];
     }
 
+    public Node GetNextNode(Node from)
+    {
+        return graph.nextNode(from);
+    }
+
     public List<Node> GetPath(Node from, Node to)
     {
         return graph.GetShortestPath(from, to);
@@ -74,8 +79,6 @@ public class GridManager : Manager<GridManager>
 
     public Tile GetTileForNode(Node n)
     {
-        var allNodes = graph.Nodes;
-
         for (int i = 0; i < allTiles.Count; i++)
         {
             if (allTiles[i].transform.GetSiblingIndex() == n.index)

@@ -20,8 +20,10 @@ public class BaseEntity : MonoBehaviour
     protected Team myTeam;
     protected BaseEntity currentTarget = null;
     protected Node currentNode;
+    protected Node startingNode;
 
     public Node CurrentNode => currentNode;
+    public Node StartingtNode => startingNode;
 
     protected bool HasEnemy => currentTarget != null;
     protected bool IsInRange => currentTarget != null && Vector3.Distance(this.transform.position, currentTarget.transform.position) <= range;
@@ -43,7 +45,7 @@ public class BaseEntity : MonoBehaviour
 
         //this.currentNode = currentNode;
         transform.position = pos;
-     
+
         //currentNode.SetOccupied(true);
 
         //healthbar = Instantiate(barPrefab, this.transform);
@@ -78,67 +80,89 @@ public class BaseEntity : MonoBehaviour
         currentTarget = entity;
     }
 
-    protected bool MoveTowards(Node nextNode)
+    protected void MoveTowards(Node nextNode)
     {
-        Vector3 direction = (nextNode.worldPosition - this.transform.position);
-        if (direction.sqrMagnitude <= 0.005f)
+        if(nextNode == startingNode)
         {
             transform.position = nextNode.worldPosition;
+            return;
+        }
+
+        /*
+        Vector3 direction = (nextNode.worldPosition - this.transform.position);
+        while (transform.position != nextNode.worldPosition)
+        {
             //animator.SetBool("walking", false);
-            return true;
+            this.transform.position += direction.normalized * movementSpeed * Time.deltaTime;
         }
         //animator.SetBool("walking", true);
+        */
 
-        this.transform.position += direction.normalized * movementSpeed * Time.deltaTime;
-        return false;
+        transform.position = nextNode.worldPosition;
+
+
     }
 
-    protected void GetInRange()
+    protected bool Move()
     {
-        if (currentTarget == null)
-            return;
-
-        if (!moving)
+        destination = GridManager.Instance.GetNextNode(currentNode);
+        if(destination.IsOccupied)
         {
-            destination = null;
-            List<Node> candidates = GridManager.Instance.GetNodesCloseTo(currentTarget.CurrentNode);
-            candidates = candidates.OrderBy(x => Vector3.Distance(x.worldPosition, this.transform.position)).ToList();
-            for (int i = 0; i < candidates.Count; i++)
-            {
-                if (!candidates[i].IsOccupied)
-                {
-                    destination = candidates[i];
-                    break;
-                }
-            }
-            if (destination == null)
-                return;
+            return false;
+        }
+        if (destination == null)
+        {
+            destination = startingNode;
+        }
+        int indexOfDestination = destination.index;
+        Debug.Log(indexOfDestination);
+        switch (indexOfDestination)
+        {
+            case 5:
+                Debug.Log("First Column Traversed");
+                destination = startingNode;
+                break;
+            case 11:
+                Debug.Log("Second Column Traversed");
+                destination = startingNode;
+                break;
+            case 16:
+                Debug.Log("Third Column Traversed");
+                destination = startingNode;
+                break;
+            case 22:
+                Debug.Log("Fourth Column Traversed");
+                destination = startingNode;
+                break;
+            default:
+                Debug.Log("Eligible");
+                break;
 
-            var path = GridManager.Instance.GetPath(currentNode, destination);
-            if (path == null && path.Count >= 1)
-                return;
-
-            if (path[1].IsOccupied)
-                return;
-
-            path[1].SetOccupied(true);
-            destination = path[1];
         }
 
-        moving = !MoveTowards(destination);
-        if (!moving)
-        {
-            //Free previous node
-            currentNode.SetOccupied(false);
-            SetCurrentNode(destination);
-        }
+        MoveTowards(destination);
+
+        //Free previous node
+        currentNode.SetOccupied(false);
+        SetCurrentNode(destination);
+        currentNode.SetOccupied(true);
+
+        return true;
+
     }
 
     public void SetCurrentNode(Node node)
     {
         currentNode = node;
-        
-        
+
+
+    }
+
+    public void SetStartingNode(Node node)
+    {
+        startingNode = node;
+
+
     }
 
     public void TakeDamage(int amount)

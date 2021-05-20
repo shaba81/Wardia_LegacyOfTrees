@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8661754912465729694}
   - component: {fileID: 1472285263204419528}
   - component: {fileID: 5586735644812149107}
+  - component: {fileID: 4750432521752463691}
   m_Layer: 0
   m_Name: Dragon
   m_TagString: Untagged
@@ -130,3 +131,18 @@ MonoBehaviour:
   range: 1
   attackSpeed: 1
   movementSpeed: 1
+--- !u!114 &4750432521752463691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2391766038641825038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a5bab4802d2d54b8610197f5501ce4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  releaseMask:
+    serializedVersion: 2
+    m_Bits: 64

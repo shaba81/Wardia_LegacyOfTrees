@@ -27,6 +27,20 @@ public class Graph
         return false;
     }
 
+    public Node nextNode(Node n)
+    {
+        //5,11,16,22
+        int currentIndex = nodes.IndexOf(n);
+        if(currentIndex < nodes.Count)
+        {
+            int nextIndex = currentIndex + 1;
+            Node result = nodes.ElementAt(nextIndex);
+            return result;
+
+        }
+        return null;
+    }
+
     public List<Node> Neighbors(Node from)
     {
         List<Node> result = new List<Node>();

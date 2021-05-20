@@ -6,31 +6,22 @@ public class MeleeEntity : BaseEntity
 {
     protected override void OnRoundStart()
     {
-        //FindTarget();
         Debug.Log("Action on round start");
-
-    }
-
-    public void Update()
-    {
-        
-        if (!HasEnemy)
+        if (!Move())
         {
-            FindTarget();
-        }
-
-        if (IsInRange && !moving)
-        {
-            //In range for attack!
-            if (canAttack)
+            //means there's someone on the other tile.
+            //if it's an enemy, combat;
+            foreach(BaseEntity entity in GameManager.Instance.GetEntitiesAgainst(myTeam))
             {
-                Attack();
-                currentTarget.TakeDamage(baseDamage);
+                if(GridManager.Instance.GetNextNode(currentNode) == entity.CurrentNode)
+                {
+                    Debug.Log("Combat");
+                }
+                //if it's an entity from Team1 just do nothing;
             }
         }
-        else
-        {
-            GetInRange();
-        }
+
     }
+
+    
 }
