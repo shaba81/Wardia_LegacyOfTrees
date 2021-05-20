@@ -7,6 +7,9 @@ public class MeleeEntity : BaseEntity
     protected override void OnRoundStart()
     {
         Debug.Log("Action on round start");
+        if (isFirstTurn)
+            return;
+
         if (!Move())
         {
             //means there's someone on the other tile.

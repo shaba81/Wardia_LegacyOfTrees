@@ -21,6 +21,7 @@ public class BaseEntity : MonoBehaviour
     protected BaseEntity currentTarget = null;
     protected Node currentNode;
     protected Node startingNode;
+    public bool isFirstTurn = true;
 
     public Node CurrentNode => currentNode;
     public Node StartingtNode => startingNode;
@@ -106,16 +107,15 @@ public class BaseEntity : MonoBehaviour
     protected bool Move()
     {
         destination = GridManager.Instance.GetNextNode(currentNode);
-        if(destination.IsOccupied)
-        {
-            return false;
-        }
         if (destination == null)
         {
             destination = startingNode;
         }
+        if(destination.IsOccupied)
+        {
+            return false;
+        }
         int indexOfDestination = destination.index;
-        Debug.Log(indexOfDestination);
         switch (indexOfDestination)
         {
             case 5:
@@ -135,7 +135,6 @@ public class BaseEntity : MonoBehaviour
                 destination = startingNode;
                 break;
             default:
-                Debug.Log("Eligible");
                 break;
 
         }

@@ -31,7 +31,7 @@ public class Graph
     {
         //5,11,16,22
         int currentIndex = nodes.IndexOf(n);
-        if(currentIndex < nodes.Count)
+        if(currentIndex < nodes.Count - 1)
         {
             int nextIndex = currentIndex + 1;
             Node result = nodes.ElementAt(nextIndex);

@@ -35,7 +35,7 @@ public class TurnHandler : MonoBehaviour
             {
 
                 foreach (BaseEntity entity in GameManager.Instance.GetMyEntities(myTeam)) {
-
+                    entity.isFirstTurn = false;
                     if(tree.parent == GridManager.Instance.GetTileForNode(entity.CurrentNode)) {
                         tree.SetConquerer(myTeam);
                     }
