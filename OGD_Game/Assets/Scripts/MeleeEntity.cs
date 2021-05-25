@@ -6,7 +6,7 @@ public class MeleeEntity : BaseEntity
 {
     protected override void OnRoundStart()
     {
-        Debug.Log("Action on round start");
+        
         if (isFirstTurn)
             return;
 
@@ -14,19 +14,21 @@ public class MeleeEntity : BaseEntity
         {
             //means there's someone on the other tile.
             //if it's an enemy, combat;
-            foreach(BaseEntity entity in GameManager.Instance.GetEntitiesAgainst(myTeam))
+            foreach (BaseEntity entity in GameManager.Instance.GetEntitiesAgainst(myTeam))
             {
-                if(GridManager.Instance.GetNextNode(currentNode) == entity.CurrentNode)
+                if (GridManager.Instance.GetNextNode(currentNode) == entity.CurrentNode)
                 {
                     Debug.Log("Combat");
                 }
                 //if it's an entity from Team1 just do nothing;
             }
         }
+        Debug.Log("Action Ended from entity: " + this);
 
     }
 
-    
 
-    
+
+
+
 }

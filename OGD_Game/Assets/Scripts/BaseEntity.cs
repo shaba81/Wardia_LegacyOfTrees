@@ -12,6 +12,7 @@ public class BaseEntity : MonoBehaviour
 
     public int baseDamage = 1;
     public int baseHealth = 3;
+    public int movement = 1;
     [Range(1, 5)]
     public int range = 1;
     public float attackSpeed = 1f; //Attacks per second
@@ -24,6 +25,7 @@ public class BaseEntity : MonoBehaviour
     public bool isFirstTurn = true;
 
     private List<Node> eligibleNodes = new List<Node>();
+    private List<int> positions = new List<int>();
 
     public Node CurrentNode => currentNode;
     public Node StartingtNode => startingNode;
@@ -68,14 +70,19 @@ public class BaseEntity : MonoBehaviour
             {
                 Node tempNode = GridManager.Instance.GetNodeForTile(t.parent);
                 eligibleNodes.Add(tempNode);
+
+                //Here i compute the tree neighbors.
+                /*
                 foreach(Node n in GridManager.Instance.Neighbors(tempNode))
                 {
                     if(!eligibleNodes.Contains(n))
                         eligibleNodes.Add(n);
                 }
+                */
 
             }
         }
+
     }
 
     protected virtual void OnRoundStart() { }
@@ -99,65 +106,58 @@ public class BaseEntity : MonoBehaviour
         currentTarget = entity;
     }
 
-    protected void MoveTowards(Node nextNode)
+    public void GetPositions()
     {
-        if (nextNode == startingNode)
+        if (startingNode.index < 5 && startingNode.index >= 0)
         {
-            transform.position = nextNode.worldPosition;
-            return;
+            positions = Enumerable.Range(0, 5).ToList();
         }
-
-        /*
-        Vector3 direction = (nextNode.worldPosition - this.transform.position);
-        while (transform.position != nextNode.worldPosition)
+        else if (startingNode.index < 11 && startingNode.index >= 5)
         {
-            //animator.SetBool("walking", false);
-            this.transform.position += direction.normalized * movementSpeed * Time.deltaTime;
+            positions = Enumerable.Range(5, 6).ToList();
         }
-        //animator.SetBool("walking", true);
-        */
+        else if (startingNode.index < 16 && startingNode.index >= 11)
+        {
+            positions = Enumerable.Range(11, 5).ToList();
+        }
+        else if (startingNode.index < 22 && startingNode.index >= 16)
+        {
+            positions = Enumerable.Range(16, 6).ToList();
+        }
+        else if (startingNode.index < 27 && startingNode.index >= 22)
+        {
+            positions = Enumerable.Range(22, 5).ToList();
+        }
+    }
 
-        transform.position = nextNode.worldPosition;
+    public int GetNextIndex()
+    {
+        int currentIndex = positions.IndexOf(currentNode.index);
+        int indexOfDestination = 0;
+        if(myTeam == Team.Team1)
+        {
+            indexOfDestination = currentIndex + movement;
 
+        } else
+        {
+            indexOfDestination = currentIndex - movement;
+        }
+        indexOfDestination = indexOfDestination % positions.Count;
 
+        return indexOfDestination;
     }
 
     protected bool Move()
     {
-        destination = GridManager.Instance.GetNextNode(currentNode);
-        if (destination == null)
-        {
-            destination = startingNode;
-        }
+
+        //to get a node at a given index GridManager.Instance.graph.Nodes[index];      
+
+        Node destination = GridManager.Instance.GetNodeAtIndex(positions[GetNextIndex()]);
         if (destination.IsOccupied)
         {
             return false;
         }
-        int indexOfDestination = destination.index;
-        switch (indexOfDestination)
-        {
-            case 5:
-                Debug.Log("First Column Traversed");
-                destination = startingNode;
-                break;
-            case 11:
-                Debug.Log("Second Column Traversed");
-                destination = startingNode;
-                break;
-            case 16:
-                Debug.Log("Third Column Traversed");
-                destination = startingNode;
-                break;
-            case 22:
-                Debug.Log("Fourth Column Traversed");
-                destination = startingNode;
-                break;
-            default:
-                break;
-
-        }
-
-        MoveTowards(destination);
+        transform.position = destination.worldPosition;
 
         //Free previous node
         currentNode.SetOccupied(false);
@@ -178,6 +178,7 @@ public class BaseEntity : MonoBehaviour
     public void SetStartingNode(Node node)
     {
         startingNode = node;
+        GetPositions();
 
 
     }

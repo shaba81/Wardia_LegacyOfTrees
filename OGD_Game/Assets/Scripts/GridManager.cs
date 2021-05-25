@@ -52,6 +52,11 @@ public class GridManager : Manager<GridManager>
         return graph.nextNode(from);
     }
 
+    public Node GetNodeAtIndex(int index)
+    {
+        return graph.Nodes[index];
+    }
+
     public List<Node> GetFirstRow()
     {
         List<Node> row = new List<Node>();

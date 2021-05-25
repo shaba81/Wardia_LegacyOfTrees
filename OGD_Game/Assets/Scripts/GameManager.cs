@@ -20,13 +20,17 @@ public class GameManager : Manager<GameManager>
     List<BaseEntity> team2Entities = new List<BaseEntity>();
     public List<TreeEntity> trees = new List<TreeEntity>();
 
+
     //int unitsPerTeam = 6;
 
     public void OnEntityBought(EntitiesDatabaseSO.EntityData entityData)
     {
             BaseEntity newEntity = Instantiate(entityData.prefab, team1Parent);
             newEntity.gameObject.name = entityData.name;
-            team1Entities.Add(newEntity);
+            newEntity.movement = entityData.movement;
+            newEntity.baseHealth = entityData.health;
+            newEntity.baseDamage = entityData.damage;
+        team1Entities.Add(newEntity);
 
             newEntity.Setup(myTeam, /*GridManager.Instance.GetFreeNode(Team.Team1)*/ spawnTransform.position);
 
@@ -55,6 +59,14 @@ public class GameManager : Manager<GameManager>
         return amount;
     }
 
+    public bool checkTreeRequirement(int required)
+    {
+        if (GetTreesConquered(myTeam) < required)
+            return false;
+
+        return true;
+    }
+
     public List<BaseEntity> GetMyEntities(Team team)
     {
         if (team == Team.Team1)
@@ -63,10 +75,12 @@ public class GameManager : Manager<GameManager>
             return team2Entities;
     }
 
-    public void StartActions ()
+
+    public void SetupActions ()
     {
-        OnRoundStart?.Invoke();
+        OnRoundStart?.Invoke(); 
     }
+
 
     public void UnitDead(BaseEntity entity)
     {

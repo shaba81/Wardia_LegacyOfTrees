@@ -17,7 +17,9 @@ MonoBehaviour:
     name: Elf
     icon: {fileID: 21300000, guid: 6179695ed5ef782458c48431d31c8efb, type: 3}
     cost: 2
+    treeRequirement: 0
   - prefab: {fileID: 5586735644812149107, guid: 791ca007efb1e1342ba883404f336eb6, type: 3}
     name: Dragon
     icon: {fileID: 21300000, guid: 277185020ddf02d41815d00c924f1acc, type: 3}
     cost: 5
+    treeRequirement: 1

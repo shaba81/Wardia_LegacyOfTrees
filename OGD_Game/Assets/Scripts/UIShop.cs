@@ -36,6 +36,13 @@ public class UIShop : MonoBehaviour
         //We should check if we have the money!
         if (PlayerData.Instance.CanAfford(cardData.cost))
         {
+            //We should check if we can actually place that card, some cards have requirements other than cost.
+            if (!GameManager.Instance.checkTreeRequirement(cardData.treeRequirement))
+            {
+                Debug.Log("You need at least " + cardData.treeRequirement + " trees conquered!");
+                return;
+            }
+
             PlayerData.Instance.SpendMoney(cardData.cost);
             //card.gameObject.SetActive(false);
             GameManager.Instance.OnEntityBought(cardData);

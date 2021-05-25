@@ -66,7 +66,7 @@ public class TurnHandler : MonoBehaviour
 
     public void EndTurn()
     {
-        GameManager.Instance.StartActions();
+        GameManager.Instance.SetupActions();
         tm.SetGameState(GameState.Start);
     }
 

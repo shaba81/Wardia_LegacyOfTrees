@@ -13,6 +13,10 @@ public class EntitiesDatabaseSO : ScriptableObject
         public Sprite icon;
 
         public int cost;
+        public int movement;
+        public int treeRequirement;
+        public int health;
+        public int damage;
     }
 
     public List<EntityData> allEntities;
