@@ -11,6 +11,7 @@ public class EntitiesDatabaseSO : ScriptableObject
         public BaseEntity prefab;
         public string name;
         public Sprite icon;
+        public bool isBuilding;
 
         public int cost;
         public int movement;

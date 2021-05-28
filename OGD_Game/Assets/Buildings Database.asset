@@ -10,27 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85da6a87f49e2e14492a5d8fa35d986b, type: 3}
-  m_Name: Entity Database
+  m_Name: Buildings Database
   m_EditorClassIdentifier: 
   allEntities:
-  - prefab: {fileID: 7738824287383524724, guid: e9514dc0707b0f9448345bd1d204bbe3, type: 3}
-    name: Peasant
-    icon: {fileID: 21300000, guid: f7233729247bbaa47a271924574b0672, type: 3}
-    isBuilding: 0
-    cost: 1
-    movement: 1
-    treeRequirement: 0
-    health: 1
-    damage: 1
-  - prefab: {fileID: 5586735644812149107, guid: 791ca007efb1e1342ba883404f336eb6, type: 3}
-    name: Dragon
-    icon: {fileID: 21300000, guid: 277185020ddf02d41815d00c924f1acc, type: 3}
-    isBuilding: 0
-    cost: 5
-    movement: 2
-    treeRequirement: 1
-    health: 3
-    damage: 1
   - prefab: {fileID: 0}
     name: Artificial Tree
     icon: {fileID: 21300432, guid: 14aefffd3622c7347aad64f2bed35801, type: 3}

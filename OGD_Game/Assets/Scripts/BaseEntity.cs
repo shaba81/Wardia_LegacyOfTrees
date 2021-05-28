@@ -13,6 +13,7 @@ public class BaseEntity : MonoBehaviour
     public int baseDamage = 1;
     public int baseHealth = 3;
     public int movement = 1;
+    public bool isBuilding = false;
     [Range(1, 5)]
     public int range = 1;
     public float attackSpeed = 1f; //Attacks per second

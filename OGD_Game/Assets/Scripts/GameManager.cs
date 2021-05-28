@@ -5,6 +5,7 @@ using System;
 public class GameManager : Manager<GameManager>
 {
     public EntitiesDatabaseSO entitiesDatabase;
+    public EntitiesDatabaseSO buildingsDatabase;
 
     public Transform team1Parent;
     public Transform team2Parent;
@@ -30,6 +31,7 @@ public class GameManager : Manager<GameManager>
             newEntity.movement = entityData.movement;
             newEntity.baseHealth = entityData.health;
             newEntity.baseDamage = entityData.damage;
+        newEntity.isBuilding = entityData.isBuilding;
         team1Entities.Add(newEntity);
 
             newEntity.Setup(myTeam, /*GridManager.Instance.GetFreeNode(Team.Team1)*/ spawnTransform.position);

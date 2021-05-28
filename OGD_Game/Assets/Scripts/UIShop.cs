@@ -9,12 +9,14 @@ public class UIShop : MonoBehaviour
     public List<UICard> buildingCards;
     public Text money;
 
-    private EntitiesDatabaseSO cachedDb;
+    private EntitiesDatabaseSO unitsDb;
+    private EntitiesDatabaseSO buildingsdDb;
     private int refreshCost = 1;
 
     private void Start()
     {
-        cachedDb = GameManager.Instance.entitiesDatabase;
+        unitsDb = GameManager.Instance.entitiesDatabase;
+        buildingsdDb = GameManager.Instance.buildingsDatabase;
         GenerateCard();
         PlayerData.Instance.OnUpdate += Refresh;
         Refresh();
@@ -27,7 +29,17 @@ public class UIShop : MonoBehaviour
             if (!unitsCards[i].gameObject.activeSelf)
                 unitsCards[i].gameObject.SetActive(true);
 
-            unitsCards[i].Setup(cachedDb.allEntities[i], this);
+            if (!unitsDb.allEntities[i].isBuilding)
+                unitsCards[i].Setup(unitsDb.allEntities[i], this);
+        }
+
+        for (int i = 0; i < buildingCards.Count; i++)
+        {
+            if (!buildingCards[i].gameObject.activeSelf)
+                buildingCards[i].gameObject.SetActive(true);
+            
+            if(buildingsdDb.allEntities[i].isBuilding)
+                buildingCards[i].Setup(buildingsdDb.allEntities[i], this);
         }
     }
 
