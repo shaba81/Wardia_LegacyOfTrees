@@ -135,12 +135,12 @@ public class DeckManager : MonoBehaviour
     //Used to switch from units and buildings.
     public void SwitchDeck()
     {
-        if(unitsObject.active)
+        if(unitsObject.activeSelf)
         {
             unitsObject.SetActive(false);
             buildingsObject.SetActive(true);
         }
-        else if (!unitsObject.active)
+        else if (!unitsObject.activeSelf)
         {
             buildingsObject.SetActive(false);
             unitsObject.SetActive(true);

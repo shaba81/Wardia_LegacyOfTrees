@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 8215525389740658285}
-  offset: {x: 0, y: 0.666, z: 0}
+  offset: {x: 0, y: -0.05, z: 0}
 --- !u!1 &4478617210320412048
 GameObject:
   m_ObjectHideFlags: 0

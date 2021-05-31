@@ -25,9 +25,9 @@ public class PlayerData : Manager<PlayerData>
         OnUpdate?.Invoke();
     }
 
-    public void GiveMoney()
+    public void GiveMoney(int amount)
     {
-        Money += 2;
+        Money += amount;
         OnUpdate?.Invoke();
     }
 }

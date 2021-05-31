@@ -78,9 +78,14 @@ public class GameManager : Manager<GameManager>
     }
 
 
-    public void SetupActions ()
+    public void FireRoundEndActions ()
     {
-        OnRoundStart?.Invoke(); 
+        OnRoundEnd?.Invoke(); 
+    }
+
+    public void FireRoundStartActions()
+    {
+        OnRoundStart?.Invoke();
     }
 
 
@@ -90,6 +95,8 @@ public class GameManager : Manager<GameManager>
         team2Entities.Remove(entity);
 
         OnUnitDied?.Invoke(entity);
+
+        entity.Unsubscribe();
 
         Destroy(entity.gameObject);
     }

@@ -29,7 +29,7 @@ public class TurnHandler : MonoBehaviour
     {
         if(tm.gameState == GameState.Start)
         {
-            PlayerData.Instance.GiveMoney();
+            PlayerData.Instance.GiveMoney(2);
 
             foreach (TreeEntity tree in GameManager.Instance.trees)
             {
@@ -43,16 +43,20 @@ public class TurnHandler : MonoBehaviour
 
                 if(tree.GetConquerer() == myTeam)
                 {
-                    PlayerData.Instance.GiveMoney();
+                    PlayerData.Instance.GiveMoney(2);
                 }
             }
+
+            //Call on round start for each entity and do the actions
+            GameManager.Instance.FireRoundStartActions();
+
             UITreeUpdater.Instance.UpdateTrees();
             tm.SetGameState(GameState.Buying);
         }
 
         if(tm.gameState == GameState.Placing)
         {
-            //light eligible nodes
+            
         }
 
 
@@ -66,7 +70,7 @@ public class TurnHandler : MonoBehaviour
 
     public void EndTurn()
     {
-        GameManager.Instance.SetupActions();
+        GameManager.Instance.FireRoundEndActions();
         tm.SetGameState(GameState.Start);
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MeleeEntity : BaseEntity
 {
-    protected override void OnRoundStart()
+    protected override void OnRoundEnd()
     {
         
         if (isFirstTurn)

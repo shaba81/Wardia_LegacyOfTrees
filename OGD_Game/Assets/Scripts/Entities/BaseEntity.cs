@@ -12,6 +12,8 @@ public class BaseEntity : MonoBehaviour
 
     public int baseDamage = 1;
     public int baseHealth = 3;
+    private int originalDamage;
+    private int originalHealth;
     public int movement = 1;
     public bool isBuilding = false;
     [Range(1, 5)]
@@ -54,8 +56,8 @@ public class BaseEntity : MonoBehaviour
 
         //currentNode.SetOccupied(true);
 
-        //healthbar = Instantiate(barPrefab, this.transform);
-        //healthbar.Setup(this.transform, baseHealth);
+        healthbar = Instantiate(barPrefab, this.transform);
+        healthbar.Setup(this.transform, baseHealth);
     }
 
     protected void Start()
@@ -65,6 +67,8 @@ public class BaseEntity : MonoBehaviour
         GameManager.Instance.OnUnitDied += OnUnitDied;
 
         eligibleNodes = GridManager.Instance.GetFirstRow();
+
+        //Here i add every tree conquered into the eligible nodes for placing
         foreach(TreeEntity t in GameManager.Instance.trees)
         {
             if (t.GetConquerer() == GameManager.Instance.myTeam)
@@ -83,6 +87,9 @@ public class BaseEntity : MonoBehaviour
 
             }
         }
+
+        originalDamage = baseDamage;
+        originalHealth = baseHealth;
 
     }
 
@@ -148,6 +155,22 @@ public class BaseEntity : MonoBehaviour
         return indexOfDestination;
     }
 
+    public bool IsDamageBuffed()
+    {
+        if (originalDamage == baseDamage)
+            return false;
+
+        return true;
+    }
+
+    public bool IsHealthBuffed()
+    {
+        if (originalHealth == baseHealth)
+            return false;
+
+        return true;
+    }
+
     protected bool Move()
     {
 
@@ -199,6 +222,22 @@ public class BaseEntity : MonoBehaviour
         return false;
     }
 
+    public void ReceiveAttackBuff(int amount)
+    {
+        baseDamage += amount;
+    }
+
+    public void ReceiveDefenseBuff(int amount)
+    {
+        baseHealth += amount;
+    }
+
+    public void ResetBuffs()
+    {
+        baseDamage = originalDamage;
+        baseHealth = originalHealth;
+    }
+
     public void TakeDamage(int amount)
     {
         baseHealth -= amount;
@@ -210,6 +249,13 @@ public class BaseEntity : MonoBehaviour
             currentNode.SetOccupied(false);
             GameManager.Instance.UnitDead(this);
         }
+    }
+
+    public void Unsubscribe()
+    {
+        GameManager.Instance.OnRoundStart -= OnRoundStart;
+        GameManager.Instance.OnRoundEnd -= OnRoundEnd;
+        GameManager.Instance.OnUnitDied -= OnUnitDied;
     }
 
     protected virtual void Attack()
