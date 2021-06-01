@@ -13,19 +13,39 @@ MonoBehaviour:
   m_Name: Deck Database
   m_EditorClassIdentifier: 
   allEntities:
-  - prefab: {fileID: 5586735644812149107, guid: 791ca007efb1e1342ba883404f336eb6, type: 3}
-    name: Dragon
-    icon: {fileID: 21300000, guid: 277185020ddf02d41815d00c924f1acc, type: 3}
-    cost: 5
-  - prefab: {fileID: 122413920864576778, guid: 22f2ef649a69236448c27d70d739dafc, type: 3}
-    name: Elf
-    icon: {fileID: 21300000, guid: 6179695ed5ef782458c48431d31c8efb, type: 3}
+  - prefab: {fileID: 7738824287383524724, guid: e9514dc0707b0f9448345bd1d204bbe3, type: 3}
+    name: Peasant
+    icon: {fileID: 21300000, guid: f7233729247bbaa47a271924574b0672, type: 3}
+    isBuilding: 0
+    cost: 1
+    movement: 1
+    treeRequirement: 0
+    health: 1
+    damage: 1
+  - prefab: {fileID: 4870212959979999574, guid: 652bc6852c4d6e34483b5a1313c137fb, type: 3}
+    name: Evangelist
+    icon: {fileID: 21300000, guid: 15c1a8fe885b50c4781e0b68f2fe8fb7, type: 3}
+    isBuilding: 0
     cost: 2
-  - prefab: {fileID: 122413920864576778, guid: 22f2ef649a69236448c27d70d739dafc, type: 3}
-    name: Elf
-    icon: {fileID: 21300000, guid: 6179695ed5ef782458c48431d31c8efb, type: 3}
+    movement: 1
+    treeRequirement: 0
+    health: 2
+    damage: 1
+  - prefab: {fileID: 4870212959979999574, guid: 652bc6852c4d6e34483b5a1313c137fb, type: 3}
+    name: Tiger
+    icon: {fileID: 21300000, guid: a0f25f1e66efff34bbd31710c8e5ade6, type: 3}
+    isBuilding: 0
     cost: 2
-  - prefab: {fileID: 5586735644812149107, guid: 791ca007efb1e1342ba883404f336eb6, type: 3}
-    name: Dragon
-    icon: {fileID: 21300000, guid: 277185020ddf02d41815d00c924f1acc, type: 3}
-    cost: 5
+    movement: 2
+    treeRequirement: 0
+    health: 1
+    damage: 2
+  - prefab: {fileID: 4870212959979999574, guid: 652bc6852c4d6e34483b5a1313c137fb, type: 3}
+    name: Avenger
+    icon: {fileID: 21300000, guid: 000feb883c78ef547baee73c10814214, type: 3}
+    isBuilding: 0
+    cost: 3
+    movement: 1
+    treeRequirement: 0
+    health: 4
+    damage: 3

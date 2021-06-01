@@ -1,19 +1,13 @@
 fileFormatVersion: 2
-guid: 4a9efe2c4a32c76488a9a6a0296da2c2
+guid: 10c352e1ef5d5484ebf473025775fc94
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3315556445324922191
-    second: characters_spritesheet_0
+      213: -5122142359148595998
+    second: Jaguar_Sprite
   - first:
-      213: 7214288080210293431
-    second: characters_spritesheet_1
-  - first:
-      213: 3568149149253020849
-    second: characters_spritesheet_2
-  - first:
-      213: 5791373812721005378
-    second: Avenger_Sprite
+      213: -6737643466943199444
+    second: Tiger_Sprit
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -139,34 +133,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: characters_spritesheet_0
+      name: Jaguar_Sprite
       rect:
         serializedVersion: 2
-        x: 200
+        x: 350
         y: 1
-        width: 31
-        height: 67
-      alignment: 6
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f4d495c3509330e20800000000000000
-      internalID: 3315556445324922191
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: characters_spritesheet_1
-      rect:
-        serializedVersion: 2
-        x: 344
-        y: 1
-        width: 31
-        height: 62
+        width: 21
+        height: 40
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b2f44839cc4e1460800000000000000
-      internalID: 7214288080210293431
+      spriteID: 2e477f1a9ae7ae8b0800000000000000
+      internalID: -5122142359148595998
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: characters_spritesheet_2
+      name: Tiger_Sprit
       rect:
         serializedVersion: 2
-        x: 488
-        y: 216
-        width: 31
-        height: 64
+        x: 494
+        y: 193
+        width: 21
+        height: 40
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,29 +168,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bca6d21fbc948130800000000000000
-      internalID: 3568149149253020849
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Avenger_Sprite
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 1
-        width: 31
-        height: 65
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2433cb47cc71f5050800000000000000
-      internalID: 5791373812721005378
+      spriteID: c278e91e6f41f72a0800000000000000
+      internalID: -6737643466943199444
       vertices: []
       indices: 
       edges: []

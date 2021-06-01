@@ -20,7 +20,7 @@ public class WeaponStorehouseEntity : BaseEntity
                     {
                         entity.ReceiveAttackBuff(1);    
                     }
-                    Debug.Log("Entity: " + entity.name + " received buff.");
+                    Debug.Log("Entity: " + entity.name + " received buff." + entity.baseDamage);
                 }
             }
         }
