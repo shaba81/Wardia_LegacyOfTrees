@@ -48,7 +48,7 @@ public class BaseEntity : MonoBehaviour
         myTeam = team;
         if (myTeam == Team.Team2)
         {
-            spriteRender.flipY = true;
+            //spriteRender.flipY = true;
         }
 
         //this.currentNode = currentNode;
@@ -85,6 +85,14 @@ public class BaseEntity : MonoBehaviour
                 }
                 */
 
+            }
+        }
+
+        foreach (BaseEntity building in GameManager.Instance.GetMyEntities(myTeam))
+        {
+            if(building.isBuilding)
+            {
+                eligibleNodes.Add(building.currentNode);
             }
         }
 
@@ -138,21 +146,45 @@ public class BaseEntity : MonoBehaviour
         }
     }
 
-    public int GetNextIndex()
+    public int GetNextIndex(int from)
     {
-        int currentIndex = positions.IndexOf(currentNode.index);
+        //int currentIndex = positions.IndexOf(currentNode.index);
         int indexOfDestination = 0;
         if(myTeam == Team.Team1)
         {
-            indexOfDestination = currentIndex + movement;
+            indexOfDestination = from + movement;
 
-        } else
+        } else if (myTeam == Team.Team2)
         {
-            indexOfDestination = currentIndex - movement;
+            indexOfDestination = from - movement;
+        }
+        indexOfDestination = indexOfDestination % positions.Count;
+        if (indexOfDestination < 0)
+            indexOfDestination = indexOfDestination + positions.Count;
+
+        return indexOfDestination;
+    }
+
+    public int GetIndexBefore(int from)
+    {
+        int indexOfDestination = 0;
+        if (myTeam == Team.Team1)
+        {
+            indexOfDestination = from - movement;
+
+        }
+        else if (myTeam == Team.Team2)
+        {
+            indexOfDestination = from + movement;
         }
         indexOfDestination = indexOfDestination % positions.Count;
 
         return indexOfDestination;
+    }
+
+    public Team GetMyTeam()
+    {
+        return myTeam;
     }
 
     public bool IsDamageBuffed()
@@ -174,13 +206,31 @@ public class BaseEntity : MonoBehaviour
     protected bool Move()
     {
 
-        //to get a node at a given index GridManager.Instance.graph.Nodes[index];      
+        //to get a node at a given index GridManager.Instance.graph.Nodes[index];
+        int index = GetNextIndex(positions.IndexOf(currentNode.index));
 
-        Node destination = GridManager.Instance.GetNodeAtIndex(positions[GetNextIndex()]);
-        if (destination.IsOccupied)
+        Node destination = GridManager.Instance.GetNodeAtIndex(positions[index]);
+
+        //If its occupied by a unit from enemy team
+        if(destination.IsOccupied && GameManager.Instance.GetTroopForNode(destination) == GameManager.Instance.GetOpposingTeam())
         {
+            Debug.Log("Enemy Blocking");
             return false;
         }
+        //If its occupied by a unit from my team
+        else if (destination.IsOccupied  && GameManager.Instance.GetTroopForNode(destination) == GameManager.Instance.myTeam)
+        {
+            if(movement == 1)
+            {
+                    destination = GridManager.Instance.GetNodeAtIndex(positions[GetIndexBefore(index)]);
+            }
+            else if(movement > 1)
+            {
+                    destination = GridManager.Instance.GetNodeAtIndex(positions[GetNextIndex(index)]);
+            }
+
+        }
+
         transform.position = destination.worldPosition;
 
         //Free previous node
@@ -263,7 +313,7 @@ public class BaseEntity : MonoBehaviour
         if (!canAttack)
             return;
 
-        animator.SetTrigger("attack");
+        //animator.SetTrigger("attack");
 
         waitBetweenAttack = 1 / attackSpeed;
         StartCoroutine(WaitCoroutine());
@@ -273,7 +323,7 @@ public class BaseEntity : MonoBehaviour
     {
         canAttack = false;
         yield return null;
-        animator.ResetTrigger("attack");
+        //animator.ResetTrigger("attack");
         yield return new WaitForSeconds(waitBetweenAttack);
         canAttack = true;
     }

@@ -2,12 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangedEntity : BaseEntity
+public class BuilderEntity : BaseEntity
 {
+
+    protected override void OnRoundStart()
+    {
+        
+        GameManager.Instance.IncreaseBuilderCounter(myTeam);
+        GameManager.Instance.OnRoundStart -= OnRoundStart;
+
+    }
+
     protected override void OnRoundEnd()
     {
+        
         if (isFirstTurn)
+        {           
             return;
+        }
 
         if (!Move())
         {
@@ -23,6 +35,16 @@ public class RangedEntity : BaseEntity
             }
         }
         Debug.Log("Action Ended from entity: " + this);
+
     }
+
+    protected override void OnUnitDied(BaseEntity diedUnity)
+    {
+        GameManager.Instance.DecreaseBuilderCounter(myTeam);
+    }
+
+
+
+
 
 }

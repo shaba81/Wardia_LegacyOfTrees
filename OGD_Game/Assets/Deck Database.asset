@@ -22,7 +22,7 @@ MonoBehaviour:
     treeRequirement: 0
     health: 1
     damage: 1
-  - prefab: {fileID: 4870212959979999574, guid: 652bc6852c4d6e34483b5a1313c137fb, type: 3}
+  - prefab: {fileID: 1797599837861044131, guid: 01900699aa773be459a3a65be7e800f4, type: 3}
     name: Evangelist
     icon: {fileID: 21300000, guid: 15c1a8fe885b50c4781e0b68f2fe8fb7, type: 3}
     isBuilding: 0
@@ -31,7 +31,7 @@ MonoBehaviour:
     treeRequirement: 0
     health: 2
     damage: 1
-  - prefab: {fileID: 4870212959979999574, guid: 652bc6852c4d6e34483b5a1313c137fb, type: 3}
+  - prefab: {fileID: 7878975758037541137, guid: 3477117d6df66284d95d2f16be4045a4, type: 3}
     name: Tiger
     icon: {fileID: 21300000, guid: a0f25f1e66efff34bbd31710c8e5ade6, type: 3}
     isBuilding: 0
@@ -40,7 +40,7 @@ MonoBehaviour:
     treeRequirement: 0
     health: 1
     damage: 2
-  - prefab: {fileID: 4870212959979999574, guid: 652bc6852c4d6e34483b5a1313c137fb, type: 3}
+  - prefab: {fileID: 1367445283036623088, guid: ce54dcb1043d86f45b6afbe5c7829a51, type: 3}
     name: Avenger
     icon: {fileID: 21300000, guid: 000feb883c78ef547baee73c10814214, type: 3}
     isBuilding: 0

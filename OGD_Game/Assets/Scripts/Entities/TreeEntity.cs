@@ -12,6 +12,10 @@ public class TreeEntity : MonoBehaviour
     void Start()
     {
         conquerer = Team.None;
+        if(GameManager.Instance.myTeam == Team.Team2)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
     }
 
     // Update is called once per frame

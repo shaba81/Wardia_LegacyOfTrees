@@ -43,7 +43,7 @@ public class TurnHandler : MonoBehaviour
 
                 if(tree.GetConquerer() == myTeam)
                 {
-                    PlayerData.Instance.GiveMoney(2);
+                    PlayerData.Instance.GiveMoney(1);
                 }
             }
 

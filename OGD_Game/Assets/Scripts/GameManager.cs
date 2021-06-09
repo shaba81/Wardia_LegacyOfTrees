@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using System;
 public class GameManager : Manager<GameManager>
@@ -19,6 +20,8 @@ public class GameManager : Manager<GameManager>
 
     List<BaseEntity> team1Entities = new List<BaseEntity>();
     List<BaseEntity> team2Entities = new List<BaseEntity>();
+    private int team1builderCounter = 0;
+    private int team2builderCounter = 0;
     public List<TreeEntity> trees = new List<TreeEntity>();
 
 
@@ -26,7 +29,15 @@ public class GameManager : Manager<GameManager>
 
     public void OnEntityBought(EntitiesDatabaseSO.EntityData entityData)
     {
-            BaseEntity newEntity = Instantiate(entityData.prefab, team1Parent);
+        Transform parent = team1Parent;
+
+        if (myTeam == Team.Team1)
+            parent = team1Parent;
+        else if(myTeam == Team.Team2)
+            parent = team2Parent;
+
+        BaseEntity newEntity = Instantiate(entityData.prefab, parent);
+
             newEntity.gameObject.name = entityData.name;
             newEntity.movement = entityData.movement;
             newEntity.baseHealth = entityData.health;
@@ -38,6 +49,16 @@ public class GameManager : Manager<GameManager>
 
             TurnManager.Instance.SetGameState(GameState.Placing);
         
+    }
+
+    public Team GetOpposingTeam()
+    {
+        if (myTeam == Team.Team1)
+            return Team.Team2;
+        else if (myTeam == Team.Team2)
+            return Team.Team1;
+
+        return Team.None;
     }
 
     public List<BaseEntity> GetEntitiesAgainst(Team against)
@@ -59,6 +80,61 @@ public class GameManager : Manager<GameManager>
         }
 
         return amount;
+    }
+
+    public void IncreaseBuilderCounter(Team team)
+    {
+        if(team == Team.Team1)
+        {
+            team1builderCounter += 1;
+        }
+        else if (team == Team.Team2)
+        {
+            team2builderCounter += 1;
+        }
+    }
+
+    public void DecreaseBuilderCounter(Team team)
+    {
+        if (team == Team.Team1)
+        {
+            team1builderCounter -= 1;
+        }
+        else if (team == Team.Team2)
+        {
+            team2builderCounter -= 1;
+        }
+    }
+
+    public bool GetBuilderCounter(Team team)
+    {
+        if (team == Team.Team1)
+        {
+            if (team1builderCounter > 0)
+                return true;
+            else
+                return false;
+        }
+        else if (team == Team.Team2)
+        {
+            if (team2builderCounter > 0)
+                return true;
+            else
+                return false;
+        }
+
+        return false;
+    }
+
+    public Team GetTroopForNode(Node node)
+    {
+        foreach(BaseEntity entity in team1Entities.Concat(team2Entities))
+        {
+            if (entity.CurrentNode == node)
+                return entity.GetMyTeam();
+        }
+
+        return Team.None;
     }
 
     public bool checkTreeRequirement(int required)

@@ -55,6 +55,16 @@ public class UIShop : MonoBehaviour
                 return;
             }
 
+            //check if we have builders
+            if(cardData.isBuilding)
+            {
+                if(!GameManager.Instance.GetBuilderCounter(GameManager.Instance.myTeam))
+                {
+                    Debug.Log("You need at least 1 builder in your board!");
+                    return;
+                }
+            }
+
             PlayerData.Instance.SpendMoney(cardData.cost);
             //card.gameObject.SetActive(false);
             GameManager.Instance.OnEntityBought(cardData);

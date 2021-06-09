@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeEntity : BaseEntity
+public class NimbleEntity : BaseEntity
 {
     protected override void OnRoundEnd()
     {
-        
         if (isFirstTurn)
             return;
 
@@ -18,17 +17,15 @@ public class MeleeEntity : BaseEntity
             {
                 if (GridManager.Instance.GetNextNode(currentNode) == entity.CurrentNode)
                 {
-                    Debug.Log("Combat");
+                    if(!entity.isBuilding)
+                    {
+                        Debug.Log("Combat");
+
+                    }
                 }
                 //if it's an entity from Team1 just do nothing;
             }
         }
-        Debug.Log("Action Ended from entity: " + this);
-
     }
-
-
-
-
 
 }

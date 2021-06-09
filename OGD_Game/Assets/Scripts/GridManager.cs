@@ -7,6 +7,7 @@ using UnityEngine.Tilemaps;
 public class GridManager : Manager<GridManager>
 {
     public GameObject terrainGrid;
+    public Transform rotatedTransform;
 
     protected Graph graph;
     protected Dictionary<Team, int> startPositionPerTeam;
@@ -17,10 +18,19 @@ public class GridManager : Manager<GridManager>
         base.Awake();
         allTiles = terrainGrid.GetComponentsInChildren<Tile>().ToList();
 
+        if (GameManager.Instance.myTeam == Team.Team2)
+        {
+            terrainGrid.transform.localRotation *= Quaternion.Euler(0, 0, 180);
+            Vector3 rotated_pos = new Vector3(-1, 1, 0);
+            terrainGrid.transform.position = rotated_pos;
+        }
+
         InitializeGraph();
         startPositionPerTeam = new Dictionary<Team, int>();
         startPositionPerTeam.Add(Team.Team1, 0);
         startPositionPerTeam.Add(Team.Team2, graph.Nodes.Count - 1);
+
+         
     }
 
     public Node GetFreeNode(Team forTeam)
