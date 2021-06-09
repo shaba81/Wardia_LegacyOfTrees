@@ -58,3 +58,9 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+*.log
+*.log
+*.log
+OGD_Game/Logs/AssetImportWorker0.log
+OGD_Game/Logs/AssetImportWorker0-prev.log
+OGD_Game/Packages/packages-lock.json
