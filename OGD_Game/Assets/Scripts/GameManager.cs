@@ -20,6 +20,7 @@ public class GameManager : Manager<GameManager>
 
     List<BaseEntity> team1Entities = new List<BaseEntity>();
     List<BaseEntity> team2Entities = new List<BaseEntity>();
+    List<BaseEntity> allEntities = new List<BaseEntity>();
     private int team1builderCounter = 0;
     private int team2builderCounter = 0;
     public List<TreeEntity> trees = new List<TreeEntity>();
@@ -149,6 +150,16 @@ public class GameManager : Manager<GameManager>
         }
 
         return Team.None;
+    }
+
+    public List<BaseEntity> GetAllEntities()
+    {
+        allEntities.Clear();
+        foreach (BaseEntity entity in team1Entities.Concat(team2Entities))
+        {
+            allEntities.Add(entity);
+        }
+        return allEntities;
     }
 
     public bool checkTreeRequirement(int required)
