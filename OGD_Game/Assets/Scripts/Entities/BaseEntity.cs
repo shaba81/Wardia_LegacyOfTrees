@@ -63,7 +63,7 @@ public class BaseEntity : MonoBehaviour
     protected void Start()
     {
         GameManager.Instance.OnRoundStart += OnRoundStart;
-        GameManager.Instance.OnRoundEnd += OnRoundEnd;
+        //GameManager.Instance.OnRoundEnd += OnRoundEnd;
         GameManager.Instance.OnUnitDied += OnUnitDied;
 
         eligibleNodes = GridManager.Instance.GetFirstRow();
@@ -102,7 +102,7 @@ public class BaseEntity : MonoBehaviour
     }
 
     protected virtual void OnRoundStart() { }
-    protected virtual void OnRoundEnd() { }
+    public virtual void OnRoundEnd() { }
     protected virtual void OnUnitDied(BaseEntity diedUnity) { }
 
     protected void FindTarget()
@@ -146,17 +146,17 @@ public class BaseEntity : MonoBehaviour
         }
     }
 
-    public int GetNextIndex(int from)
+    public int GetNextIndex(int from, int amount)
     {
         //int currentIndex = positions.IndexOf(currentNode.index);
         int indexOfDestination = 0;
         if(myTeam == Team.Team1)
         {
-            indexOfDestination = from + movement;
+            indexOfDestination = from + amount;
 
         } else if (myTeam == Team.Team2)
         {
-            indexOfDestination = from - movement;
+            indexOfDestination = from - amount;
         }
         indexOfDestination = indexOfDestination % positions.Count;
         if (indexOfDestination < 0)
@@ -165,19 +165,21 @@ public class BaseEntity : MonoBehaviour
         return indexOfDestination;
     }
 
-    public int GetIndexBefore(int from)
+    public int GetIndexBefore(int from, int amount)
     {
         int indexOfDestination = 0;
         if (myTeam == Team.Team1)
         {
-            indexOfDestination = from - movement;
+            indexOfDestination = from - amount;
 
         }
         else if (myTeam == Team.Team2)
         {
-            indexOfDestination = from + movement;
+            indexOfDestination = from + amount;
         }
         indexOfDestination = indexOfDestination % positions.Count;
+        if (indexOfDestination < 0)
+            indexOfDestination = indexOfDestination + positions.Count;
 
         return indexOfDestination;
     }
@@ -207,7 +209,7 @@ public class BaseEntity : MonoBehaviour
     {
 
         //to get a node at a given index GridManager.Instance.graph.Nodes[index];
-        int index = GetNextIndex(positions.IndexOf(currentNode.index));
+        int index = GetNextIndex(positions.IndexOf(currentNode.index), movement);
 
         Node destination = GridManager.Instance.GetNodeAtIndex(positions[index]);
 
@@ -222,11 +224,11 @@ public class BaseEntity : MonoBehaviour
         {
             if(movement == 1)
             {
-                    destination = GridManager.Instance.GetNodeAtIndex(positions[GetIndexBefore(index)]);
+                    destination = GridManager.Instance.GetNodeAtIndex(positions[GetIndexBefore(index, movement)]);
             }
             else if(movement > 1)
             {
-                    destination = GridManager.Instance.GetNodeAtIndex(positions[GetNextIndex(index)]);
+                    destination = GridManager.Instance.GetNodeAtIndex(positions[GetNextIndex(index, 1)]);
             }
 
         }
@@ -304,7 +306,7 @@ public class BaseEntity : MonoBehaviour
     public void Unsubscribe()
     {
         GameManager.Instance.OnRoundStart -= OnRoundStart;
-        GameManager.Instance.OnRoundEnd -= OnRoundEnd;
+        //GameManager.Instance.OnRoundEnd -= OnRoundEnd;
         GameManager.Instance.OnUnitDied -= OnUnitDied;
     }
 
@@ -327,4 +329,5 @@ public class BaseEntity : MonoBehaviour
         yield return new WaitForSeconds(waitBetweenAttack);
         canAttack = true;
     }
+
 }

@@ -27,7 +27,7 @@ public class WeaponStorehouseEntity : BaseEntity
 
     }
 
-    protected override void OnRoundEnd()
+    public override void OnRoundEnd()
     {
         
     }

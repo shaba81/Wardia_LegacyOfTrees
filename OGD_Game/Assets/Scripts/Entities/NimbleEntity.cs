@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class NimbleEntity : BaseEntity
 {
-    protected override void OnRoundEnd()
+    public override void OnRoundEnd()
     {
-        if (isFirstTurn)
-            return;
 
         if (!Move())
         {

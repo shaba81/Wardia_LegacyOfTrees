@@ -13,13 +13,8 @@ public class BuilderEntity : BaseEntity
 
     }
 
-    protected override void OnRoundEnd()
+    public override void OnRoundEnd()
     {
-        
-        if (isFirstTurn)
-        {           
-            return;
-        }
 
         if (!Move())
         {
@@ -34,8 +29,6 @@ public class BuilderEntity : BaseEntity
                 //if it's an entity from Team1 just do nothing;
             }
         }
-        Debug.Log("Action Ended from entity: " + this);
-
     }
 
     protected override void OnUnitDied(BaseEntity diedUnity)

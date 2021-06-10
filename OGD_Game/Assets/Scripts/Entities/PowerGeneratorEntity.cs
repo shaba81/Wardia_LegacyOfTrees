@@ -19,7 +19,7 @@ public class PowerGeneratorEntity : BaseEntity
 
     }
 
-    protected override void OnRoundEnd()
+    public override void OnRoundEnd()
     {
 
     }

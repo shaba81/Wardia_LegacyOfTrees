@@ -36,9 +36,6 @@ public class TurnManager
     public void SetGameState(GameState gameState)
     {
         this.gameState = gameState;
-        if (OnStateChange != null)
-        {
-            OnStateChange();
-        }
+        OnStateChange?.Invoke();
     }
 }

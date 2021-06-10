@@ -35,7 +35,7 @@ public class TurnHandler : MonoBehaviour
             {
 
                 foreach (BaseEntity entity in GameManager.Instance.GetMyEntities(myTeam)) {
-                    entity.isFirstTurn = false;
+                    //entity.isFirstTurn = false;
                     if(tree.parent == GridManager.Instance.GetTileForNode(entity.CurrentNode)) {
                         tree.SetConquerer(myTeam);
                     }
@@ -70,6 +70,7 @@ public class TurnHandler : MonoBehaviour
 
     public void EndTurn()
     {
+        GameManager.Instance.SortEntities();
         GameManager.Instance.FireRoundEndActions();
         tm.SetGameState(GameState.Start);
     }

@@ -16,7 +16,7 @@ public class GameManager : Manager<GameManager>
     public Action OnRoundEnd;
     public Action<BaseEntity> OnUnitDied;
 
-    public Team myTeam = Team.Team1;
+    public Team myTeam;
 
     List<BaseEntity> team1Entities = new List<BaseEntity>();
     List<BaseEntity> team2Entities = new List<BaseEntity>();
@@ -43,9 +43,15 @@ public class GameManager : Manager<GameManager>
             newEntity.baseHealth = entityData.health;
             newEntity.baseDamage = entityData.damage;
         newEntity.isBuilding = entityData.isBuilding;
-        team1Entities.Add(newEntity);
 
-            newEntity.Setup(myTeam, /*GridManager.Instance.GetFreeNode(Team.Team1)*/ spawnTransform.position);
+        if(myTeam == Team.Team1)
+            team1Entities.Add(newEntity);
+        else if(myTeam == Team.Team2)
+            team2Entities.Add(newEntity);
+
+
+
+        newEntity.Setup(myTeam, /*GridManager.Instance.GetFreeNode(Team.Team1)*/ spawnTransform.position);
 
             TurnManager.Instance.SetGameState(GameState.Placing);
         
@@ -59,6 +65,12 @@ public class GameManager : Manager<GameManager>
             return Team.Team1;
 
         return Team.None;
+    }
+
+    public void SortEntities()
+    {
+        //list.Sort((x, y) => y.CurrentNode.index.CompareTo(x.CurrentNode.index)); // descending, for the opponent. Just to remind
+        team1Entities.Sort((x, y) => x.CurrentNode.index.CompareTo(y.CurrentNode.index)); // asc
     }
 
     public List<BaseEntity> GetEntitiesAgainst(Team against)
@@ -156,7 +168,8 @@ public class GameManager : Manager<GameManager>
 
     public void FireRoundEndActions ()
     {
-        OnRoundEnd?.Invoke(); 
+        //OnRoundEnd?.Invoke(); 
+        StartCoroutine(RoundEndCoroutine(GetMyEntities(myTeam)));      
     }
 
     public void FireRoundStartActions()
@@ -191,6 +204,25 @@ public class GameManager : Manager<GameManager>
         }
     }
     */
+
+    IEnumerator RoundEndCoroutine(List<BaseEntity> _entities)
+    {
+        WaitForSeconds wait = new WaitForSeconds(0.5f);
+
+        foreach (BaseEntity e in _entities)
+        {
+            if(!e.isFirstTurn)
+            {
+                e.OnRoundEnd();
+                yield return wait;
+            }
+            else
+            {
+                e.isFirstTurn = false;
+            }
+
+        }
+    }
 }
 
 public enum Team
