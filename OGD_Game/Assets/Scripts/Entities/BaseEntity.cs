@@ -16,6 +16,7 @@ public class BaseEntity : MonoBehaviour
     private int originalHealth;
     public int movement = 1;
     public bool isBuilding = false;
+    protected bool isBuilder = false;
     
 
     protected Team myTeam;
@@ -64,6 +65,17 @@ public class BaseEntity : MonoBehaviour
 
         eligibleNodes = GridManager.Instance.GetFirstRow();
 
+        if(isBuilding)
+        {
+            foreach(BaseEntity entity in GameManager.Instance.GetMyEntities(myTeam)) 
+            {
+                if (entity.isBuilder)
+                {
+                    eligibleNodes.Add(entity.currentNode);
+                }
+            }
+        }
+
         //Here i add every tree conquered into the eligible nodes for placing
         foreach(TreeEntity t in GameManager.Instance.trees)
         {
@@ -84,11 +96,14 @@ public class BaseEntity : MonoBehaviour
             }
         }
 
-        foreach (BaseEntity building in GameManager.Instance.GetMyEntities(myTeam))
+        if (!isBuilding)
         {
-            if(building.isBuilding)
+            foreach (BaseEntity building in GameManager.Instance.GetMyEntities(myTeam))
             {
-                eligibleNodes.Add(building.currentNode);
+                if(building.isBuilding)
+                {
+                    eligibleNodes.Add(building.currentNode);
+                }
             }
         }
 
@@ -193,7 +208,7 @@ public class BaseEntity : MonoBehaviour
         Node destination = GridManager.Instance.GetNodeAtIndex(positions[index]);
 
         //If its occupied by a unit from enemy team
-        if(destination.IsOccupied && GameManager.Instance.GetTroopForNode(destination) == GameManager.Instance.GetOpposingTeam())
+        if(GameManager.Instance.GetTroopForNode(destination) == GameManager.Instance.GetOpposingTeam())
         {
             Debug.Log("Enemy Blocking");
             return false;

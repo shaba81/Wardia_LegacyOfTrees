@@ -69,8 +69,10 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         {
             if (eligibleTiles.Contains(tileUnder))
             {
-
-                tileUnder.SetHighlight(true, !GridManager.Instance.GetNodeForTile(tileUnder).IsOccupied);
+                if(!thisEntity.isBuilding)
+                    tileUnder.SetHighlight(true, !GridManager.Instance.GetNodeForTile(tileUnder).IsOccupied);
+                else
+                    tileUnder.SetHighlight(true, true);
             }
             else
             {
@@ -115,10 +117,37 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
             Node candidateNode = GridManager.Instance.GetNodeForTile(t);
             if (candidateNode != null && thisEntity != null)
             {
+                if (!thisEntity.CheckDrop(candidateNode))
+                    return false;
+
+                if (thisEntity.isBuilding)
+                {
+                    if (candidateNode.IsOccupied)
+                    {
+                        foreach(BaseEntity entity in GameManager.Instance.GetMyEntities(GameManager.Instance.myTeam))
+                        {
+                            if(entity.CurrentNode == candidateNode)
+                            {
+                                entity.TakeDamage(entity.baseHealth);
+                                break;
+                            }
+                        }
+                    }
+                    thisEntity.SetCurrentNode(candidateNode);
+                    thisEntity.SetStartingNode(candidateNode);
+
+                    thisEntity.transform.position = candidateNode.worldPosition;
+                    TurnManager.Instance.SetGameState(GameState.Buying);
+                    foreach (Tile _t in eligibleTiles)
+                    {
+                        _t.SetEligibleHighlight(false);
+                    }
+                    this.enabled = false;
+                    return true;
+                }
+
                 if (!candidateNode.IsOccupied)
                 {
-                    if (!thisEntity.CheckDrop(candidateNode))
-                        return false;
                     //Let's move this unity to that node
                     if (thisEntity.CurrentNode != null)
                     {
@@ -127,9 +156,7 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
                     }
                     thisEntity.SetCurrentNode(candidateNode);
                     thisEntity.SetStartingNode(candidateNode);
-
-                    if(!thisEntity.isBuilding)
-                        candidateNode.SetOccupied(true);
+                    candidateNode.SetOccupied(true);
 
                     thisEntity.transform.position = candidateNode.worldPosition;
                     TurnManager.Instance.SetGameState(GameState.Buying);

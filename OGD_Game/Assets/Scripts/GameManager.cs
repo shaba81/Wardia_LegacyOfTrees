@@ -25,6 +25,8 @@ public class GameManager : Manager<GameManager>
     private int team2builderCounter = 0;
     public List<TreeEntity> trees = new List<TreeEntity>();
 
+    private List<Node> builderNodes = new List<Node>();
+
 
     int currentTurn = 1;
 

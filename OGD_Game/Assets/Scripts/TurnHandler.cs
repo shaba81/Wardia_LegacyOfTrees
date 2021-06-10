@@ -84,7 +84,7 @@ public class TurnHandler : MonoBehaviour
 
         //JUST TO DEBUG A MATCH -------------------
         tm.SetGameState(GameState.Start);
-        GameManager.Instance.ChangeTeam();
+        //GameManager.Instance.ChangeTeam();
     }
 
 }
