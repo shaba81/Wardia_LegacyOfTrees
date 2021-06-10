@@ -13,15 +13,24 @@ public class NimbleEntity : BaseEntity
             //if it's an enemy, combat;
             foreach (BaseEntity entity in GameManager.Instance.GetEntitiesAgainst(myTeam))
             {
-                if (GridManager.Instance.GetNextNode(currentNode) == entity.CurrentNode)
+                
+                if (GridManager.Instance.GetNextNode(currentNode, positions, true) == entity.CurrentNode)
                 {
                     if(!entity.isBuilding)
                     {
                         Debug.Log("Combat");
+                        int damageToTake = entity.baseDamage;
+
+                        if (!entity.TakeDamage(baseDamage))
+                        {
+                            TakeDamage(damageToTake);
+                        }
+
+                        if (!dead)
+                            Move();
 
                     }
                 }
-                //if it's an entity from Team1 just do nothing;
             }
         }
     }

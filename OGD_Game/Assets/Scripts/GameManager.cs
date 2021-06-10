@@ -73,12 +73,14 @@ public class GameManager : Manager<GameManager>
         team1Entities.Sort((x, y) => x.CurrentNode.index.CompareTo(y.CurrentNode.index)); // asc
     }
 
-    public List<BaseEntity> GetEntitiesAgainst(Team against)
+    public List<BaseEntity> GetEntitiesAgainst(Team myTeam)
     {
-        if (against == Team.Team1)
+        if (myTeam == Team.Team1)
             return team2Entities;
-        else
+        else if (myTeam == Team.Team2)
             return team1Entities;
+
+        return null;
     }
 
     public int GetTreesConquered(Team team)
@@ -161,8 +163,10 @@ public class GameManager : Manager<GameManager>
     {
         if (team == Team.Team1)
             return team1Entities;
-        else
+        else if (team == Team.Team2)
             return team2Entities;
+
+        return null;
     }
 
 

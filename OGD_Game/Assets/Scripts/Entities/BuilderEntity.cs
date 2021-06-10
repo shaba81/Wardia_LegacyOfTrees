@@ -22,11 +22,22 @@ public class BuilderEntity : BaseEntity
             //if it's an enemy, combat;
             foreach (BaseEntity entity in GameManager.Instance.GetEntitiesAgainst(myTeam))
             {
-                if (GridManager.Instance.GetNextNode(currentNode) == entity.CurrentNode)
+                Debug.Log(entity.GetMyTeam());
+                if (GridManager.Instance.GetNextNode(currentNode, positions, false).index == entity.CurrentNode.index)
                 {
-                    Debug.Log("Combat");
+                    if (!entity.isBuilding)
+                    {
+                        Debug.Log("Combat");
+                        int damageToTake = entity.baseDamage;
+
+                        entity.TakeDamage(baseDamage);
+
+                        //This means if i'm not dead
+                        if (!TakeDamage(damageToTake))
+                            Move();
+
+                    }
                 }
-                //if it's an entity from Team1 just do nothing;
             }
         }
     }

@@ -28,7 +28,7 @@ public class BaseEntity : MonoBehaviour
     public bool isFirstTurn = true;
 
     private List<Node> eligibleNodes = new List<Node>();
-    private List<int> positions = new List<int>();
+    protected List<int> positions = new List<int>();
 
     public Node CurrentNode => currentNode;
     public Node StartingtNode => startingNode;
@@ -290,7 +290,8 @@ public class BaseEntity : MonoBehaviour
         baseHealth = originalHealth;
     }
 
-    public void TakeDamage(int amount)
+    //RETURNS TRUE IF DEAD
+    public bool TakeDamage(int amount)
     {
         baseHealth -= amount;
         healthbar.UpdateBar(baseHealth);
@@ -300,7 +301,11 @@ public class BaseEntity : MonoBehaviour
             dead = true;
             currentNode.SetOccupied(false);
             GameManager.Instance.UnitDead(this);
+            return true;
         }
+        // HERE WE HAVE TO NOTIFY THE NETWORK MANAGER
+
+        return false;
     }
 
     public void Unsubscribe()

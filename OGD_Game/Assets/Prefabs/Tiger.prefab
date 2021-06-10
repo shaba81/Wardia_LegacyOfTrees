@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3531194527579869771}
   - component: {fileID: 7096392183873705560}
   - component: {fileID: 8181344355857833192}
-  - component: {fileID: 7878975758037541137}
+  - component: {fileID: -3526674322708097195}
   - component: {fileID: 3296803182932568715}
   m_Layer: 0
   m_Name: Tiger
@@ -111,7 +111,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.21, y: 0.4}
   m_EdgeRadius: 0
---- !u!114 &7878975758037541137
+--- !u!114 &-3526674322708097195
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 539197337467190428}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeb6394cc40fa2e42bb15280de9b8934, type: 3}
+  m_Script: {fileID: 11500000, guid: d0f4385d92e63f4478f42fffbc843459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   barPrefab: {fileID: 9001919181559767783, guid: 73699f5e031aaaf42bcfc521411eaa14, type: 3}
