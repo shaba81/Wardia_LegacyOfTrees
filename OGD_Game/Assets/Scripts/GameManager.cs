@@ -26,7 +26,7 @@ public class GameManager : Manager<GameManager>
     public List<TreeEntity> trees = new List<TreeEntity>();
 
 
-    //int unitsPerTeam = 6;
+    int currentTurn = 1;
 
     public void OnEntityBought(EntitiesDatabaseSO.EntityData entityData)
     {
@@ -141,6 +141,16 @@ public class GameManager : Manager<GameManager>
         return false;
     }
 
+    public void UpdateTurnCounter()
+    {
+        currentTurn += 1;
+    }
+
+    public int GetTurnCounter()
+    {
+        return currentTurn;
+    }
+
     public Team GetTroopForNode(Node node)
     {
         foreach(BaseEntity entity in team1Entities.Concat(team2Entities))
@@ -205,6 +215,22 @@ public class GameManager : Manager<GameManager>
         Destroy(entity.gameObject);
     }
 
+    public void ChangeTeam()
+    {
+        if (myTeam == Team.Team1)
+            myTeam = Team.Team2;
+        else if (myTeam == Team.Team2)
+            myTeam = Team.Team1;
+    }
+
+    public bool CheckTurnLimit()
+    {
+        if (GetTurnCounter() == 20)
+            return true;
+        else
+            return false;
+    }
+
     /*
     public void DebugFight()
     {
@@ -222,6 +248,8 @@ public class GameManager : Manager<GameManager>
 
     IEnumerator RoundEndCoroutine(List<BaseEntity> _entities)
     {
+        //TurnManager.Instance.SetGameState(GameState.EndTurn);
+
         WaitForSeconds wait = new WaitForSeconds(0.5f);
 
         foreach (BaseEntity e in _entities)
@@ -237,6 +265,10 @@ public class GameManager : Manager<GameManager>
             }
 
         }
+
+        UpdateTurnCounter();
+        UITurnUpdater.Instance.UpdateTurn();
+        //TurnManager.Instance.SetGameState(GameState.Wait);
     }
 }
 

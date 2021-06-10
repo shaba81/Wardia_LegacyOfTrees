@@ -31,7 +31,7 @@ MonoBehaviour:
     treeRequirement: 0
     health: 2
     damage: 1
-  - prefab: {fileID: 7878975758037541137, guid: 3477117d6df66284d95d2f16be4045a4, type: 3}
+  - prefab: {fileID: -3526674322708097195, guid: 3477117d6df66284d95d2f16be4045a4, type: 3}
     name: Tiger
     icon: {fileID: 21300000, guid: a0f25f1e66efff34bbd31710c8e5ade6, type: 3}
     isBuilding: 0

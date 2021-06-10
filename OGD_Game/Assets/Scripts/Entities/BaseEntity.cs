@@ -16,10 +16,7 @@ public class BaseEntity : MonoBehaviour
     private int originalHealth;
     public int movement = 1;
     public bool isBuilding = false;
-    [Range(1, 5)]
-    public int range = 1;
-    public float attackSpeed = 1f; //Attacks per second
-    public float movementSpeed = 1f; //Attacks per second
+    
 
     protected Team myTeam;
     protected BaseEntity currentTarget = null;
@@ -33,8 +30,7 @@ public class BaseEntity : MonoBehaviour
     public Node CurrentNode => currentNode;
     public Node StartingtNode => startingNode;
 
-    protected bool HasEnemy => currentTarget != null;
-    protected bool IsInRange => currentTarget != null && Vector3.Distance(this.transform.position, currentTarget.transform.position) <= range;
+    
     protected bool moving;
     protected Node destination;
     protected HealthBar healthbar;
@@ -104,23 +100,6 @@ public class BaseEntity : MonoBehaviour
     protected virtual void OnRoundStart() { }
     public virtual void OnRoundEnd() { }
     protected virtual void OnUnitDied(BaseEntity diedUnity) { }
-
-    protected void FindTarget()
-    {
-        var allEnemies = GameManager.Instance.GetEntitiesAgainst(myTeam);
-        float minDistance = Mathf.Infinity;
-        BaseEntity entity = null;
-        foreach (BaseEntity e in allEnemies)
-        {
-            if (Vector3.Distance(e.transform.position, this.transform.position) <= minDistance)
-            {
-                minDistance = Vector3.Distance(e.transform.position, this.transform.position);
-                entity = e;
-            }
-        }
-
-        currentTarget = entity;
-    }
 
     public void GetPositions()
     {
@@ -313,26 +292,6 @@ public class BaseEntity : MonoBehaviour
         GameManager.Instance.OnRoundStart -= OnRoundStart;
         //GameManager.Instance.OnRoundEnd -= OnRoundEnd;
         GameManager.Instance.OnUnitDied -= OnUnitDied;
-    }
-
-    protected virtual void Attack()
-    {
-        if (!canAttack)
-            return;
-
-        //animator.SetTrigger("attack");
-
-        waitBetweenAttack = 1 / attackSpeed;
-        StartCoroutine(WaitCoroutine());
-    }
-
-    IEnumerator WaitCoroutine()
-    {
-        canAttack = false;
-        yield return null;
-        //animator.ResetTrigger("attack");
-        yield return new WaitForSeconds(waitBetweenAttack);
-        canAttack = true;
     }
 
 }

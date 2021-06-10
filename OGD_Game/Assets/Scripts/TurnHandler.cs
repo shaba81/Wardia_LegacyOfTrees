@@ -29,6 +29,20 @@ public class TurnHandler : MonoBehaviour
     {
         if(tm.gameState == GameState.Start)
         {
+
+            //CHECK IF THE PLAYER HAS ALL THE TREES
+            // if(...)
+
+            //CHECK IF WE REACHED TURN LIMIT
+            if(GameManager.Instance.CheckTurnLimit())
+            {
+                //check who has more trees
+
+                //if they're equal, check who whas more nature points
+
+                //then switch to endGame Screen, that shows the winner etc....
+            }
+
             PlayerData.Instance.GiveMoney(2);
 
             foreach (TreeEntity tree in GameManager.Instance.trees)
@@ -46,20 +60,15 @@ public class TurnHandler : MonoBehaviour
                     PlayerData.Instance.GiveMoney(1);
                 }
             }
+            UITreeUpdater.Instance.UpdateTrees();
+            
+            //CHECK WINNING CONDITION
 
             //Call on round start for each entity and do the actions
             GameManager.Instance.FireRoundStartActions();
 
-            UITreeUpdater.Instance.UpdateTrees();
             tm.SetGameState(GameState.Buying);
         }
-
-        if(tm.gameState == GameState.Placing)
-        {
-            
-        }
-
-
         
     }
 
@@ -72,7 +81,10 @@ public class TurnHandler : MonoBehaviour
     {
         GameManager.Instance.SortEntities();
         GameManager.Instance.FireRoundEndActions();
+
+        //JUST TO DEBUG A MATCH -------------------
         tm.SetGameState(GameState.Start);
+        GameManager.Instance.ChangeTeam();
     }
 
 }
