@@ -3,6 +3,9 @@ Online Game Design project for UNIMI Course 2020/21.
 
 "Compete with other players to decide the fate of nature!"
 
+!THIS IS A GAME PROTOTYPE - This must not be intended as the final version of the game.!
+
+
 # Introduction
 In an alternate 1800, during an industrial revolution in a land called Wardia, deforestation reached a no turning point. Nature was devastated by men and industry and the few wizards that lived among humans splitted into two factions: black and white ones. Black wizards chose to serve the industry and became leaders of large corporations, encouraging the final devastation of nature. White wizards remained in the forests of Wardia and are still protecting nature and animals. Because of this strong opposition the two sides will battle against each other into violent clashes between machines and nature, to preserve or to destroy the last forests remaining in the world.
 
@@ -19,6 +22,7 @@ The aim of the game is not to reach the opponent (Stormbound) or to defeat him (
 
 # Platform(s) 
 Mobile (iOS - Android).
+Unity 2020.3
 
 
 
