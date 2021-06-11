@@ -29,12 +29,13 @@ public class TurnHandler : MonoBehaviour
     {
         if(tm.gameState == GameState.Start)
         {
+            UIButtonManager.Instance.EnableEndButton();
 
             //CHECK IF THE PLAYER HAS ALL THE TREES
             // if(...)
 
             //CHECK IF WE REACHED TURN LIMIT
-            if(GameManager.Instance.CheckTurnLimit())
+            if (GameManager.Instance.CheckTurnLimit())
             {
                 //check who has more trees
 
@@ -69,22 +70,39 @@ public class TurnHandler : MonoBehaviour
 
             tm.SetGameState(GameState.Buying);
         }
+
+        if(tm.gameState == GameState.EndTurn)
+        {
+            UIButtonManager.Instance.DisableEndButton();
+            GameManager.Instance.SortEntities();
+            GameManager.Instance.FireRoundEndActions();
+
+
+
+            GameManager.Instance.UpdateTurnCounter();
+
+            UITurnUpdater.Instance.UpdateTurn();
+            TurnManager.Instance.SetGameState(GameState.Wait);
+        }
+
+        if(tm.gameState == GameState.Wait)
+        {
+            //JUST TO DEBUG A MATCH -------------------
+            tm.SetGameState(GameState.Start);
+            GameManager.Instance.ChangeTeam();
+        }
         
     }
 
     public void HandleOnStateChange()
     {
-        turnText.text = tm.gameState.ToString();
+        turnText.text = GameManager.Instance.myTeam.ToString();
     }
 
     public void EndTurn()
     {
-        GameManager.Instance.SortEntities();
-        GameManager.Instance.FireRoundEndActions();
-
-        //JUST TO DEBUG A MATCH -------------------
-        tm.SetGameState(GameState.Start);
-        GameManager.Instance.ChangeTeam();
+        tm.SetGameState(GameState.EndTurn);
+        
     }
 
 }

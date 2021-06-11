@@ -14,6 +14,12 @@ TextureImporter:
   - first:
       213: 5791373812721005378
     second: Avenger_Sprite
+  - first:
+      213: 8791198055836843070
+    second: characters_spritesheet_4
+  - first:
+      213: 1501312497998032828
+    second: characters_spritesheet_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -218,6 +224,48 @@ TextureImporter:
       bones: []
       spriteID: 2433cb47cc71f5050800000000000000
       internalID: 5791373812721005378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characters_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 216
+        width: 32
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3c7244dd0c900a70800000000000000
+      internalID: 8791198055836843070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characters_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 504
+        width: 31
+        height: 65
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbfe60c33cbb5d410800000000000000
+      internalID: 1501312497998032828
       vertices: []
       indices: 
       edges: []

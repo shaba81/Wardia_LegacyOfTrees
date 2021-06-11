@@ -14,7 +14,8 @@ public class BuilderEntity : BaseEntity
                 {
                     foreach (Node node in GridManager.Instance.Neighbors(entity.CurrentNode))
                     {
-                        eligibleNodes.Add(node);
+                        if(!node.IsOccupied)
+                            eligibleNodes.Add(node);
                     }
                 }
             }
@@ -43,8 +44,6 @@ public class BuilderEntity : BaseEntity
                 Debug.Log(entity.GetMyTeam());
                 if (GridManager.Instance.GetNextNode(currentNode, positions, false).index == entity.CurrentNode.index)
                 {
-                    if (!entity.isBuilding)
-                    {
                         Debug.Log("Combat");
                         int damageToTake = entity.baseDamage;
 
@@ -54,7 +53,7 @@ public class BuilderEntity : BaseEntity
                         if (!TakeDamage(damageToTake))
                             Move();
 
-                    }
+                    
                 }
             }
         }

@@ -24,6 +24,7 @@ public class GameManager : Manager<GameManager>
     private int team1builderCounter = 0;
     private int team2builderCounter = 0;
     public List<TreeEntity> trees = new List<TreeEntity>();
+    private List<BaseEntity> toRemove = new List<BaseEntity>();
 
     private List<Node> builderNodes = new List<Node>();
 
@@ -72,8 +73,8 @@ public class GameManager : Manager<GameManager>
 
     public void SortEntities()
     {
-        //list.Sort((x, y) => y.CurrentNode.index.CompareTo(x.CurrentNode.index)); // descending, for the opponent. Just to remind
-        team1Entities.Sort((x, y) => x.CurrentNode.index.CompareTo(y.CurrentNode.index)); // asc
+        team1Entities.Sort((x, y) => y.CurrentNode.index.CompareTo(x.CurrentNode.index)); // descending, for the opponent. Just to remind
+        team2Entities.Sort((x, y) => x.CurrentNode.index.CompareTo(y.CurrentNode.index)); // asc
     }
 
     public List<BaseEntity> GetEntitiesAgainst(Team myTeam)
@@ -207,8 +208,10 @@ public class GameManager : Manager<GameManager>
 
     public void UnitDead(BaseEntity entity)
     {
-        team1Entities.Remove(entity);
-        team2Entities.Remove(entity);
+        //team1Entities.Remove(entity);
+        //team2Entities.Remove(entity);
+
+        toRemove.Add(entity);
 
         OnUnitDied?.Invoke(entity);
 
@@ -254,7 +257,9 @@ public class GameManager : Manager<GameManager>
 
         WaitForSeconds wait = new WaitForSeconds(0.5f);
 
-        foreach (BaseEntity e in _entities)
+        List<BaseEntity> tempList = _entities;
+
+        foreach (BaseEntity e in tempList.ToList())
         {
             if(!e.isFirstTurn)
             {
@@ -268,9 +273,13 @@ public class GameManager : Manager<GameManager>
 
         }
 
-        UpdateTurnCounter();
-        UITurnUpdater.Instance.UpdateTurn();
-        //TurnManager.Instance.SetGameState(GameState.Wait);
+        foreach(BaseEntity remove in toRemove)
+        {
+            team1Entities.Remove(remove);
+            team2Entities.Remove(remove);
+        }
+
+        toRemove.Clear();
     }
 }
 
