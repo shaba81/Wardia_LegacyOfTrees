@@ -27,6 +27,11 @@ public class WeaponStorehouseEntity : BaseEntity
 
     }
 
+    private void Update()
+    {
+        
+    }
+
     public override void OnRoundEnd()
     {
         

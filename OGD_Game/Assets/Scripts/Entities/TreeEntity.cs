@@ -8,6 +8,10 @@ public class TreeEntity : MonoBehaviour
     private Team conquerer;
     public Tile parent;
 
+    public GameObject whiteTree;
+    public GameObject darkTree;
+    public GameObject normalTree;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,17 +30,32 @@ public class TreeEntity : MonoBehaviour
 
     public void SetConquerer(Team team)
     {
+        DeActivateConquerSprites();
+
         if(team == Team.Team1)
         {
             //parent.SetHighlight(true, true);
+            whiteTree.gameObject.SetActive(true);
 
         } else if (team == Team.Team2)
         {
             //parent.SetHighlight(true, false);
+            darkTree.gameObject.SetActive(true);
+        }
+        else
+        {
+            normalTree.gameObject.SetActive(true);
         }
 
         isConquered = true;
         conquerer = team;
+    }
+
+    private void DeActivateConquerSprites()
+    {
+        normalTree.gameObject.SetActive(false);
+        whiteTree.gameObject.SetActive(false);
+        darkTree.gameObject.SetActive(false);
     }
 
     public Team GetConquerer()

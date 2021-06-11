@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 30109116177020095}
   - component: {fileID: 1594646800366027918}
   - component: {fileID: 4177698894149922318}
-  - component: {fileID: 1797599837861044131}
+  - component: {fileID: 3766917789227410178}
   - component: {fileID: 2363069954169715923}
   m_Layer: 0
   m_Name: Evangelist
@@ -111,7 +111,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.43, y: 0.64}
   m_EdgeRadius: 0
---- !u!114 &1797599837861044131
+--- !u!114 &3766917789227410178
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4064798249457339088}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeb6394cc40fa2e42bb15280de9b8934, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ca0d13c695166444930a685cd805042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   barPrefab: {fileID: 9001919181559767783, guid: 73699f5e031aaaf42bcfc521411eaa14, type: 3}
@@ -130,9 +130,6 @@ MonoBehaviour:
   baseHealth: 3
   movement: 1
   isBuilding: 0
-  range: 1
-  attackSpeed: 1
-  movementSpeed: 1
   isFirstTurn: 1
 --- !u!114 &2363069954169715923
 MonoBehaviour:

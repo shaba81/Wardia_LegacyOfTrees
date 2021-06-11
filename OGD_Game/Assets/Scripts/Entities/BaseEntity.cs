@@ -25,7 +25,7 @@ public class BaseEntity : MonoBehaviour
     protected Node startingNode;
     public bool isFirstTurn = true;
 
-    private List<Node> eligibleNodes = new List<Node>();
+    protected List<Node> eligibleNodes = new List<Node>();
     protected List<int> positions = new List<int>();
 
     public Node CurrentNode => currentNode;
@@ -65,6 +65,8 @@ public class BaseEntity : MonoBehaviour
 
         eligibleNodes = GridManager.Instance.GetFirstRow();
 
+        AddPlacingConditions();
+
         if(isBuilding)
         {
             foreach(BaseEntity entity in GameManager.Instance.GetMyEntities(myTeam)) 
@@ -83,15 +85,6 @@ public class BaseEntity : MonoBehaviour
             {
                 Node tempNode = GridManager.Instance.GetNodeForTile(t.parent);
                 eligibleNodes.Add(tempNode);
-
-                //Here i compute the tree neighbors.
-                /*
-                foreach(Node n in GridManager.Instance.Neighbors(tempNode))
-                {
-                    if(!eligibleNodes.Contains(n))
-                        eligibleNodes.Add(n);
-                }
-                */
 
             }
         }
@@ -115,6 +108,7 @@ public class BaseEntity : MonoBehaviour
     protected virtual void OnRoundStart() { }
     public virtual void OnRoundEnd() { }
     protected virtual void OnUnitDied(BaseEntity diedUnity) { }
+    protected virtual void AddPlacingConditions() { }
 
     public void GetPositions()
     {
@@ -139,6 +133,7 @@ public class BaseEntity : MonoBehaviour
             positions = Enumerable.Range(22, 5).ToList();
         }
     }
+
 
     public int GetNextIndex(int from, int amount)
     {

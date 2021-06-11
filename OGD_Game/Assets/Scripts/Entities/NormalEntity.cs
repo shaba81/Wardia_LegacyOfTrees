@@ -2,38 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuilderEntity : BaseEntity
+public class NormalEntity : BaseEntity
 {
-    protected override void AddPlacingConditions()
-    {
-        if(name.Contains("Peasant"))
-        {
-            foreach(BaseEntity entity in GameManager.Instance.GetMyEntities(myTeam))
-            {
-                if (entity.name.Contains("Evangelist"))
-                {
-                    foreach (Node node in GridManager.Instance.Neighbors(entity.CurrentNode))
-                    {
-                        eligibleNodes.Add(node);
-                    }
-                }
-            }
-        }
-    }
-
-    protected override void OnRoundStart()
-    {
-
-        isBuilder = true;
-        GameManager.Instance.IncreaseBuilderCounter(myTeam);
-        GameManager.Instance.OnRoundStart -= OnRoundStart;
-
-    }
-
-
     public override void OnRoundEnd()
     {
-
         if (!Move())
         {
             //means there's someone on the other tile.
@@ -58,17 +30,5 @@ public class BuilderEntity : BaseEntity
                 }
             }
         }
-
-
     }
-
-    protected override void OnUnitDied(BaseEntity diedUnity)
-    {
-        GameManager.Instance.DecreaseBuilderCounter(myTeam);
-    }
-
-
-
-
-
 }
