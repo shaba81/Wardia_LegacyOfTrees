@@ -26,9 +26,9 @@ Unity 2020.3
 
 ## Pristine Games
 #### Team
-Davide Bagnato - github.com/davidebug - Game Design, Programming, AI
-Angelo Maurizio Alfano - github.com/shaba81 - Game Design, Programming, AI
-Federico Porteri - federicoporteri.3i@gmail.com - Game Design, Programming, AI
+* Davide Bagnato - github.com/davidebug - Game Design, Programming, AI 
+* Angelo Maurizio Alfano - github.com/shaba81 - Game Design, Programming, AI 
+* Federico Porteri - federicoporteri.3i@gmail.com - Game Design, Programming, AI
 
 
 
