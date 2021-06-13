@@ -133,7 +133,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         }
         progressLabel.SetActive(false);
         gamePanelSample.SetActive(true);
-        PhotonNetwork.LoadLevel(2);
         Debug.LogFormat("LOADING GAME");
 
         // TODO: CARICO IL LIVELLO E SETTO I PLAYER
