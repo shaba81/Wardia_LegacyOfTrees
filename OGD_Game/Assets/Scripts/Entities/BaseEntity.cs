@@ -45,7 +45,7 @@ public class BaseEntity : MonoBehaviour
     public void Setup(Team team, /*Node currentNode*/ Vector3 pos)
     {
         myTeam = team;
-        if (!isBuilding && myTeam == Team.Team2)
+        if (!isBuilding && myTeam == GameManager.Instance.GetOpposingTeam())
         {
             spriteRender.sprite = opponentSprite;
         }
@@ -54,6 +54,25 @@ public class BaseEntity : MonoBehaviour
         transform.position = pos;
 
         //currentNode.SetOccupied(true);
+
+        healthbar = Instantiate(barPrefab, this.transform);
+        healthbar.Setup(this.transform, baseHealth);
+    }
+
+    public void Spawn(Team team)
+    {
+
+        myTeam = team;
+        if (!isBuilding)
+        {
+            spriteRender.sprite = opponentSprite;
+        }
+
+        //this.currentNode = GridManager.Instance.GetNodeAtIndex(nodeIndex);
+        transform.position = currentNode.worldPosition;
+
+        //currentNode.SetOccupied(true);
+        //startingNode = currentNode;
 
         healthbar = Instantiate(barPrefab, this.transform);
         healthbar.Setup(this.transform, baseHealth);

@@ -136,6 +136,14 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
                     thisEntity.SetCurrentNode(candidateNode);
                     thisEntity.SetStartingNode(candidateNode);
 
+
+                    int entityIndex = GameManager.Instance.GetMyEntities(GameManager.Instance.myTeam).IndexOf(thisEntity);
+                    int nodeIndex = candidateNode.index;
+
+                    //SEND OVER NETWORK THE ENTITY INDEX AND THE NODEINDEX
+                    //CLASSECHEMANDAMESSAGGI.SEND(thisEntity.name, nodeIndex);
+                    //IN QUELLA CLASSE POI VERRA CHIAMATO QUESTO METODO EnemySpawner.Instance.SpawnEnemy(thisEntity.name, nodeIndex);
+
                     thisEntity.transform.position = candidateNode.worldPosition;
                     TurnManager.Instance.SetGameState(GameState.Buying);
                     foreach (Tile _t in eligibleTiles)
@@ -159,6 +167,13 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
                     candidateNode.SetOccupied(true);
 
                     thisEntity.transform.position = candidateNode.worldPosition;
+
+                    int nodeIndex = candidateNode.index;
+
+                    //SEND OVER NETWORK THE ENTITY INDEX AND THE NODEINDEX
+                    //CLASSECHEMANDAMESSAGGI.SEND(thisEntity.name, nodeIndex);
+                    //IN QUELLA CLASSE POI VERRA CHIAMATO QUESTO METODO EnemySpawner.Instance.SpawnEnemy(thisEntity.name, nodeIndex);
+
                     TurnManager.Instance.SetGameState(GameState.Buying);
                     foreach (Tile _t in eligibleTiles)
                     {

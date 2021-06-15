@@ -87,6 +87,20 @@ public class GameManager : Manager<GameManager>
         return null;
     }
 
+    public BaseEntity GetEntityAtIndex(Team team, int index)
+    {
+        if(team == Team.Team1)
+        {
+            return team1Entities[index];
+        }
+        else if (team == Team.Team2)
+        {
+            return team2Entities[index];
+        }
+
+        return null;
+    }
+
     public int GetTreesConquered(Team team)
     {
         int amount = 0;
