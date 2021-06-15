@@ -16,8 +16,6 @@ public class NimbleEntity : BaseEntity
                 
                 if (GridManager.Instance.GetNextNode(currentNode, positions, true) == entity.CurrentNode)
                 {
-                    if(!entity.isBuilding)
-                    {
                         Debug.Log("Combat");
                         int damageToTake = entity.baseDamage;
 
@@ -29,7 +27,7 @@ public class NimbleEntity : BaseEntity
                         if (!dead)
                             Move();
 
-                    }
+                
                 }
             }
         }

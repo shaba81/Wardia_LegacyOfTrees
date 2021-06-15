@@ -10,6 +10,8 @@ public class BaseEntity : MonoBehaviour
     public SpriteRenderer spriteRender;
     public Animator animator;
 
+    public Sprite opponentSprite;
+
     public int baseDamage = 1;
     public int baseHealth = 3;
     private int originalDamage;
@@ -43,9 +45,9 @@ public class BaseEntity : MonoBehaviour
     public void Setup(Team team, /*Node currentNode*/ Vector3 pos)
     {
         myTeam = team;
-        if (myTeam == Team.Team2)
+        if (!isBuilding && myTeam == Team.Team2)
         {
-            //spriteRender.flipY = true;
+            spriteRender.sprite = opponentSprite;
         }
 
         //this.currentNode = currentNode;

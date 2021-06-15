@@ -8,6 +8,12 @@ TextureImporter:
   - first:
       213: -6737643466943199444
     second: Tiger_Sprit
+  - first:
+      213: 3824821712470159445
+    second: tiger_spritesheet_2
+  - first:
+      213: 2680908652871716299
+    second: tiger_spritesheet_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -170,6 +176,48 @@ TextureImporter:
       bones: []
       spriteID: c278e91e6f41f72a0800000000000000
       internalID: -6737643466943199444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiger_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 145
+        width: 21
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5503cfc251f741530800000000000000
+      internalID: 3824821712470159445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiger_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 337
+        width: 21
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcd80b93730843520800000000000000
+      internalID: 2680908652871716299
       vertices: []
       indices: 
       edges: []

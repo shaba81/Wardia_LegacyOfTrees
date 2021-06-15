@@ -5,6 +5,9 @@ TextureImporter:
   - first:
       213: 7932932362849005653
     second: Evangelist_Sprite
+  - first:
+      213: -352209955149211868
+    second: Magicians_Spritesheet_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -146,6 +149,27 @@ TextureImporter:
       bones: []
       spriteID: 550b0da14ff671e60800000000000000
       internalID: 7932932362849005653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magicians_Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 217
+        width: 45
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42799f079e2bc1bf0800000000000000
+      internalID: -352209955149211868
       vertices: []
       indices: 
       edges: []

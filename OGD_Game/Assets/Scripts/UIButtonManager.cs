@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class UIButtonManager : MonoBehaviour
+public class UIButtonManager : Manager<UIButtonManager>
 {
     public GameObject unitCards;
     public GameObject buildingsCards;
@@ -59,5 +59,15 @@ public class UIButtonManager : MonoBehaviour
 
         fullUnitImage.enabled = false;
         emptyUnitImage.enabled = true;
+    }
+
+    public void DisableEndButton()
+    {
+        changePhaseButton.interactable = false;
+    }
+
+    public void EnableEndButton()
+    {
+        changePhaseButton.interactable = true;
     }
 }

@@ -38,8 +38,6 @@ public class EvangelistEntity : BaseEntity
                 Debug.Log(entity.GetMyTeam());
                 if (GridManager.Instance.GetNextNode(currentNode, positions, false).index == entity.CurrentNode.index)
                 {
-                    if (!entity.isBuilding)
-                    {
                         Debug.Log("Combat");
                         int damageToTake = entity.baseDamage;
 
@@ -49,7 +47,7 @@ public class EvangelistEntity : BaseEntity
                         if (!TakeDamage(damageToTake))
                             Move();
 
-                    }
+                  
                 }
             }
         }

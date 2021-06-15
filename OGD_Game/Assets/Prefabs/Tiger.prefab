@@ -126,13 +126,11 @@ MonoBehaviour:
   barPrefab: {fileID: 9001919181559767783, guid: 73699f5e031aaaf42bcfc521411eaa14, type: 3}
   spriteRender: {fileID: 7096392183873705560}
   animator: {fileID: 0}
+  opponentSprite: {fileID: 2680908652871716299, guid: 10c352e1ef5d5484ebf473025775fc94, type: 3}
   baseDamage: 1
   baseHealth: 3
   movement: 1
   isBuilding: 0
-  range: 1
-  attackSpeed: 1
-  movementSpeed: 1
   isFirstTurn: 1
 --- !u!114 &3296803182932568715
 MonoBehaviour:

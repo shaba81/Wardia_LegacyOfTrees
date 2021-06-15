@@ -126,6 +126,7 @@ MonoBehaviour:
   barPrefab: {fileID: 9001919181559767783, guid: 73699f5e031aaaf42bcfc521411eaa14, type: 3}
   spriteRender: {fileID: 5615809729887968222}
   animator: {fileID: 0}
+  opponentSprite: {fileID: 3824821712470159445, guid: 10c352e1ef5d5484ebf473025775fc94, type: 3}
   baseDamage: 1
   baseHealth: 3
   movement: 1
