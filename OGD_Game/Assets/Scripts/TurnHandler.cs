@@ -88,7 +88,7 @@ public class TurnHandler : MonoBehaviour
 
         if(tm.gameState == GameState.Wait)
         {
-            // networkActionsHandler.SendTurn();
+           networkActionsHandler.SendTurn();
         }
         
     }
