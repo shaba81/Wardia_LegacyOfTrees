@@ -31,6 +31,9 @@ public class GameManager : Manager<GameManager>
 
     int currentTurn = 1;
 
+    private void Start() {
+        myTeam = TeamManager.Instance.GetTeam();
+    }
     public void OnEntityBought(EntitiesDatabaseSO.EntityData entityData)
     {
         Transform parent = team1Parent;

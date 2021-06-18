@@ -13,12 +13,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     [SerializeField]
     private GameObject progressLabel;
 
-    [SerializeField]
-    private GameObject gamePanelSample;
-
-    [SerializeField]
-    private GameObject textSample;
-
     string gameVersion = "1";
 
     void Awake()
@@ -30,8 +24,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         progressLabel.SetActive(false);
         controlPanel.SetActive(true);
-        gamePanelSample.SetActive(false);
-        textSample.SetActive(false);
     }
 
 
@@ -126,36 +118,21 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         if (!PhotonNetwork.IsMasterClient)
         {
             Debug.LogError("I'm Player 2");
+            TeamManager.Instance.SetTeam(Team.Team2);
         }
         else
         {
-            Debug.LogError("I'm Player 1");
+            Debug.LogError("I'm Player 1"); 
+            TeamManager.Instance.SetTeam(Team.Team1);
         }
-        progressLabel.SetActive(false);
-        gamePanelSample.SetActive(true);
+        progressLabel.SetActive(false); 
         Debug.LogFormat("LOADING GAME");
 
-        // TODO: CARICO IL LIVELLO E SETTO I PLAYER
-        // int numPlayers = 2;
-        // PhotonNetwork.LoadLevel(numPlayers);
+        SceneManager.LoadScene("GameScene");
     }
 
 
     #endregion
 
-    #region Sample actions Methods
-
-    [PunRPC]
-     void sampleAction(string test)
-    {
-        textSample.SetActive(true);
-        Debug.LogFormat("received message:" +  test);
-    }
-    public void SendAction()
-    {
-        this.photonView.RPC("sampleAction", RpcTarget.Others, "ciao");
-    }
-
-    #endregion
 
 }

@@ -40,6 +40,8 @@ MonoBehaviour:
   - RespawnSpaceship
   - SampleAction
   - sampleAction
+  - ChangeTurn
+  - SpawnEntity
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

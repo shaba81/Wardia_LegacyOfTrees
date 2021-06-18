@@ -15,10 +15,11 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
 
     private BaseEntity thisEntity;
     private List<Tile> eligibleTiles = new List<Tile>();
-
+    public NetworkActionsHandler networkActionsHandler;
     // Use this for initialization
     void Start()
     {
+        networkActionsHandler =  GameObject.Find("NetworkActionsHandler").GetComponent<NetworkActionsHandler>();
         mainCamera = Camera.main;
         if (mainCamera.GetComponent<Physics2DRaycaster>() == null)
             mainCamera.gameObject.AddComponent<Physics2DRaycaster>();
@@ -141,8 +142,7 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
                     int nodeIndex = candidateNode.index;
 
                     //SEND OVER NETWORK THE ENTITY INDEX AND THE NODEINDEX
-                    //CLASSECHEMANDAMESSAGGI.SEND(thisEntity.name, nodeIndex);
-                    //IN QUELLA CLASSE POI VERRA CHIAMATO QUESTO METODO EnemySpawner.Instance.SpawnEnemy(thisEntity.name, nodeIndex);
+                    networkActionsHandler.SendEntity(thisEntity.name, nodeIndex);
 
                     thisEntity.transform.position = candidateNode.worldPosition;
                     TurnManager.Instance.SetGameState(GameState.Buying);
@@ -171,8 +171,7 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
                     int nodeIndex = candidateNode.index;
 
                     //SEND OVER NETWORK THE ENTITY INDEX AND THE NODEINDEX
-                    //CLASSECHEMANDAMESSAGGI.SEND(thisEntity.name, nodeIndex);
-                    //IN QUELLA CLASSE POI VERRA CHIAMATO QUESTO METODO EnemySpawner.Instance.SpawnEnemy(thisEntity.name, nodeIndex);
+                   networkActionsHandler.SendEntity(thisEntity.name, nodeIndex);
 
                     TurnManager.Instance.SetGameState(GameState.Buying);
                     foreach (Tile _t in eligibleTiles)

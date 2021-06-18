@@ -8,7 +8,8 @@ public class TurnHandler : MonoBehaviour
     TurnManager tm;
     public Text turnText;
     public Team myTeam;
-
+    [SerializeField]
+    public NetworkActionsHandler networkActionsHandler;
     private void Awake()
     {
         myTeam = GameManager.Instance.myTeam;
@@ -87,9 +88,7 @@ public class TurnHandler : MonoBehaviour
 
         if(tm.gameState == GameState.Wait)
         {
-            //JUST TO DEBUG A MATCH -------------------
-            tm.SetGameState(GameState.Start);
-            GameManager.Instance.ChangeTeam();
+            // networkActionsHandler.SendTurn();
         }
         
     }

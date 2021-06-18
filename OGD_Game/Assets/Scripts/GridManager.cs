@@ -13,10 +13,10 @@ public class GridManager : Manager<GridManager>
     protected Dictionary<Team, int> startPositionPerTeam;
 
     List<Tile> allTiles = new List<Tile>();
-    protected void Awake()
-    {
-        base.Awake();
-        allTiles = terrainGrid.GetComponentsInChildren<Tile>().ToList();
+
+
+    private void Start() {
+         allTiles = terrainGrid.GetComponentsInChildren<Tile>().ToList();
 
         if (GameManager.Instance.myTeam == Team.Team2)
         {
@@ -29,8 +29,6 @@ public class GridManager : Manager<GridManager>
         startPositionPerTeam = new Dictionary<Team, int>();
         startPositionPerTeam.Add(Team.Team1, 0);
         startPositionPerTeam.Add(Team.Team2, graph.Nodes.Count - 1);
-
-         
     }
 
     public Node GetFreeNode(Team forTeam)
