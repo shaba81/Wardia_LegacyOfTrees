@@ -5,7 +5,7 @@ using UnityEngine;
 public class TreeEntity : MonoBehaviour
 {
     public bool isConquered = false;
-    private Team conquerer;
+    private Team conquerer = Team.None;
     public Tile parent;
 
     public GameObject whiteTree;
@@ -15,7 +15,6 @@ public class TreeEntity : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        conquerer = Team.None;
         if(GameManager.Instance.myTeam == Team.Team2)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);

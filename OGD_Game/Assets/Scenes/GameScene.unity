@@ -3731,6 +3731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ed3e7dd8e791042a679ae9cb29622c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  opposingTeam: 0
   enemySpawn: {fileID: 786270579}
   database: {fileID: 11400000, guid: 8ab941f082f9f6b4bbbc27cc1a10add9, type: 2}
 --- !u!4 &786270579
@@ -4043,6 +4044,8 @@ MonoBehaviour:
   spawnTransform: {fileID: 1544871645}
   myTeam: 0
   trees: []
+  currentTurn: 1
+  opponentNaturePoints: 0
 --- !u!4 &827809807
 Transform:
   m_ObjectHideFlags: 0
@@ -4402,7 +4405,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881228965}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.26, y: -1.63, z: 0}
+  m_LocalPosition: {x: -2.02, y: -1.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 683350259}
@@ -7522,7 +7525,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1964990616}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.51, y: 2.73, z: 0}
+  m_LocalPosition: {x: 1.79, y: 2.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 683350259}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : Manager<EnemySpawner>
 {
-    private Team opposingTeam;
+    public Team opposingTeam;
     private Transform parent;
     public Transform enemySpawn;
     public EntitiesDatabaseSO database;
@@ -12,7 +12,13 @@ public class EnemySpawner : Manager<EnemySpawner>
 
     void Start()
     {
-        opposingTeam = GameManager.Instance.GetOpposingTeam();
+        if(TeamManager.Instance.GetTeam() == Team.Team1)
+            opposingTeam = Team.Team2;
+        else if (TeamManager.Instance.GetTeam() == Team.Team2)
+            opposingTeam = Team.Team1;
+
+        Debug.LogFormat(opposingTeam.ToString());
+
         if(opposingTeam == Team.Team1)
         {
             parent = GameManager.Instance.team1Parent;
@@ -37,6 +43,7 @@ public class EnemySpawner : Manager<EnemySpawner>
         }
 
         BaseEntity newEntity = Instantiate(entityData.prefab, parent);
+        newEntity.GetComponent<Dragger>().enabled = false;
 
         newEntity.gameObject.name = entityData.name;
         newEntity.movement = entityData.movement;
@@ -44,7 +51,7 @@ public class EnemySpawner : Manager<EnemySpawner>
         newEntity.baseDamage = entityData.damage;
         newEntity.isBuilding = entityData.isBuilding;
 
-        GameManager.Instance.GetMyEntities(opposingTeam).Add(newEntity);
+        GameManager.Instance.GetEntitiesAgainst(GameManager.Instance.myTeam).Add(newEntity);
 
         Node node = GridManager.Instance.GetNodeAtIndex(nodeIndex);
 

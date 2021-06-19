@@ -29,10 +29,20 @@ public class GameManager : Manager<GameManager>
     private List<Node> builderNodes = new List<Node>();
 
 
-    int currentTurn = 1;
+    public int currentTurn = 1;
+    private int allTrees;
+    public int opponentNaturePoints;
 
     private void Start() {
         myTeam = TeamManager.Instance.GetTeam();
+        if(myTeam == Team.Team2)
+        {
+            Vector3 tempParentPosition = team1Parent.position;
+            team1Parent.position = team2Parent.position;
+            team2Parent.position = tempParentPosition;
+        }
+        allTrees = trees.Count;
+        
     }
     public void OnEntityBought(EntitiesDatabaseSO.EntityData entityData)
     {
@@ -72,6 +82,42 @@ public class GameManager : Manager<GameManager>
             return Team.Team1;
 
         return Team.None;
+    }
+
+    public bool CheckVictoryByTrees()
+    {
+
+        Debug.Log(GetTreesConquered(myTeam));
+        Debug.Log(GetTreesConquered(GetOpposingTeam()));
+
+        if (GetTreesConquered(myTeam) == 5)
+            return true;
+
+        return false;
+    }
+
+    public void UpdateOpponentNaturePoints(int amount)
+    {
+        opponentNaturePoints = amount;
+    }
+
+    public void UpdateEnemyTrees()
+    {
+
+        foreach (TreeEntity tree in trees)
+        {
+            Debug.Log("IM LOOKING FOR ENTITIES, IM TEAM " + myTeam);
+            foreach (BaseEntity entity in GetEntitiesAgainst(myTeam))
+            {
+                Debug.Log("ENTITY FROM TEAM " + entity.GetMyTeam());
+                //entity.isFirstTurn = false;
+                if (tree.parent == GridManager.Instance.GetTileForNode(entity.CurrentNode))
+                {
+                    tree.SetConquerer(entity.GetMyTeam());
+                }
+            }
+        }
+        UITreeUpdater.Instance.UpdateTrees();
     }
 
     public void SortEntities()
@@ -159,12 +205,8 @@ public class GameManager : Manager<GameManager>
         }
 
         return false;
-    }
-
-    public void UpdateTurnCounter()
-    {
-        currentTurn += 1;
-    }
+    } 
+  
 
     public int GetTurnCounter()
     {
@@ -213,8 +255,12 @@ public class GameManager : Manager<GameManager>
 
     public void FireRoundEndActions ()
     {
-        //OnRoundEnd?.Invoke(); 
         StartCoroutine(RoundEndCoroutine(GetMyEntities(myTeam)));      
+    }
+
+    public void FireOpponentActions()
+    {
+        StartCoroutine(RoundEndCoroutine(GetEntitiesAgainst(myTeam)));
     }
 
     public void FireRoundStartActions()

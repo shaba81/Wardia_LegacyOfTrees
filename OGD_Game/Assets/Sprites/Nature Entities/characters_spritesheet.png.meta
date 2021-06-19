@@ -20,6 +20,30 @@ TextureImporter:
   - first:
       213: 1501312497998032828
     second: characters_spritesheet_5
+  - first:
+      213: -4699864045137833088
+    second: peasant_walking_front_1
+  - first:
+      213: -3513553625569913001
+    second: peasant_walking_front_2
+  - first:
+      213: 649617722625763188
+    second: peasant_walking_back_1
+  - first:
+      213: -1403023571794833421
+    second: peasant_walking_back_2
+  - first:
+      213: 1760218502823135268
+    second: avenger_walking_front_1
+  - first:
+      213: 4294557144701112526
+    second: avenger_walking_front_2
+  - first:
+      213: -8958606225747822085
+    second: avenger_walking_back_1
+  - first:
+      213: -231762177852774557
+    second: avenger_walking_back_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -266,6 +290,174 @@ TextureImporter:
       bones: []
       spriteID: cbfe60c33cbb5d410800000000000000
       internalID: 1501312497998032828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: peasant_walking_front_1
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 216
+        width: 31
+        height: 62
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 083dde84d8ab6ceb0800000000000000
+      internalID: -4699864045137833088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: peasant_walking_front_2
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 216
+        width: 31
+        height: 62
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7579e98d7995d3fc0800000000000000
+      internalID: -3513553625569913001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: peasant_walking_back_1
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 1
+        width: 31
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47728ec70e7e30900800000000000000
+      internalID: 649617722625763188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: peasant_walking_back_2
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 1
+        width: 31
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ff4ba7be75778ce0800000000000000
+      internalID: -1403023571794833421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avenger_walking_front_1
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 504
+        width: 31
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 428c7dbf66d8d6810800000000000000
+      internalID: 1760218502823135268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avenger_walking_front_2
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 504
+        width: 31
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec0968538f4599b30800000000000000
+      internalID: 4294557144701112526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avenger_walking_back_1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 1
+        width: 31
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf9b2b73a13aca380800000000000000
+      internalID: -8958606225747822085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avenger_walking_back_2
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 1
+        width: 31
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 367e6b4f68d98ccf0800000000000000
+      internalID: -231762177852774557
       vertices: []
       indices: 
       edges: []

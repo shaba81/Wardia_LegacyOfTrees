@@ -11,7 +11,7 @@ public class PlayerData : Manager<PlayerData>
 
     private void Start()
     {
-        Money = 10;
+        Money = 0;
     }
 
     public bool CanAfford(int amount)

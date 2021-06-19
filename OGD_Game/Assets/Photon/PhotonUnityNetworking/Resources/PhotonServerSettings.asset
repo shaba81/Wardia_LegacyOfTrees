@@ -42,6 +42,10 @@ MonoBehaviour:
   - sampleAction
   - ChangeTurn
   - SpawnEntity
+  - UpdateTurn
+  - UpdateOpponentNaturePoints
+  - UpdateEnemyTrees
+  - UpdateTrees
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
