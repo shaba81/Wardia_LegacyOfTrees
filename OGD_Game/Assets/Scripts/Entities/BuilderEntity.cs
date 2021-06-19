@@ -39,9 +39,10 @@ public class BuilderEntity : BaseEntity
         {
             //means there's someone on the other tile.
             //if it's an enemy, combat;
+            Debug.Log("CANT MOVE");
             foreach (BaseEntity entity in GameManager.Instance.GetEntitiesAgainst(myTeam))
             {
-                Debug.Log(entity.GetMyTeam());
+                Debug.Log(entity.name);
                 if (GridManager.Instance.GetNextNode(currentNode, positions, false).index == entity.CurrentNode.index)
                 {
                         Debug.Log("Combat");

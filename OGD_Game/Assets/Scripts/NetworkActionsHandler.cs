@@ -58,13 +58,11 @@ public class NetworkActionsHandler : MonoBehaviourPunCallbacks
     [PunRPC]
     void UpdateTrees()
     {
-        Debug.Log("TREE RPC");
         GameManager.Instance.UpdateEnemyTrees();
         Debug.LogFormat("Updated Enemy Trees");
     }
     public void SendTreeUpdate()
     {
-        Debug.Log("SENDING TREE UPDATE MESSAGE");
         this.photonView.RPC("UpdateTrees", RpcTarget.Others);
     }
 

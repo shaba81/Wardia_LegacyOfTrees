@@ -87,9 +87,6 @@ public class GameManager : Manager<GameManager>
     public bool CheckVictoryByTrees()
     {
 
-        Debug.Log(GetTreesConquered(myTeam));
-        Debug.Log(GetTreesConquered(GetOpposingTeam()));
-
         if (GetTreesConquered(myTeam) == 5)
             return true;
 
@@ -106,10 +103,8 @@ public class GameManager : Manager<GameManager>
 
         foreach (TreeEntity tree in trees)
         {
-            Debug.Log("IM LOOKING FOR ENTITIES, IM TEAM " + myTeam);
             foreach (BaseEntity entity in GetEntitiesAgainst(myTeam))
             {
-                Debug.Log("ENTITY FROM TEAM " + entity.GetMyTeam());
                 //entity.isFirstTurn = false;
                 if (tree.parent == GridManager.Instance.GetTileForNode(entity.CurrentNode))
                 {
