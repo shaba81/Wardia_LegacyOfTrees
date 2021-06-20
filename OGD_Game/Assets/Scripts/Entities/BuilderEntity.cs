@@ -10,12 +10,16 @@ public class BuilderEntity : BaseEntity
         {
             foreach(BaseEntity entity in GameManager.Instance.GetMyEntities(myTeam))
             {
-                if (entity.name.Contains("Evangelist"))
+                if(entity != null)
                 {
-                    foreach (Node node in GridManager.Instance.Neighbors(entity.CurrentNode))
+
+                    if (entity.name.Contains("Evangelist"))
                     {
-                        if(!node.IsOccupied)
-                            eligibleNodes.Add(node);
+                        foreach (Node node in GridManager.Instance.Neighbors(entity.CurrentNode))
+                        {
+                            if(!node.IsOccupied)
+                                eligibleNodes.Add(node);
+                        }
                     }
                 }
             }

@@ -14,12 +14,15 @@ public class EvangelistEntity : BaseEntity
         {
             foreach (BaseEntity entity in GameManager.Instance.GetMyEntities(myTeam))
             {
-                if (entity.name.Contains("Peasant") && entity.CurrentNode == n)
+                if(entity != null)
                 {
-                    if (!entity.IsHealthBuffed())
+                    if (entity.name.Contains("Peasant") && entity.CurrentNode == n)
                     {
-                        entity.ReceiveDefenseBuff(1);
-                        Debug.Log("Entity: " + entity.name + " received buff." + entity.baseHealth);
+                        if (!entity.IsHealthBuffed())
+                        {
+                            entity.ReceiveDefenseBuff(1);
+                            Debug.Log("Entity: " + entity.name + " received buff." + entity.baseHealth);
+                        }
                     }
                 }
             }
