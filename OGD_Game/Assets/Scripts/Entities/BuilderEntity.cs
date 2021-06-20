@@ -10,12 +10,16 @@ public class BuilderEntity : BaseEntity
         {
             foreach(BaseEntity entity in GameManager.Instance.GetMyEntities(myTeam))
             {
-                if (entity.name.Contains("Evangelist"))
+                if(entity != null)
                 {
-                    foreach (Node node in GridManager.Instance.Neighbors(entity.CurrentNode))
+
+                    if (entity.name.Contains("Evangelist"))
                     {
-                        if(!node.IsOccupied)
-                            eligibleNodes.Add(node);
+                        foreach (Node node in GridManager.Instance.Neighbors(entity.CurrentNode))
+                        {
+                            if(!node.IsOccupied)
+                                eligibleNodes.Add(node);
+                        }
                     }
                 }
             }
@@ -39,9 +43,10 @@ public class BuilderEntity : BaseEntity
         {
             //means there's someone on the other tile.
             //if it's an enemy, combat;
+            Debug.Log("CANT MOVE");
             foreach (BaseEntity entity in GameManager.Instance.GetEntitiesAgainst(myTeam))
             {
-                Debug.Log(entity.GetMyTeam());
+                Debug.Log(entity.name);
                 if (GridManager.Instance.GetNextNode(currentNode, positions, false).index == entity.CurrentNode.index)
                 {
                         Debug.Log("Combat");

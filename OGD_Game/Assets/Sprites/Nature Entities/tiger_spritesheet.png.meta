@@ -14,6 +14,30 @@ TextureImporter:
   - first:
       213: 2680908652871716299
     second: tiger_spritesheet_3
+  - first:
+      213: 4992766999395734226
+    second: tiger_walking_front_1
+  - first:
+      213: 8754672754575479475
+    second: tiger_walking_front_2
+  - first:
+      213: -8057671434915520731
+    second: tiger_walking_back_1
+  - first:
+      213: 982100079144123039
+    second: tiger_walking_back_2
+  - first:
+      213: -5739191781934982461
+    second: white_tiger_walking_back_1
+  - first:
+      213: -3934953084759394827
+    second: white_tiger_walking_back_2
+  - first:
+      213: -1277636083592137183
+    second: white_tiger_walking_front_1
+  - first:
+      213: -6821878960522327585
+    second: white_tiger_walking_front_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -218,6 +242,174 @@ TextureImporter:
       bones: []
       spriteID: bcd80b93730843520800000000000000
       internalID: 2680908652871716299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiger_walking_front_1
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 144
+        width: 21
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d29645122fd94540800000000000000
+      internalID: 4992766999395734226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiger_walking_front_2
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 144
+        width: 21
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b2134d6c78de7970800000000000000
+      internalID: 8754672754575479475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiger_walking_back_1
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 0
+        width: 21
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52f5c0575866d2090800000000000000
+      internalID: -8057671434915520731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiger_walking_back_2
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 0
+        width: 21
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9ab44f81de11ad00800000000000000
+      internalID: 982100079144123039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: white_tiger_walking_back_1
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 192
+        width: 21
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ca9ceb5b7b4a50b0800000000000000
+      internalID: -5739191781934982461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: white_tiger_walking_back_2
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 192
+        width: 21
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f5b617840d3469c0800000000000000
+      internalID: -3934953084759394827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: white_tiger_walking_front_1
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 336
+        width: 21
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 126f44d40cce44ee0800000000000000
+      internalID: -1277636083592137183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: white_tiger_walking_front_2
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 336
+        width: 21
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd90b51ba31d351a0800000000000000
+      internalID: -6821878960522327585
       vertices: []
       indices: 
       edges: []

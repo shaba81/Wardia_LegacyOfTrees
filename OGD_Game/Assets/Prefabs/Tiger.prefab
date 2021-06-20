@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8181344355857833192}
   - component: {fileID: -3526674322708097195}
   - component: {fileID: 3296803182932568715}
+  - component: {fileID: -8430763088466678691}
+  - component: {fileID: -7604945742551478743}
   m_Layer: 0
   m_Name: Tiger
   m_TagString: Untagged
@@ -125,12 +127,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barPrefab: {fileID: 9001919181559767783, guid: 73699f5e031aaaf42bcfc521411eaa14, type: 3}
   spriteRender: {fileID: 7096392183873705560}
-  animator: {fileID: 0}
+  switchAnim: {fileID: -7604945742551478743}
   opponentSprite: {fileID: 2680908652871716299, guid: 10c352e1ef5d5484ebf473025775fc94, type: 3}
   baseDamage: 1
   baseHealth: 3
   movement: 1
   isBuilding: 0
+  myTeam: 0
   isFirstTurn: 1
 --- !u!114 &3296803182932568715
 MonoBehaviour:
@@ -147,3 +150,37 @@ MonoBehaviour:
   releaseMask:
     serializedVersion: 2
     m_Bits: 64
+  networkActionsHandler: {fileID: 0}
+--- !u!95 &-8430763088466678691
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539197337467190428}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b0706ed1079f84a4a8e40e9aa625a785, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-7604945742551478743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539197337467190428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e80a7c64700874895ec37890ed3b56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: -8430763088466678691}
+  front: {fileID: 9100000, guid: 4edb3d2f96618854a9165c91255c8e33, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PhotonServerSettings
   m_EditorClassIdentifier: 
   AppSettings:
-    AppIdRealtime: 
+    AppIdRealtime: b5075a1f-d05b-4da3-96b6-b6d82bc8df05
     AppIdChat: 
     AppIdVoice: 
     AppVersion: 
@@ -27,7 +27,7 @@ MonoBehaviour:
     AuthMode: 0
     EnableLobbyStatistics: 0
     NetworkLogging: 1
-  DevRegion: 
+  DevRegion: eu
   PunLogging: 0
   EnableSupportLogger: 0
   RunInBackground: 1
@@ -38,6 +38,14 @@ MonoBehaviour:
   - DestroySpaceship
   - Fire
   - RespawnSpaceship
+  - SampleAction
+  - sampleAction
+  - ChangeTurn
+  - SpawnEntity
+  - UpdateTurn
+  - UpdateOpponentNaturePoints
+  - UpdateEnemyTrees
+  - UpdateTrees
   DisableAutoOpenWizard: 1
   ShowSettings: 0
-  DevRegionSetOnce: 0
+  DevRegionSetOnce: 1

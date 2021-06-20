@@ -29,8 +29,21 @@ public class GameManager : Manager<GameManager>
     private List<Node> builderNodes = new List<Node>();
 
 
-    int currentTurn = 1;
+    public int currentTurn = 1;
+    private int allTrees;
+    public int opponentNaturePoints;
 
+    private void Start() {
+        myTeam = TeamManager.Instance.GetTeam();
+        if(myTeam == Team.Team2)
+        {
+            Vector3 tempParentPosition = team1Parent.position;
+            team1Parent.position = team2Parent.position;
+            team2Parent.position = tempParentPosition;
+        }
+        allTrees = trees.Count;
+        
+    }
     public void OnEntityBought(EntitiesDatabaseSO.EntityData entityData)
     {
         Transform parent = team1Parent;
@@ -71,6 +84,37 @@ public class GameManager : Manager<GameManager>
         return Team.None;
     }
 
+    public bool CheckVictoryByTrees()
+    {
+
+        if (GetTreesConquered(myTeam) == 5)
+            return true;
+
+        return false;
+    }
+
+    public void UpdateOpponentNaturePoints(int amount)
+    {
+        opponentNaturePoints = amount;
+    }
+
+    public void UpdateEnemyTrees()
+    {
+
+        foreach (TreeEntity tree in trees)
+        {
+            foreach (BaseEntity entity in GetEntitiesAgainst(myTeam))
+            {
+                //entity.isFirstTurn = false;
+                if (tree.parent == GridManager.Instance.GetTileForNode(entity.CurrentNode))
+                {
+                    tree.SetConquerer(entity.GetMyTeam());
+                }
+            }
+        }
+        UITreeUpdater.Instance.UpdateTrees();
+    }
+
     public void SortEntities()
     {
         team1Entities.Sort((x, y) => y.CurrentNode.index.CompareTo(x.CurrentNode.index)); // descending, for the opponent. Just to remind
@@ -83,6 +127,20 @@ public class GameManager : Manager<GameManager>
             return team2Entities;
         else if (myTeam == Team.Team2)
             return team1Entities;
+
+        return null;
+    }
+
+    public BaseEntity GetEntityAtIndex(Team team, int index)
+    {
+        if(team == Team.Team1)
+        {
+            return team1Entities[index];
+        }
+        else if (team == Team.Team2)
+        {
+            return team2Entities[index];
+        }
 
         return null;
     }
@@ -142,12 +200,8 @@ public class GameManager : Manager<GameManager>
         }
 
         return false;
-    }
-
-    public void UpdateTurnCounter()
-    {
-        currentTurn += 1;
-    }
+    } 
+  
 
     public int GetTurnCounter()
     {
@@ -196,8 +250,12 @@ public class GameManager : Manager<GameManager>
 
     public void FireRoundEndActions ()
     {
-        //OnRoundEnd?.Invoke(); 
         StartCoroutine(RoundEndCoroutine(GetMyEntities(myTeam)));      
+    }
+
+    public void FireOpponentActions()
+    {
+        StartCoroutine(RoundEndCoroutine(GetEntitiesAgainst(myTeam)));
     }
 
     public void FireRoundStartActions()

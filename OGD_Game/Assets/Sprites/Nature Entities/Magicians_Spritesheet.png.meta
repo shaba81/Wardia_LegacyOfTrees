@@ -8,6 +8,21 @@ TextureImporter:
   - first:
       213: -352209955149211868
     second: Magicians_Spritesheet_1
+  - first:
+      213: 3291984495841487994
+    second: evangelist_walking_back_1
+  - first:
+      213: 4545074341579916669
+    second: evangelist_walking_back_2
+  - first:
+      213: -4157519002032678137
+    second: evangelist_walking_front_1
+  - first:
+      213: -2427907371075903426
+    second: Magicians_Spritesheet_5
+  - first:
+      213: -4665953013914847596
+    second: evangelist_walking_front_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -170,6 +185,111 @@ TextureImporter:
       bones: []
       spriteID: 42799f079e2bc1bf0800000000000000
       internalID: -352209955149211868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evangelist_walking_back_1
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 0
+        width: 43
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7ca9b0157a7fad20800000000000000
+      internalID: 3291984495841487994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evangelist_walking_back_2
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 0
+        width: 43
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d750d976809531f30800000000000000
+      internalID: 4545074341579916669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evangelist_walking_front_1
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 216
+        width: 45
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70bd7e0ce768d46c0800000000000000
+      internalID: -4157519002032678137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magicians_Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 281
+        width: 7
+        height: 2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e30e77f0c175e4ed0800000000000000
+      internalID: -2427907371075903426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evangelist_walking_front_2
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 216
+        width: 45
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49631f284743f3fb0800000000000000
+      internalID: -4665953013914847596
       vertices: []
       indices: 
       edges: []

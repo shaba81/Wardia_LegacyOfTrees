@@ -8,7 +8,8 @@ public class BaseEntity : MonoBehaviour
 
     public HealthBar barPrefab;
     public SpriteRenderer spriteRender;
-    public Animator animator;
+    private Animator anim;
+    public SwitchAnimator switchAnim;
 
     public Sprite opponentSprite;
 
@@ -21,7 +22,7 @@ public class BaseEntity : MonoBehaviour
     protected bool isBuilder = false;
     
 
-    protected Team myTeam;
+    public Team myTeam;
     protected BaseEntity currentTarget = null;
     protected Node currentNode;
     protected Node startingNode;
@@ -45,9 +46,10 @@ public class BaseEntity : MonoBehaviour
     public void Setup(Team team, /*Node currentNode*/ Vector3 pos)
     {
         myTeam = team;
-        if (!isBuilding && myTeam == Team.Team2)
+        if (!isBuilding && myTeam == GameManager.Instance.GetOpposingTeam())
         {
             spriteRender.sprite = opponentSprite;
+            switchAnim.SwitchFront();
         }
 
         //this.currentNode = currentNode;
@@ -59,8 +61,30 @@ public class BaseEntity : MonoBehaviour
         healthbar.Setup(this.transform, baseHealth);
     }
 
+    public void Spawn(Team team)
+    {
+
+        myTeam = team;
+        if (!isBuilding)
+        {
+            spriteRender.sprite = opponentSprite;
+        }
+
+        //this.currentNode = GridManager.Instance.GetNodeAtIndex(nodeIndex);
+        transform.position = currentNode.worldPosition;
+
+        //currentNode.SetOccupied(true);
+        //startingNode = currentNode;
+
+        healthbar = Instantiate(barPrefab, this.transform);
+        healthbar.Setup(this.transform, baseHealth);
+    }
+
     protected void Start()
     {
+
+        anim = GetComponent<Animator>();
+
         GameManager.Instance.OnRoundStart += OnRoundStart;
         //GameManager.Instance.OnRoundEnd += OnRoundEnd;
         GameManager.Instance.OnUnitDied += OnUnitDied;
@@ -223,8 +247,8 @@ public class BaseEntity : MonoBehaviour
             }
 
         }
-
-        transform.position = destination.worldPosition;
+        StartCoroutine(MoveFunction(destination.worldPosition));
+        //transform.position = destination.worldPosition;
 
         //Free previous node
         currentNode.SetOccupied(false);
@@ -297,6 +321,27 @@ public class BaseEntity : MonoBehaviour
         // HERE WE HAVE TO NOTIFY THE NETWORK MANAGER
 
         return false;
+    }
+
+    IEnumerator MoveFunction(Vector3 newPos)
+    {
+        float timeSinceStarted = 0f;
+        anim.SetBool("Walking", true);
+        while (true)
+        {
+            timeSinceStarted += Time.deltaTime;
+            transform.position = Vector3.Lerp(transform.position, newPos, timeSinceStarted);
+
+            // If the object has arrived, stop the coroutine
+            if (this.transform.position == newPos)
+            {
+                anim.SetBool("Walking", false);
+                yield break;
+            }
+
+            // Otherwise, continue next frame
+            yield return null;
+        }
     }
 
     public void Unsubscribe()
