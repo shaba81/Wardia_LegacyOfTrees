@@ -10,50 +10,50 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadMainmenu()
     {
-      StartCoroutine(LoadLevel(0));
+      StartCoroutine(LoadLevel("MainMenu"));
       page.Play();
     }
 
     public void LoadDeckmaking()
     {
-      StartCoroutine(LoadLevel(6));
+      StartCoroutine(LoadLevel("DeckMakingScene"));
       page.Play();
     }
 
     public void LoadMatch()
     {
-      StartCoroutine(LoadLevel(1));
-      page.Play();
+      StartCoroutine(LoadLevel("GameScene"));
+      //page.Play();
     }
 
     public void LoadMatchmaking()
     {
-      StartCoroutine(LoadLevel(5));
+      StartCoroutine(LoadLevel("MatchMaking"));
       page.Play();
     }
 
     public void LoadOption()
     {
-      StartCoroutine(LoadLevel(2));
+      StartCoroutine(LoadLevel("Options"));
       page.Play();
     }
 
     public void LoadShop()
     {
-      StartCoroutine(LoadLevel(3));
+      StartCoroutine(LoadLevel("Shop"));
       page.Play();
     }
 
     public void LoadResultscreen()
     {
-      StartCoroutine(LoadLevel(4));
+      StartCoroutine(LoadLevel("ResultScreen"));
       page.Play();
     }
 
-    IEnumerator LoadLevel(int Levelindex)
+    IEnumerator LoadLevel(string Levelname)
     {
       transition.SetTrigger("Start");
       yield return new WaitForSeconds(1);
-      SceneManager.LoadScene(Levelindex);
+      SceneManager.LoadScene(Levelname);
     }
 }
