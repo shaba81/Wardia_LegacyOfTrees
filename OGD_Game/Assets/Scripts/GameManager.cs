@@ -210,12 +210,14 @@ public class GameManager : Manager<GameManager>
 
     public Team GetTroopForNode(Node node)
     {
-        foreach(BaseEntity entity in team1Entities.Concat(team2Entities))
+        foreach(BaseEntity entity in GetAllEntities())
         {
-            if (entity.CurrentNode == node)
+            if (entity != null && entity.CurrentNode == node)
                 return entity.GetMyTeam();
         }
 
+
+        Debug.Log("NONE");
         return Team.None;
     }
 
@@ -317,7 +319,7 @@ public class GameManager : Manager<GameManager>
 
         List<BaseEntity> tempList = _entities;
 
-        foreach (BaseEntity e in tempList.ToList())
+        foreach (BaseEntity e in tempList)
         {
             if(!e.isFirstTurn)
             {

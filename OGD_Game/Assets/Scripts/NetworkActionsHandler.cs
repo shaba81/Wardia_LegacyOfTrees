@@ -24,7 +24,7 @@ public class NetworkActionsHandler : MonoBehaviourPunCallbacks
     {
         GameManager.Instance.FireOpponentActions();
         TurnManager.Instance.SetGameState(GameState.Start);
-        Debug.LogFormat("Changed turn");
+        //Debug.LogFormat("Changed turn");
     }
     public void SendTurn()
     {
@@ -36,7 +36,6 @@ public class NetworkActionsHandler : MonoBehaviourPunCallbacks
     {
         GameManager.Instance.currentTurn += 1;
         UITurnUpdater.Instance.UpdateTurn();
-        Debug.LogFormat("Updated turn counter");
     }
     public void SendUpdateTurn()
     {
@@ -48,7 +47,7 @@ public class NetworkActionsHandler : MonoBehaviourPunCallbacks
     void UpdateOpponentNaturePoints(int amount)
     {
         GameManager.Instance.UpdateOpponentNaturePoints(amount);
-        Debug.LogFormat("Updated Nature Points");
+        //Debug.LogFormat("Updated Nature Points");
     }
     public void SendNaturePoints(int amount)
     {
@@ -59,7 +58,7 @@ public class NetworkActionsHandler : MonoBehaviourPunCallbacks
     void UpdateTrees()
     {
         GameManager.Instance.UpdateEnemyTrees();
-        Debug.LogFormat("Updated Enemy Trees");
+        //Debug.LogFormat("Updated Enemy Trees");
     }
     public void SendTreeUpdate()
     {
