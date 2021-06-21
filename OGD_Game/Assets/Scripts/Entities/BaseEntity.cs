@@ -220,11 +220,11 @@ public class BaseEntity : MonoBehaviour
         return true;
     }
 
-    protected bool Move()
+    protected bool Move(int amount)
     {
 
         //to get a node at a given index GridManager.Instance.graph.Nodes[index];
-        int index = GetNextIndex(positions.IndexOf(currentNode.index), movement);
+        int index = GetNextIndex(positions.IndexOf(currentNode.index), amount);
 
         Node destination = GridManager.Instance.GetNodeAtIndex(positions[index]);
 
@@ -237,11 +237,11 @@ public class BaseEntity : MonoBehaviour
         //If its occupied by a unit from my team
         else if (destination.IsOccupied  && GameManager.Instance.GetTroopForNode(destination) == GameManager.Instance.myTeam)
         {
-            if(movement == 1)
+            if(amount == 1)
             {
-                    destination = GridManager.Instance.GetNodeAtIndex(positions[GetIndexBefore(index, movement)]);
+                    destination = GridManager.Instance.GetNodeAtIndex(positions[GetIndexBefore(index, amount)]);
             }
-            else if(movement > 1)
+            else if(amount > 1)
             {
                     destination = GridManager.Instance.GetNodeAtIndex(positions[GetNextIndex(index, 1)]);
             }

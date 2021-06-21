@@ -39,7 +39,7 @@ public class BuilderEntity : BaseEntity
     public override void OnRoundEnd()
     {
 
-        if (!Move())
+        if (!Move(movement))
         {
             //means there's someone on the other tile.
             //if it's an enemy, combat;
@@ -56,7 +56,7 @@ public class BuilderEntity : BaseEntity
 
                         //This means if i'm not dead
                         if (!TakeDamage(damageToTake))
-                            Move();
+                            Move(movement);
 
                     
                 }

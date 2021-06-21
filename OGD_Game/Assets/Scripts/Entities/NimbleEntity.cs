@@ -7,7 +7,7 @@ public class NimbleEntity : BaseEntity
     public override void OnRoundEnd()
     {
 
-        if (!Move())
+        if (!Move(movement))
         {
             //means there's someone on the other tile.
             //if it's an enemy, combat;
@@ -25,7 +25,7 @@ public class NimbleEntity : BaseEntity
                         }
 
                         if (!dead)
-                            Move();
+                            Move(2);
 
                 
                 }
