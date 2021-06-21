@@ -4044,6 +4044,7 @@ MonoBehaviour:
   spawnTransform: {fileID: 1544871645}
   myTeam: 0
   trees: []
+  networkActionsHandler: {fileID: 1466544906}
   currentTurn: 1
   opponentNaturePoints: 0
 --- !u!4 &827809807

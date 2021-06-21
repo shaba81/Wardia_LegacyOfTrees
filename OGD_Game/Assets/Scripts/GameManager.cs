@@ -28,21 +28,23 @@ public class GameManager : Manager<GameManager>
 
     private List<Node> builderNodes = new List<Node>();
 
-
+    [SerializeField]
+    public NetworkActionsHandler networkActionsHandler;
     public int currentTurn = 1;
     private int allTrees;
     public int opponentNaturePoints;
 
-    private void Start() {
+    private void Start()
+    {
         myTeam = TeamManager.Instance.GetTeam();
-        if(myTeam == Team.Team2)
+        if (myTeam == Team.Team2)
         {
             Vector3 tempParentPosition = team1Parent.position;
             team1Parent.position = team2Parent.position;
             team2Parent.position = tempParentPosition;
         }
         allTrees = trees.Count;
-        
+
     }
     public void OnEntityBought(EntitiesDatabaseSO.EntityData entityData)
     {
@@ -50,28 +52,28 @@ public class GameManager : Manager<GameManager>
 
         if (myTeam == Team.Team1)
             parent = team1Parent;
-        else if(myTeam == Team.Team2)
+        else if (myTeam == Team.Team2)
             parent = team2Parent;
 
         BaseEntity newEntity = Instantiate(entityData.prefab, parent);
 
-            newEntity.gameObject.name = entityData.name;
-            newEntity.movement = entityData.movement;
-            newEntity.baseHealth = entityData.health;
-            newEntity.baseDamage = entityData.damage;
+        newEntity.gameObject.name = entityData.name;
+        newEntity.movement = entityData.movement;
+        newEntity.baseHealth = entityData.health;
+        newEntity.baseDamage = entityData.damage;
         newEntity.isBuilding = entityData.isBuilding;
 
-        if(myTeam == Team.Team1)
+        if (myTeam == Team.Team1)
             team1Entities.Add(newEntity);
-        else if(myTeam == Team.Team2)
+        else if (myTeam == Team.Team2)
             team2Entities.Add(newEntity);
 
 
 
         newEntity.Setup(myTeam, /*GridManager.Instance.GetFreeNode(Team.Team1)*/ spawnTransform.position);
 
-            TurnManager.Instance.SetGameState(GameState.Placing);
-        
+        TurnManager.Instance.SetGameState(GameState.Placing);
+
     }
 
     public Team GetOpposingTeam()
@@ -133,7 +135,7 @@ public class GameManager : Manager<GameManager>
 
     public BaseEntity GetEntityAtIndex(Team team, int index)
     {
-        if(team == Team.Team1)
+        if (team == Team.Team1)
         {
             return team1Entities[index];
         }
@@ -149,7 +151,7 @@ public class GameManager : Manager<GameManager>
     {
         int amount = 0;
 
-        foreach(TreeEntity t in trees)
+        foreach (TreeEntity t in trees)
         {
             if (t.GetConquerer() == team)
                 amount += 1;
@@ -160,7 +162,7 @@ public class GameManager : Manager<GameManager>
 
     public void IncreaseBuilderCounter(Team team)
     {
-        if(team == Team.Team1)
+        if (team == Team.Team1)
         {
             team1builderCounter += 1;
         }
@@ -200,8 +202,8 @@ public class GameManager : Manager<GameManager>
         }
 
         return false;
-    } 
-  
+    }
+
 
     public int GetTurnCounter()
     {
@@ -210,7 +212,7 @@ public class GameManager : Manager<GameManager>
 
     public Team GetTroopForNode(Node node)
     {
-        foreach(BaseEntity entity in GetAllEntities())
+        foreach (BaseEntity entity in GetAllEntities())
         {
             if (entity != null && entity.CurrentNode == node)
                 return entity.GetMyTeam();
@@ -250,9 +252,9 @@ public class GameManager : Manager<GameManager>
     }
 
 
-    public void FireRoundEndActions ()
+    public void FireRoundEndActions()
     {
-        StartCoroutine(RoundEndCoroutine(GetMyEntities(myTeam)));      
+        StartCoroutine(RoundEndCoroutine(GetMyEntities(myTeam)));
     }
 
     public void FireOpponentActions()
@@ -273,11 +275,11 @@ public class GameManager : Manager<GameManager>
 
         toRemove.Add(entity);
 
-        OnUnitDied?.Invoke(entity);
+        // OnUnitDied?.Invoke(entity);
 
-        entity.Unsubscribe();
+        // entity.Unsubscribe();
 
-        Destroy(entity.gameObject);
+        // Destroy(entity.gameObject);
     }
 
     public void ChangeTeam()
@@ -321,9 +323,10 @@ public class GameManager : Manager<GameManager>
 
         foreach (BaseEntity e in tempList)
         {
-            if(!e.isFirstTurn)
+            if (!e.isFirstTurn)
             {
-                e.OnRoundEnd();
+                // e.OnRoundEnd();
+                networkActionsHandler.FireOnRoundEnd(e);
                 yield return wait;
             }
             else
@@ -333,13 +336,55 @@ public class GameManager : Manager<GameManager>
 
         }
 
-        foreach(BaseEntity remove in toRemove)
+        foreach (BaseEntity remove in toRemove)
         {
-            team1Entities.Remove(remove);
-            team2Entities.Remove(remove);
+            networkActionsHandler.FireRemoveEntity(remove);
         }
 
         toRemove.Clear();
+    }
+
+    public void RemoveAt(int nodeIndex)
+    {
+        foreach (BaseEntity e in team1Entities)
+        {
+            if (e.CurrentNode.index == nodeIndex)
+            {
+                team1Entities.Remove(e);
+                OnUnitDied?.Invoke(e);
+
+                e.Unsubscribe();
+
+                Destroy(e.gameObject);
+                break;
+            }
+        }
+        foreach (BaseEntity e in team2Entities)
+        {
+            if (e.CurrentNode.index == nodeIndex)
+            {
+                team2Entities.Remove(e);
+                OnUnitDied?.Invoke(e);
+
+                e.Unsubscribe();
+
+                Destroy(e.gameObject);
+                break;
+            }
+        }
+    }
+
+    public void FireOnRoundEndAt(int nodeIndex)
+    {
+        allEntities = GetAllEntities();
+        foreach (BaseEntity e in allEntities)
+        {
+            if (e.CurrentNode.index == nodeIndex)
+            {
+                e.OnRoundEnd();
+                break;
+            }
+        }
     }
 }
 

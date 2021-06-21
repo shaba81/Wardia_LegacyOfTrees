@@ -13,11 +13,11 @@ public class TurnHandler : MonoBehaviour
     [SerializeField]
     public NetworkActionsHandler networkActionsHandler;
     private void Awake()
-    {       
+    {
         tm = TurnManager.Instance;
         tm.OnStateChange += HandleOnStateChange;
     }
-    
+
     void Start()
     {
         myTeam = GameManager.Instance.myTeam;
@@ -35,12 +35,12 @@ public class TurnHandler : MonoBehaviour
 
     void Update()
     {
-        if(tm.gameState == GameState.Start)
+        if (tm.gameState == GameState.Start)
         {
             UIButtonManager.Instance.EnableEndButton();
 
             //CHECK IF THE PLAYER HAS ALL THE TREES
-            if(GameManager.Instance.CheckVictoryByTrees())
+            if (GameManager.Instance.CheckVictoryByTrees())
             {
                 winner = GameManager.Instance.myTeam;
                 Debug.Log(winner + " won the match!");
@@ -71,7 +71,7 @@ public class TurnHandler : MonoBehaviour
                 //if they're equal, check who whas more nature points
                 networkActionsHandler.SendNaturePoints(PlayerData.Instance.Money);
                 opponentNaturePoints = GameManager.Instance.opponentNaturePoints;
-                if(PlayerData.Instance.Money > opponentNaturePoints)
+                if (PlayerData.Instance.Money > opponentNaturePoints)
                 {
                     winner = GameManager.Instance.myTeam;
                     Debug.Log(winner + " won the match!");
@@ -90,15 +90,17 @@ public class TurnHandler : MonoBehaviour
             foreach (TreeEntity tree in GameManager.Instance.trees)
             {
 
-                foreach (BaseEntity entity in GameManager.Instance.GetMyEntities(myTeam)) {
+                foreach (BaseEntity entity in GameManager.Instance.GetMyEntities(myTeam))
+                {
                     //entity.isFirstTurn = false;
-                    if(tree.parent == GridManager.Instance.GetTileForNode(entity.CurrentNode)) {
+                    if (tree.parent == GridManager.Instance.GetTileForNode(entity.CurrentNode))
+                    {
                         tree.SetConquerer(entity.GetMyTeam());
                     }
                 }
 
 
-                if(tree.GetConquerer() == myTeam)
+                if (tree.GetConquerer() == myTeam)
                 {
                     PlayerData.Instance.GiveMoney(1);
                 }
@@ -112,7 +114,7 @@ public class TurnHandler : MonoBehaviour
             tm.SetGameState(GameState.Buying);
         }
 
-        if(tm.gameState == GameState.EndTurn)
+        if (tm.gameState == GameState.EndTurn)
         {
             UIButtonManager.Instance.DisableEndButton();
             GameManager.Instance.SortEntities();
@@ -127,11 +129,6 @@ public class TurnHandler : MonoBehaviour
             TurnManager.Instance.SetGameState(GameState.Wait);
         }
 
-        if(tm.gameState == GameState.Wait)
-        {
-            //GameManager.Instance.UpdateEnemyTrees();
-        }
-        
     }
 
     public void HandleOnStateChange()
@@ -142,7 +139,7 @@ public class TurnHandler : MonoBehaviour
     public void EndTurn()
     {
         tm.SetGameState(GameState.EndTurn);
-        
+
     }
 
     public void UpdateTurnCounter()
