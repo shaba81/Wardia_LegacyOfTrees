@@ -23,7 +23,7 @@ public class NetworkActionsHandler : MonoBehaviourPunCallbacks
     [PunRPC]
     void ChangeTurn()
     {
-        // GameManager.Instance.FireOpponentActions();
+        GameManager.Instance.FireOpponentActions();
         TurnManager.Instance.SetGameState(GameState.Start);
     }
     public void SendTurn()
@@ -31,27 +31,27 @@ public class NetworkActionsHandler : MonoBehaviourPunCallbacks
         this.photonView.RPC("ChangeTurn", RpcTarget.Others);
     }
 
-    [PunRPC]
-    void OnRoundEnd(int nodeIndex)
-    {
-        GameManager.Instance.FireOnRoundEndAt(nodeIndex);
-        Debug.Log("Round End");
-    }
-    public void FireOnRoundEnd(BaseEntity e)
-    {
-        this.photonView.RPC("OnRoundEnd", RpcTarget.All, e.CurrentNode.index);
-    }
+    // [PunRPC]
+    // void OnRoundEnd(int nodeIndex)
+    // {
+    //     GameManager.Instance.FireOnRoundEndAt(nodeIndex);
+    //     // Debug.Log("Round End");
+    // }
+    // public void FireOnRoundEnd(BaseEntity e)
+    // {
+    //     this.photonView.RPC("OnRoundEnd", RpcTarget.All, e.CurrentNode.index);
+    // }
 
-    [PunRPC]
-    void RemoveEntity(int index)
-    {
-        GameManager.Instance.RemoveAt(index);
-        Debug.Log("REMOVED ENTITY");
-    }
-    public void FireRemoveEntity(BaseEntity remove)
-    {
-        this.photonView.RPC("RemoveEntity", RpcTarget.All, remove.CurrentNode.index);
-    }
+    // [PunRPC]
+    // void RemoveEntity(int index)
+    // {
+    //     GameManager.Instance.RemoveAt(index);
+    //     Debug.Log("REMOVED ENTITY");
+    // }
+    // public void FireRemoveEntity(BaseEntity remove)
+    // {
+    //     this.photonView.RPC("RemoveEntity", RpcTarget.Others, remove.CurrentNode.index);
+    // }
 
     [PunRPC]
     void UpdateTurn()

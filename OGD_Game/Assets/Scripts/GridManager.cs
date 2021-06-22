@@ -55,12 +55,12 @@ public class GridManager : Manager<GridManager>
         return graph.Nodes[currentIndex];
     }
 
-    public Node GetNextNode(Node from, List<int> positions, bool isTwo)
+    public Node GetNextNode(Node from, List<int> positions, bool isTwo, Team troopTeam)
     {
         int _index = from.index;
         int nodeIndex = 0;
 
-        if (GameManager.Instance.myTeam == Team.Team1)
+        if (troopTeam == Team.Team1)
         {
             //_index += 1;
             nodeIndex = positions.SkipWhile(x => x != _index).Skip(1).DefaultIfEmpty(positions[0]).FirstOrDefault();
@@ -72,7 +72,7 @@ public class GridManager : Manager<GridManager>
             }
 
         }
-        else if (GameManager.Instance.myTeam == Team.Team2)
+        else if (troopTeam == Team.Team2)
         {
             //_index -= 1;
             nodeIndex = positions.TakeWhile(x => x != _index).DefaultIfEmpty(positions[positions.Count - 1]).LastOrDefault();
@@ -84,6 +84,31 @@ public class GridManager : Manager<GridManager>
             }
 
         }
+
+        //   if (GameManager.Instance.myTeam == Team.Team1)
+        // {
+        //     //_index += 1;
+        //     nodeIndex = positions.SkipWhile(x => x != _index).Skip(1).DefaultIfEmpty(positions[0]).FirstOrDefault();
+        //     if (isTwo)
+        //     {
+        //         _index = nodeIndex;
+        //         _index = positions.SkipWhile(x => x != _index).Skip(1).DefaultIfEmpty(positions[0]).FirstOrDefault();
+        //         nodeIndex = _index;
+        //     }
+
+        // }
+        // else if (GameManager.Instance.myTeam == Team.Team2)
+        // {
+        //     //_index -= 1;
+        //     nodeIndex = positions.TakeWhile(x => x != _index).DefaultIfEmpty(positions[positions.Count - 1]).LastOrDefault();
+        //     if (isTwo)
+        //     {
+        //         _index = nodeIndex;
+        //         _index = positions.TakeWhile(x => x != _index).DefaultIfEmpty(positions[positions.Count - 1]).LastOrDefault();
+        //         nodeIndex = _index;
+        //     }
+
+        // }
 
         return GetNodeAtIndex(nodeIndex);
     }

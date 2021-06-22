@@ -13,7 +13,7 @@ public class NormalEntity : BaseEntity
             foreach (BaseEntity entity in GameManager.Instance.GetEntitiesAgainst(myTeam))
             {
                 Debug.Log(entity.GetMyTeam());
-                if (GridManager.Instance.GetNextNode(currentNode, positions, false).index == entity.CurrentNode.index)
+                if (GridManager.Instance.GetNextNode(currentNode, positions, false, myTeam).index == entity.CurrentNode.index)
                 {
                         Debug.Log("Combat");
                         int damageToTake = entity.baseDamage;

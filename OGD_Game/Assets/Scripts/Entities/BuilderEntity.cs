@@ -47,7 +47,8 @@ public class BuilderEntity : BaseEntity
             foreach (BaseEntity entity in GameManager.Instance.GetEntitiesAgainst(myTeam))
             {
                 Debug.Log(entity.name);
-                if (GridManager.Instance.GetNextNode(currentNode, positions, false).index == entity.CurrentNode.index)
+               
+                if (GridManager.Instance.GetNextNode(currentNode, positions, false, myTeam).index == entity.CurrentNode.index)
                 {
                         Debug.Log("Combat");
                         int damageToTake = entity.baseDamage;

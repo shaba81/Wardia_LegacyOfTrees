@@ -14,7 +14,7 @@ public class NimbleEntity : BaseEntity
             foreach (BaseEntity entity in GameManager.Instance.GetEntitiesAgainst(myTeam))
             {
                 
-                if (GridManager.Instance.GetNextNode(currentNode, positions, true) == entity.CurrentNode)
+                if (GridManager.Instance.GetNextNode(currentNode, positions, true, myTeam).index == entity.CurrentNode.index)
                 {
                         Debug.Log("Combat");
                         int damageToTake = entity.baseDamage;

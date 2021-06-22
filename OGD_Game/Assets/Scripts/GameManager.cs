@@ -214,12 +214,12 @@ public class GameManager : Manager<GameManager>
     {
         foreach (BaseEntity entity in GetAllEntities())
         {
-            if (entity != null && entity.CurrentNode == node)
+            if (entity != null && entity.CurrentNode == node && !entity.dead)
                 return entity.GetMyTeam();
         }
 
 
-        Debug.Log("NONE");
+        // Debug.Log("NONE");
         return Team.None;
     }
 
@@ -270,16 +270,9 @@ public class GameManager : Manager<GameManager>
 
     public void UnitDead(BaseEntity entity)
     {
-        //team1Entities.Remove(entity);
-        //team2Entities.Remove(entity);
 
         toRemove.Add(entity);
 
-        // OnUnitDied?.Invoke(entity);
-
-        // entity.Unsubscribe();
-
-        // Destroy(entity.gameObject);
     }
 
     public void ChangeTeam()
@@ -325,8 +318,7 @@ public class GameManager : Manager<GameManager>
         {
             if (!e.isFirstTurn)
             {
-                // e.OnRoundEnd();
-                networkActionsHandler.FireOnRoundEnd(e);
+                e.OnRoundEnd();
                 yield return wait;
             }
             else
@@ -338,54 +330,72 @@ public class GameManager : Manager<GameManager>
 
         foreach (BaseEntity remove in toRemove)
         {
-            networkActionsHandler.FireRemoveEntity(remove);
+            Remove(remove);
         }
 
         toRemove.Clear();
     }
 
-    public void RemoveAt(int nodeIndex)
+    public void Remove(BaseEntity remove)
     {
-        foreach (BaseEntity e in team1Entities)
-        {
-            if (e.CurrentNode.index == nodeIndex)
-            {
-                team1Entities.Remove(e);
-                OnUnitDied?.Invoke(e);
 
-                e.Unsubscribe();
+        team1Entities.Remove(remove);
 
-                Destroy(e.gameObject);
-                break;
-            }
-        }
-        foreach (BaseEntity e in team2Entities)
-        {
-            if (e.CurrentNode.index == nodeIndex)
-            {
-                team2Entities.Remove(e);
-                OnUnitDied?.Invoke(e);
+        team2Entities.Remove(remove);
 
-                e.Unsubscribe();
+        OnUnitDied?.Invoke(remove);
 
-                Destroy(e.gameObject);
-                break;
-            }
-        }
+        remove.Unsubscribe();
+
+        Destroy(remove.gameObject);
     }
 
-    public void FireOnRoundEndAt(int nodeIndex)
-    {
-        allEntities = GetAllEntities();
-        foreach (BaseEntity e in allEntities)
-        {
-            if (e.CurrentNode.index == nodeIndex)
-            {
-                e.OnRoundEnd();
-                break;
-            }
-        }
-    }
+    // public void RemoveAt(int nodeIndex)
+    // {
+    //     foreach (BaseEntity e in team1Entities)
+    //     {
+    //         if (e.CurrentNode.index == nodeIndex)
+    //         {
+    //             team1Entities.Remove(e);
+    //             OnUnitDied?.Invoke(e);
+
+    //             e.Unsubscribe();
+
+    //             Destroy(e.gameObject);
+    //             break;
+    //         }
+    //     }
+    //     foreach (BaseEntity e in team2Entities)
+    //     {
+    //         if (e.CurrentNode.index == nodeIndex)
+    //         {
+    //             team2Entities.Remove(e);
+    //             OnUnitDied?.Invoke(e);
+
+    //             e.Unsubscribe();
+
+    //             Destroy(e.gameObject);
+    //             break;
+    //         }
+    //     }
+    // }
+
+
+
+
+    // public void FireOnRoundEndAt(int nodeIndex)
+    // {
+    //     allEntities = GetAllEntities();
+    //     foreach (BaseEntity e in allEntities)
+    //     {
+    //         if (e.CurrentNode.index == nodeIndex)
+    //         {
+    //             Debug.Log("Calling on Round end at index  - " + nodeIndex.ToString());
+    //             e.OnRoundEnd();
+    //             break;
+    //         }
+    //     }
+    // }
 }
 
 public enum Team
