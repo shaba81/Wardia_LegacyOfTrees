@@ -12,7 +12,8 @@ public class PowerGeneratorEntity : BaseEntity
         if(turnCounter == 2)
         {
             PlayerData.Instance.GiveMoney(5);
-            PopUpManager.Instance.SpawnPopUp(this.transform.position, PopUpType.FivePoints);
+            if (this.myTeam == GameManager.Instance.myTeam)
+                PopUpManager.Instance.SpawnPopUp(this.transform.position, PopUpType.FivePoints);
             UITreeUpdater.Instance.UpdateTrees();
             Debug.Log("Entity: " + name + " gave 5 points.");
             TakeDamage(1);
