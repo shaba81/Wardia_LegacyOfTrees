@@ -20,9 +20,16 @@ public class HealthBar : MonoBehaviour
     public void UpdateBar(float newValue)
     {
         float newScale = newValue / maxHealth;
+        if (newScale < 0)
+            newScale = 0;
         Vector3 scale = bar.transform.localScale;
         scale.x = newScale;
         bar.transform.localScale = scale;
+    }
+
+    public void HideBar()
+    {
+        //this.gameObject.SetActive(false);
     }
 
     private void Update()

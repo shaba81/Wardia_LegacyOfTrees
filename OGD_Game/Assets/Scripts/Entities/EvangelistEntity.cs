@@ -21,6 +21,7 @@ public class EvangelistEntity : BaseEntity
                         if (!entity.IsHealthBuffed())
                         {
                             entity.ReceiveDefenseBuff(1);
+                            PopUpManager.Instance.SpawnPopUp(entity.transform.position, PopUpType.Health);
                             Debug.Log("Entity: " + entity.name + " received buff." + entity.baseHealth);
                         }
                     }

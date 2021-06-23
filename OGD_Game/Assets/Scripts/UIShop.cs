@@ -58,7 +58,7 @@ public class UIShop : MonoBehaviour
             //check if we have builders
             if(cardData.isBuilding)
             {
-                if(!GameManager.Instance.GetBuilderCounter(GameManager.Instance.myTeam))
+                if(!GameManager.Instance.CheckBuilders(GameManager.Instance.myTeam))
                 {
                     Debug.Log("You need at least 1 builder in your board!");
                     return;

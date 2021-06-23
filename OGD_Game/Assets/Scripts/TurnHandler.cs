@@ -8,7 +8,6 @@ public class TurnHandler : MonoBehaviour
     TurnManager tm;
     public Text turnText;
     public Team myTeam;
-    private Team winner = Team.None;
     private int opponentNaturePoints = 0;
     [SerializeField]
     public NetworkActionsHandler networkActionsHandler;
@@ -42,24 +41,24 @@ public class TurnHandler : MonoBehaviour
             //CHECK IF THE PLAYER HAS ALL THE TREES
             if (GameManager.Instance.CheckVictoryByTrees())
             {
-                winner = GameManager.Instance.myTeam;
-                Debug.Log(winner + " won the match!");
+                GameManager.Instance.SetWinner(GameManager.Instance.myTeam);
+                Debug.Log(GameManager.Instance.GetWinner() + " won the match!");
             }
 
             //CHECK IF WE REACHED TURN LIMIT
             if (GameManager.Instance.CheckTurnLimit())
             {
-                winner = UITreeUpdater.Instance.GetWinner();
+                GameManager.Instance.SetWinner(UITreeUpdater.Instance.GetWinner());
 
                 //check who has more trees
-                if (winner == GameManager.Instance.myTeam)
+                if (GameManager.Instance.GetWinner() == GameManager.Instance.myTeam)
                 {
-                    Debug.Log(winner + " won the match!");
+                    Debug.Log(GameManager.Instance.GetWinner() + " won the match!");
                     //SWITCH TO END SCREEN, variable winner is preserved.
                 }
-                else if (winner == GameManager.Instance.GetOpposingTeam())
+                else if (GameManager.Instance.GetWinner() == GameManager.Instance.GetOpposingTeam())
                 {
-                    Debug.Log(winner + " won the match! And you lost.");
+                    Debug.Log(GameManager.Instance.GetWinner() + " won the match! And you lost.");
                     //SWITCH TO END SCREEN, variable winner is preserved.
                 }
                 else
@@ -73,14 +72,14 @@ public class TurnHandler : MonoBehaviour
                 opponentNaturePoints = GameManager.Instance.opponentNaturePoints;
                 if (PlayerData.Instance.Money > opponentNaturePoints)
                 {
-                    winner = GameManager.Instance.myTeam;
-                    Debug.Log(winner + " won the match!");
+                    GameManager.Instance.SetWinner(GameManager.Instance.myTeam);
+                    Debug.Log(GameManager.Instance.GetWinner() + " won the match!");
                     //SWITCH TO END SCREEN, variable winner is preserved.
                 }
                 else if (PlayerData.Instance.Money < opponentNaturePoints)
                 {
-                    winner = GameManager.Instance.GetOpposingTeam();
-                    Debug.Log(winner + " won the match! And you lost.");
+                    GameManager.Instance.SetWinner(GameManager.Instance.GetOpposingTeam());
+                    Debug.Log(GameManager.Instance.GetWinner() + " won the match! And you lost.");
                     //SWITCH TO END SCREEN, variable winner is preserved.
                 }
             }
@@ -103,6 +102,7 @@ public class TurnHandler : MonoBehaviour
                 if (tree.GetConquerer() == myTeam)
                 {
                     PlayerData.Instance.GiveMoney(1);
+                    PopUpManager.Instance.SpawnPopUp(tree.transform.position, PopUpType.OnePoint);
                 }
             }
             networkActionsHandler.SendTreeUpdate();

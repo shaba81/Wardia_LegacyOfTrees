@@ -8,6 +8,7 @@ public class ArtificialTreeEntity : BaseEntity
     protected override void OnRoundStart()
     {
         PlayerData.Instance.GiveMoney(1);
+        PopUpManager.Instance.SpawnPopUp(this.transform.position, PopUpType.OnePoint);
         Debug.Log("Artificial Tree Gave 1 point.");
     }
 }

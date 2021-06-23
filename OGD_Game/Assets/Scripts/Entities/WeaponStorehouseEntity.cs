@@ -18,7 +18,8 @@ public class WeaponStorehouseEntity : BaseEntity
                 {
                     if(!entity.IsDamageBuffed())
                     {
-                        entity.ReceiveAttackBuff(1);    
+                        entity.ReceiveAttackBuff(1);
+                        PopUpManager.Instance.SpawnPopUp(entity.transform.position, PopUpType.Damage);
                     }
                     Debug.Log("Entity: " + entity.name + " received buff." + entity.baseDamage);
                 }

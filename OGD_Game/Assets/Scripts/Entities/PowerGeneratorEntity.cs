@@ -11,9 +11,10 @@ public class PowerGeneratorEntity : BaseEntity
         turnCounter++;
         if(turnCounter == 2)
         {
-            PlayerData.Instance.GiveMoney(6);
+            PlayerData.Instance.GiveMoney(5);
+            PopUpManager.Instance.SpawnPopUp(this.transform.position, PopUpType.FivePoints);
             UITreeUpdater.Instance.UpdateTrees();
-            Debug.Log("Entity: " + name + " gave 6 points.");
+            Debug.Log("Entity: " + name + " gave 5 points.");
             TakeDamage(1);
         }
 

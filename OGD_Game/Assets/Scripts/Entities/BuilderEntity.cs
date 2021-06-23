@@ -30,7 +30,6 @@ public class BuilderEntity : BaseEntity
     {
 
         isBuilder = true;
-        GameManager.Instance.IncreaseBuilderCounter(myTeam);
         GameManager.Instance.OnRoundStart -= OnRoundStart;
 
     }
@@ -69,7 +68,7 @@ public class BuilderEntity : BaseEntity
 
     protected override void OnUnitDied(BaseEntity diedUnity)
     {
-        GameManager.Instance.DecreaseBuilderCounter(myTeam);
+        
     }
 
 

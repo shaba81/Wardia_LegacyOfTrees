@@ -19,7 +19,7 @@ public class BaseEntity : MonoBehaviour
     private int originalHealth;
     public int movement = 1;
     public bool isBuilding = false;
-    protected bool isBuilder = false;
+    public bool isBuilder = false;
 
 
     public Team myTeam;
@@ -223,7 +223,6 @@ public class BaseEntity : MonoBehaviour
 
     protected bool Move(int amount)
     {
-        Debug.Log("Moving");
         //to get a node at a given index GridManager.Instance.graph.Nodes[index];
         int index = GetNextIndex(positions.IndexOf(currentNode.index), amount);
 
@@ -236,8 +235,7 @@ public class BaseEntity : MonoBehaviour
             return false;
         }
         //If its occupied by a unit from my team
-        else if (destination.IsOccupied && obstructingTroopTeam == GameManager.Instance.myTeam
-        && obstructingTroopTeam != Team.None)
+        else if (destination.IsOccupied && obstructingTroopTeam == myTeam)
         {
             if (amount == 1)
             {
@@ -299,6 +297,7 @@ public class BaseEntity : MonoBehaviour
     public void ReceiveDefenseBuff(int amount)
     {
         baseHealth += amount;
+        barPrefab.Setup(this.transform, baseHealth);
     }
 
     public void ResetBuffs()

@@ -17,12 +17,11 @@ public class GameManager : Manager<GameManager>
     public Action<BaseEntity> OnUnitDied;
 
     public Team myTeam;
+    private Team winner = Team.None;
 
     List<BaseEntity> team1Entities = new List<BaseEntity>();
     List<BaseEntity> team2Entities = new List<BaseEntity>();
     List<BaseEntity> allEntities = new List<BaseEntity>();
-    private int team1builderCounter = 0;
-    private int team2builderCounter = 0;
     public List<TreeEntity> trees = new List<TreeEntity>();
     private List<BaseEntity> toRemove = new List<BaseEntity>();
 
@@ -98,6 +97,7 @@ public class GameManager : Manager<GameManager>
     public void UpdateOpponentNaturePoints(int amount)
     {
         opponentNaturePoints = amount;
+        Debug.Log("OPPONENT NATURE POINTS: " + opponentNaturePoints);
     }
 
     public void UpdateEnemyTrees()
@@ -121,6 +121,16 @@ public class GameManager : Manager<GameManager>
     {
         team1Entities.Sort((x, y) => y.CurrentNode.index.CompareTo(x.CurrentNode.index)); // descending, for the opponent. Just to remind
         team2Entities.Sort((x, y) => x.CurrentNode.index.CompareTo(y.CurrentNode.index)); // asc
+    }
+
+    public Team GetWinner()
+    {
+        return winner;
+    }
+
+    public void SetWinner(Team _winner)
+    {
+        winner = _winner;
     }
 
     public List<BaseEntity> GetEntitiesAgainst(Team myTeam)
@@ -160,48 +170,36 @@ public class GameManager : Manager<GameManager>
         return amount;
     }
 
-    public void IncreaseBuilderCounter(Team team)
+    public bool CheckBuilders(Team _team)
     {
-        if (team == Team.Team1)
-        {
-            team1builderCounter += 1;
-        }
-        else if (team == Team.Team2)
-        {
-            team2builderCounter += 1;
-        }
-    }
+        bool builderFound = false;
 
-    public void DecreaseBuilderCounter(Team team)
-    {
-        if (team == Team.Team1)
+        if(_team == Team.Team1)
         {
-            team1builderCounter -= 1;
-        }
-        else if (team == Team.Team2)
-        {
-            team2builderCounter -= 1;
-        }
-    }
+            foreach (BaseEntity entity in team1Entities)
+            {
+                if(entity != null && entity.isBuilder)
+                {
+                    builderFound = true;
+                    break;
+                }
+            }
 
-    public bool GetBuilderCounter(Team team)
-    {
-        if (team == Team.Team1)
-        {
-            if (team1builderCounter > 0)
-                return true;
-            else
-                return false;
         }
-        else if (team == Team.Team2)
+        else if (_team == Team.Team2)
         {
-            if (team2builderCounter > 0)
-                return true;
-            else
-                return false;
+            foreach (BaseEntity entity in team2Entities)
+            {
+                if (entity != null)
+                {
+                    builderFound = true;
+                    break;
+                }
+            }
+
         }
 
-        return false;
+        return builderFound;
     }
 
 
@@ -275,14 +273,6 @@ public class GameManager : Manager<GameManager>
 
     }
 
-    public void ChangeTeam()
-    {
-        if (myTeam == Team.Team1)
-            myTeam = Team.Team2;
-        else if (myTeam == Team.Team2)
-            myTeam = Team.Team1;
-    }
-
     public bool CheckTurnLimit()
     {
         if (GetTurnCounter() == 20)
@@ -290,21 +280,6 @@ public class GameManager : Manager<GameManager>
         else
             return false;
     }
-
-    /*
-    public void DebugFight()
-    {
-        for (int i = 0; i < unitsPerTeam; i++)
-        {
-            int randomIndex = UnityEngine.Random.Range(0, entitiesDatabase.allEntities.Count);
-            BaseEntity newEntity = Instantiate(entitiesDatabase.allEntities[randomIndex].prefab, team2Parent);
-
-            team2Entities.Add(newEntity);
-
-            newEntity.Setup(Team.Team2, GridManager.Instance.GetFreeNode(Team.Team2));
-        }
-    }
-    */
 
     IEnumerator RoundEndCoroutine(List<BaseEntity> _entities)
     {
