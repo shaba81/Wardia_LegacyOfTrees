@@ -9,20 +9,22 @@ public class WeaponStorehouseEntity : BaseEntity
         //Retrieve current node
         //Check for neighbors and check all entities that have the same node as the neighbors
         //Give Buffs
-
-        foreach(Node n in GridManager.Instance.Neighbors(currentNode))
+        if(this.myTeam == GameManager.Instance.myTeam)
         {
-            foreach(BaseEntity entity in GameManager.Instance.GetMyEntities(myTeam))
+            foreach(Node n in GridManager.Instance.Neighbors(currentNode))
             {
-                if(!entity.isBuilding && entity.CurrentNode == n)
+                foreach(BaseEntity entity in GameManager.Instance.GetMyEntities(myTeam))
                 {
-                    if(!entity.IsDamageBuffed())
+                    if(!entity.isBuilding && entity.CurrentNode == n)
                     {
-                        entity.ReceiveAttackBuff(1);
-                        if(this.myTeam == GameManager.Instance.myTeam)
-                            PopUpManager.Instance.SpawnPopUp(entity.transform.position, PopUpType.Damage);
+                        if(!entity.IsDamageBuffed())
+                        {
+                            entity.ReceiveAttackBuff(1);
+                        
+                                PopUpManager.Instance.SpawnPopUp(entity.transform.position, PopUpType.Damage);
+                        }
+                        Debug.Log("Entity: " + entity.name + " received buff." + entity.baseDamage);
                     }
-                    Debug.Log("Entity: " + entity.name + " received buff." + entity.baseDamage);
                 }
             }
         }
