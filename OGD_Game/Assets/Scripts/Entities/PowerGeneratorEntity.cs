@@ -8,13 +8,17 @@ public class PowerGeneratorEntity : BaseEntity
 
     protected override void OnRoundStart()
     {
-        turnCounter++;
-        if(turnCounter == 2)
+        if(this.myTeam == GameManager.Instance.myTeam)
         {
-            PlayerData.Instance.GiveMoney(6);
-            UITreeUpdater.Instance.UpdateTrees();
-            Debug.Log("Entity: " + name + " gave 6 points.");
-            TakeDamage(1);
+            turnCounter++;
+            if(turnCounter == 2)
+            {
+                PlayerData.Instance.GiveMoney(5);
+                PopUpManager.Instance.SpawnPopUp(this.transform.position, PopUpType.FivePoints);
+                UITreeUpdater.Instance.UpdateTrees();
+                Debug.Log("Entity: " + name + " gave 5 points.");
+                TakeDamage(1);
+            }
         }
 
     }

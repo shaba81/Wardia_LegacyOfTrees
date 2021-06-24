@@ -7,14 +7,14 @@ public class NimbleEntity : BaseEntity
     public override void OnRoundEnd()
     {
 
-        if (!Move())
+        if (!Move(movement))
         {
             //means there's someone on the other tile.
             //if it's an enemy, combat;
             foreach (BaseEntity entity in GameManager.Instance.GetEntitiesAgainst(myTeam))
             {
                 
-                if (GridManager.Instance.GetNextNode(currentNode, positions, true) == entity.CurrentNode)
+                if (GridManager.Instance.GetNextNode(currentNode, positions, true, myTeam).index == entity.CurrentNode.index)
                 {
                         Debug.Log("Combat");
                         int damageToTake = entity.baseDamage;
@@ -25,7 +25,7 @@ public class NimbleEntity : BaseEntity
                         }
 
                         if (!dead)
-                            Move();
+                            Move(2);
 
                 
                 }

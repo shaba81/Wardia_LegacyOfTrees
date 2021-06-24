@@ -8,16 +8,16 @@ public class TurnHandler : MonoBehaviour
     TurnManager tm;
     public Text turnText;
     public Team myTeam;
-    private Team winner = Team.None;
     private int opponentNaturePoints = 0;
+    public LevelLoader levelLoader;
     [SerializeField]
     public NetworkActionsHandler networkActionsHandler;
     private void Awake()
-    {       
+    {
         tm = TurnManager.Instance;
         tm.OnStateChange += HandleOnStateChange;
     }
-    
+
     void Start()
     {
         myTeam = GameManager.Instance.myTeam;
@@ -35,72 +35,81 @@ public class TurnHandler : MonoBehaviour
 
     void Update()
     {
-        if(tm.gameState == GameState.Start)
+        //CHECK IF THE PLAYER HAS ALL THE TREES
+        if (GameManager.Instance.CheckVictoryByTrees())
+        {
+            GameManager.Instance.SetWinner(GameManager.Instance.myTeam);
+            Debug.Log(GameManager.Instance.GetWinner() + " won the match!");
+            levelLoader.LoadResultscreen();
+        }
+
+        //CHECK IF WE REACHED TURN LIMIT
+        if (GameManager.Instance.CheckTurnLimit())
+        {
+            GameManager.Instance.SetWinner(UITreeUpdater.Instance.GetWinner());
+
+            //check who has more trees
+            if (GameManager.Instance.GetWinner() == GameManager.Instance.myTeam)
+            {
+                Debug.Log(GameManager.Instance.GetWinner() + " won the match!");
+                levelLoader.LoadResultscreen();
+                //SWITCH TO END SCREEN, variable winner is preserved.
+            }
+            else if (GameManager.Instance.GetWinner() != GameManager.Instance.myTeam && GameManager.Instance.GetWinner() != Team.None)
+            {
+                Debug.Log(GameManager.Instance.GetWinner() + " won the match! And you lost.");
+                levelLoader.LoadResultscreen();
+                //SWITCH TO END SCREEN, variable winner is preserved.
+            }
+            else
+            {
+                Debug.Log("Same amount of trees!");
+            }
+
+
+            //if they're equal, check who whas more nature points
+            networkActionsHandler.SendNaturePoints(PlayerData.Instance.Money);
+            opponentNaturePoints = GameManager.Instance.opponentNaturePoints;
+            if (PlayerData.Instance.Money > opponentNaturePoints)
+            {
+                GameManager.Instance.SetWinner(GameManager.Instance.myTeam);
+                Debug.Log(GameManager.Instance.GetWinner() + " won the match!");
+                levelLoader.LoadResultscreen();
+                //SWITCH TO END SCREEN, variable winner is preserved.
+            }
+            else if (PlayerData.Instance.Money < opponentNaturePoints)
+            {
+                GameManager.Instance.SetWinner(GameManager.Instance.GetOpposingTeam());
+                Debug.Log(GameManager.Instance.GetWinner() + " won the match! And you lost.");
+                levelLoader.LoadResultscreen();
+                //SWITCH TO END SCREEN, variable winner is preserved.
+            }
+        }
+
+        if (tm.gameState == GameState.Start)
         {
             UIButtonManager.Instance.EnableEndButton();
 
-            //CHECK IF THE PLAYER HAS ALL THE TREES
-            if(GameManager.Instance.CheckVictoryByTrees())
-            {
-                winner = GameManager.Instance.myTeam;
-                Debug.Log(winner + " won the match!");
-            }
-
-            //CHECK IF WE REACHED TURN LIMIT
-            if (GameManager.Instance.CheckTurnLimit())
-            {
-                winner = UITreeUpdater.Instance.GetWinner();
-
-                //check who has more trees
-                if (winner == GameManager.Instance.myTeam)
-                {
-                    Debug.Log(winner + " won the match!");
-                    //SWITCH TO END SCREEN, variable winner is preserved.
-                }
-                else if (winner == GameManager.Instance.GetOpposingTeam())
-                {
-                    Debug.Log(winner + " won the match! And you lost.");
-                    //SWITCH TO END SCREEN, variable winner is preserved.
-                }
-                else
-                {
-                    Debug.Log("Same amount of trees!");
-                }
-
-
-                //if they're equal, check who whas more nature points
-                networkActionsHandler.SendNaturePoints(PlayerData.Instance.Money);
-                opponentNaturePoints = GameManager.Instance.opponentNaturePoints;
-                if(PlayerData.Instance.Money > opponentNaturePoints)
-                {
-                    winner = GameManager.Instance.myTeam;
-                    Debug.Log(winner + " won the match!");
-                    //SWITCH TO END SCREEN, variable winner is preserved.
-                }
-                else if (PlayerData.Instance.Money < opponentNaturePoints)
-                {
-                    winner = GameManager.Instance.GetOpposingTeam();
-                    Debug.Log(winner + " won the match! And you lost.");
-                    //SWITCH TO END SCREEN, variable winner is preserved.
-                }
-            }
-
+            
             PlayerData.Instance.GiveMoney(2);
 
             foreach (TreeEntity tree in GameManager.Instance.trees)
             {
 
-                foreach (BaseEntity entity in GameManager.Instance.GetMyEntities(myTeam)) {
+                foreach (BaseEntity entity in GameManager.Instance.GetMyEntities(myTeam))
+                {
                     //entity.isFirstTurn = false;
-                    if(tree.parent == GridManager.Instance.GetTileForNode(entity.CurrentNode)) {
+                    if (tree.parent == GridManager.Instance.GetTileForNode(entity.CurrentNode))
+                    {
                         tree.SetConquerer(entity.GetMyTeam());
                     }
                 }
 
 
-                if(tree.GetConquerer() == myTeam)
+                if (tree.GetConquerer() == myTeam)
                 {
                     PlayerData.Instance.GiveMoney(1);
+                    PopUpManager.Instance.SpawnPopUp(tree.transform.position, PopUpType.OnePoint);
                 }
             }
             networkActionsHandler.SendTreeUpdate();
@@ -112,7 +121,7 @@ public class TurnHandler : MonoBehaviour
             tm.SetGameState(GameState.Buying);
         }
 
-        if(tm.gameState == GameState.EndTurn)
+        if (tm.gameState == GameState.EndTurn)
         {
             UIButtonManager.Instance.DisableEndButton();
             GameManager.Instance.SortEntities();
@@ -127,11 +136,6 @@ public class TurnHandler : MonoBehaviour
             TurnManager.Instance.SetGameState(GameState.Wait);
         }
 
-        if(tm.gameState == GameState.Wait)
-        {
-            //GameManager.Instance.UpdateEnemyTrees();
-        }
-        
     }
 
     public void HandleOnStateChange()
@@ -142,7 +146,7 @@ public class TurnHandler : MonoBehaviour
     public void EndTurn()
     {
         tm.SetGameState(GameState.EndTurn);
-        
+
     }
 
     public void UpdateTurnCounter()

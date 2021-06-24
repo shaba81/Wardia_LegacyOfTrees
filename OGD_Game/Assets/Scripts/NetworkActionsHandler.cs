@@ -4,12 +4,13 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.SceneManagement;
+
 public class NetworkActionsHandler : MonoBehaviourPunCallbacks
 {
 
 
     [PunRPC]
-     void SpawnEntity(string name, int index)
+    void SpawnEntity(string name, int index)
     {
         EnemySpawner.Instance.SpawnEnemy(name, index);
     }
@@ -20,35 +21,55 @@ public class NetworkActionsHandler : MonoBehaviourPunCallbacks
 
 
     [PunRPC]
-     void ChangeTurn()
+    void ChangeTurn()
     {
         GameManager.Instance.FireOpponentActions();
         TurnManager.Instance.SetGameState(GameState.Start);
-        Debug.LogFormat("Changed turn");
     }
     public void SendTurn()
     {
         this.photonView.RPC("ChangeTurn", RpcTarget.Others);
     }
 
+    // [PunRPC]
+    // void OnRoundEnd(int nodeIndex)
+    // {
+    //     GameManager.Instance.FireOnRoundEndAt(nodeIndex);
+    //     // Debug.Log("Round End");
+    // }
+    // public void FireOnRoundEnd(BaseEntity e)
+    // {
+    //     this.photonView.RPC("OnRoundEnd", RpcTarget.All, e.CurrentNode.index);
+    // }
+
+    // [PunRPC]
+    // void RemoveEntity(int index)
+    // {
+    //     GameManager.Instance.RemoveAt(index);
+    //     Debug.Log("REMOVED ENTITY");
+    // }
+    // public void FireRemoveEntity(BaseEntity remove)
+    // {
+    //     this.photonView.RPC("RemoveEntity", RpcTarget.Others, remove.CurrentNode.index);
+    // }
+
     [PunRPC]
     void UpdateTurn()
     {
         GameManager.Instance.currentTurn += 1;
         UITurnUpdater.Instance.UpdateTurn();
-        Debug.LogFormat("Updated turn counter");
     }
     public void SendUpdateTurn()
     {
         this.photonView.RPC("UpdateTurn", RpcTarget.Others);
     }
 
-    
+
     [PunRPC]
     void UpdateOpponentNaturePoints(int amount)
     {
         GameManager.Instance.UpdateOpponentNaturePoints(amount);
-        Debug.LogFormat("Updated Nature Points");
+        //Debug.LogFormat("Updated Nature Points");
     }
     public void SendNaturePoints(int amount)
     {
@@ -59,7 +80,7 @@ public class NetworkActionsHandler : MonoBehaviourPunCallbacks
     void UpdateTrees()
     {
         GameManager.Instance.UpdateEnemyTrees();
-        Debug.LogFormat("Updated Enemy Trees");
+        //Debug.LogFormat("Updated Enemy Trees");
     }
     public void SendTreeUpdate()
     {

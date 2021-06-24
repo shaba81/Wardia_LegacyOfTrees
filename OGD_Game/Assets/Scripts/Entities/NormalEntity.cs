@@ -6,14 +6,14 @@ public class NormalEntity : BaseEntity
 {
     public override void OnRoundEnd()
     {
-        if (!Move())
+        if (!Move(movement))
         {
             //means there's someone on the other tile.
             //if it's an enemy, combat;
             foreach (BaseEntity entity in GameManager.Instance.GetEntitiesAgainst(myTeam))
             {
                 Debug.Log(entity.GetMyTeam());
-                if (GridManager.Instance.GetNextNode(currentNode, positions, false).index == entity.CurrentNode.index)
+                if (GridManager.Instance.GetNextNode(currentNode, positions, false, myTeam).index == entity.CurrentNode.index)
                 {
                         Debug.Log("Combat");
                         int damageToTake = entity.baseDamage;
@@ -22,7 +22,7 @@ public class NormalEntity : BaseEntity
 
                         //This means if i'm not dead
                         if (!TakeDamage(damageToTake))
-                            Move();
+                            Move(movement);
 
                   
                 }

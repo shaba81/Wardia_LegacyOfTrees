@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class DeckManager : MonoBehaviour
 {
 
-    public List<UICard> unitsCards;
-    public List<UICard> buildingsCards;
+    public List<RosterCard> unitsCards;
+    public List<RosterCard> buildingsCards;
     public List<UICard> allCards;
     public List<GameObject> unitsCursors;
     public List<GameObject> buildingsCursors;
@@ -17,6 +18,12 @@ public class DeckManager : MonoBehaviour
 
     public GameObject unitsObject;
     public GameObject buildingsObject;
+
+    public Color buttonSelectedColor;
+    public Color buttonUnselectedColor;
+
+    public Image units_button;
+    public Image buildings_button;
 
 
     private 
@@ -35,6 +42,7 @@ public class DeckManager : MonoBehaviour
 
     private void LoadCards()
     {
+
         for (int i = 0; i < allCards.Count; i++)
         {
             if (!allCards[i].gameObject.activeSelf)
@@ -43,13 +51,13 @@ public class DeckManager : MonoBehaviour
             allCards[i].AltSetup(cardsDb.allEntities[i], this);
         }
 
+        
         for (int i = 0; i < unitsCards.Count; i++)
         {
             if (!unitsCards[i].gameObject.activeSelf)
                 unitsCards[i].gameObject.SetActive(true);
 
-            unitsCards[i].AltSetup(unitsDb.allEntities[i], this);
-            unitsCards[i].clickable = false;
+            unitsCards[i].Setup(unitsDb.allEntities[i]);
         }
 
         for (int i = 0; i < buildingsCards.Count; i++)
@@ -57,9 +65,9 @@ public class DeckManager : MonoBehaviour
             if (!buildingsCards[i].gameObject.activeSelf)
                 buildingsCards[i].gameObject.SetActive(true);
 
-            buildingsCards[i].AltSetup(buildingsDb.allEntities[i], this);
-            buildingsCards[i].clickable = false;
+            buildingsCards[i].Setup(buildingsDb.allEntities[i]);
         }
+        
 
     }
 
@@ -67,16 +75,15 @@ public class DeckManager : MonoBehaviour
     {
         if(!myData.isBuilding)
         {
-            if(index < 4)
+            if(index < 5)
             {
                 unitsCursors[index].SetActive(false);
                 unitsDb.allEntities[index] = myData;
                 unitsCards[index].gameObject.SetActive(true);
-                unitsCards[index].AltSetup(unitsDb.allEntities[index], this);
-                unitsCards[index].clickable = false;
+                unitsCards[index].Setup(unitsDb.allEntities[index]);
 
                 index++;
-                if(index != 4)
+                if(index != 5)
                 {
                     unitsCursors[index].SetActive(true);
                 } 
@@ -90,8 +97,7 @@ public class DeckManager : MonoBehaviour
                 buildingsCursors[buildingsIndex].SetActive(false);
                 buildingsDb.allEntities[buildingsIndex] = myData;
                 buildingsCards[buildingsIndex].gameObject.SetActive(true);
-                buildingsCards[buildingsIndex].AltSetup(buildingsDb.allEntities[buildingsIndex], this);
-                buildingsCards[buildingsIndex].clickable = false;
+                buildingsCards[buildingsIndex].Setup(buildingsDb.allEntities[buildingsIndex]);
 
                 buildingsIndex++;
                 if (buildingsIndex != 3)
@@ -114,7 +120,7 @@ public class DeckManager : MonoBehaviour
 
     public void ResetDeck()
     {
-        if (index != 4)
+        if (index != 5)
         {
             unitsCursors[index].SetActive(false);  
         }
@@ -133,18 +139,20 @@ public class DeckManager : MonoBehaviour
     }
 
     //Used to switch from units and buildings.
-    public void SwitchDeck()
+    public void SwitchToBuildingsDeck()
     {
-        if(unitsObject.activeSelf)
-        {
+        units_button.color = buttonUnselectedColor;
             unitsObject.SetActive(false);
+        buildings_button.color = buttonSelectedColor;
             buildingsObject.SetActive(true);
-        }
-        else if (!unitsObject.activeSelf)
-        {
+    }
+
+    public void SwitchToUnitsDeck()
+    {
+        buildings_button.color = buttonUnselectedColor;
             buildingsObject.SetActive(false);
+        units_button.color = buttonSelectedColor;
             unitsObject.SetActive(true);
-        }
     }
 
 }

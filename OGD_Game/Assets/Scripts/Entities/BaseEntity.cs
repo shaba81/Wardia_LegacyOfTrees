@@ -19,8 +19,8 @@ public class BaseEntity : MonoBehaviour
     private int originalHealth;
     public int movement = 1;
     public bool isBuilding = false;
-    protected bool isBuilder = false;
-    
+    public bool isBuilder = false;
+
 
     public Team myTeam;
     protected BaseEntity currentTarget = null;
@@ -34,12 +34,12 @@ public class BaseEntity : MonoBehaviour
     public Node CurrentNode => currentNode;
     public Node StartingtNode => startingNode;
 
-    
+
     protected bool moving;
     protected Node destination;
     protected HealthBar healthbar;
 
-    protected bool dead = false;
+    public bool dead = false;
     protected bool canAttack = true;
     protected float waitBetweenAttack;
 
@@ -93,9 +93,9 @@ public class BaseEntity : MonoBehaviour
 
         AddPlacingConditions();
 
-        if(isBuilding)
+        if (isBuilding)
         {
-            foreach(BaseEntity entity in GameManager.Instance.GetMyEntities(myTeam)) 
+            foreach (BaseEntity entity in GameManager.Instance.GetMyEntities(myTeam))
             {
                 if (entity.isBuilder)
                 {
@@ -105,7 +105,7 @@ public class BaseEntity : MonoBehaviour
         }
 
         //Here i add every tree conquered into the eligible nodes for placing
-        foreach(TreeEntity t in GameManager.Instance.trees)
+        foreach (TreeEntity t in GameManager.Instance.trees)
         {
             if (t.GetConquerer() == GameManager.Instance.myTeam)
             {
@@ -119,7 +119,7 @@ public class BaseEntity : MonoBehaviour
         {
             foreach (BaseEntity building in GameManager.Instance.GetMyEntities(myTeam))
             {
-                if(building.isBuilding)
+                if (building.isBuilding)
                 {
                     eligibleNodes.Add(building.currentNode);
                 }
@@ -165,11 +165,12 @@ public class BaseEntity : MonoBehaviour
     {
         //int currentIndex = positions.IndexOf(currentNode.index);
         int indexOfDestination = 0;
-        if(myTeam == Team.Team1)
+        if (myTeam == Team.Team1)
         {
             indexOfDestination = from + amount;
 
-        } else if (myTeam == Team.Team2)
+        }
+        else if (myTeam == Team.Team2)
         {
             indexOfDestination = from - amount;
         }
@@ -220,30 +221,29 @@ public class BaseEntity : MonoBehaviour
         return true;
     }
 
-    protected bool Move()
+    protected bool Move(int amount)
     {
-
         //to get a node at a given index GridManager.Instance.graph.Nodes[index];
-        int index = GetNextIndex(positions.IndexOf(currentNode.index), movement);
+        int index = GetNextIndex(positions.IndexOf(currentNode.index), amount);
 
         Node destination = GridManager.Instance.GetNodeAtIndex(positions[index]);
-
+        Team obstructingTroopTeam = GameManager.Instance.GetTroopForNode(destination);
         //If its occupied by a unit from enemy team
-        if(GameManager.Instance.GetTroopForNode(destination) == GameManager.Instance.GetOpposingTeam())
+        if (obstructingTroopTeam != myTeam && obstructingTroopTeam != Team.None)
         {
             Debug.Log("Enemy Blocking");
             return false;
         }
         //If its occupied by a unit from my team
-        else if (destination.IsOccupied  && GameManager.Instance.GetTroopForNode(destination) == GameManager.Instance.myTeam)
+        else if (destination.IsOccupied && obstructingTroopTeam == myTeam)
         {
-            if(movement == 1)
+            if (amount == 1)
             {
-                    destination = GridManager.Instance.GetNodeAtIndex(positions[GetIndexBefore(index, movement)]);
+                destination = GridManager.Instance.GetNodeAtIndex(positions[GetIndexBefore(index, amount)]);
             }
-            else if(movement > 1)
+            else if (amount > 1)
             {
-                    destination = GridManager.Instance.GetNodeAtIndex(positions[GetNextIndex(index, 1)]);
+                destination = GridManager.Instance.GetNodeAtIndex(positions[GetNextIndex(index, 1)]);
             }
 
         }
@@ -297,6 +297,7 @@ public class BaseEntity : MonoBehaviour
     public void ReceiveDefenseBuff(int amount)
     {
         baseHealth += amount;
+        barPrefab.Setup(this.transform, baseHealth);
     }
 
     public void ResetBuffs()

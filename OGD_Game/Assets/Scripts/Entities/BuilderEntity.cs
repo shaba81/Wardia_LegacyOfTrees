@@ -30,7 +30,6 @@ public class BuilderEntity : BaseEntity
     {
 
         isBuilder = true;
-        GameManager.Instance.IncreaseBuilderCounter(myTeam);
         GameManager.Instance.OnRoundStart -= OnRoundStart;
 
     }
@@ -39,7 +38,7 @@ public class BuilderEntity : BaseEntity
     public override void OnRoundEnd()
     {
 
-        if (!Move())
+        if (!Move(movement))
         {
             //means there's someone on the other tile.
             //if it's an enemy, combat;
@@ -47,7 +46,8 @@ public class BuilderEntity : BaseEntity
             foreach (BaseEntity entity in GameManager.Instance.GetEntitiesAgainst(myTeam))
             {
                 Debug.Log(entity.name);
-                if (GridManager.Instance.GetNextNode(currentNode, positions, false).index == entity.CurrentNode.index)
+               
+                if (GridManager.Instance.GetNextNode(currentNode, positions, false, myTeam).index == entity.CurrentNode.index)
                 {
                         Debug.Log("Combat");
                         int damageToTake = entity.baseDamage;
@@ -56,7 +56,7 @@ public class BuilderEntity : BaseEntity
 
                         //This means if i'm not dead
                         if (!TakeDamage(damageToTake))
-                            Move();
+                            Move(movement);
 
                     
                 }
@@ -68,7 +68,7 @@ public class BuilderEntity : BaseEntity
 
     protected override void OnUnitDied(BaseEntity diedUnity)
     {
-        GameManager.Instance.DecreaseBuilderCounter(myTeam);
+        
     }
 
 
