@@ -37,6 +37,11 @@ public class UICard : MonoBehaviour
         this.deckmanagerRef = deckref;
     }
 
+    public void DeckSetup(EntitiesDatabaseSO.EntityData myData, DeckManager deckref)
+    {
+
+    }
+
     public void OnClick()
     {
         if (clickable)
