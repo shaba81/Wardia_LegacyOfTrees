@@ -9,8 +9,8 @@ public class ResultSceneScript : MonoBehaviour
     public Image black;
     public Text winnerText;
     public Transform arrivalPoint;
-    private Team winner = Team.Team1;
-    private Team myTeam = Team.Team1;
+    private Team winner;
+    private Team myTeam;
     public float moveXspeed;
 
     // Start is called before the first frame update
