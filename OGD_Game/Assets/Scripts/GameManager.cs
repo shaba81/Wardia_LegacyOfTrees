@@ -371,6 +371,12 @@ public class GameManager : Manager<GameManager>
     //         }
     //     }
     // }
+
+    public void ResetAll()
+    {
+        team1Entities.Clear();
+        team2Entities.Clear();
+    }
 }
 
 public enum Team
