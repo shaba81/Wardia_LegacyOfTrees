@@ -28,7 +28,7 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadMatchmaking()
     {
-      StartCoroutine(LoadLevel("MatchMaking"));
+      StartCoroutine(LoadLevel("MatchmakingScene"));
       page.Play();
     }
 

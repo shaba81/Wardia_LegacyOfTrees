@@ -43,9 +43,9 @@ public class ResultSceneScript : MonoBehaviour
                 }
             }
         }
-        else if (black.transform.position.x > arrivalPoint.position.x)
+        else if (winner == Team.Team2)
         {
-            if (Vector3.Distance(black.transform.position, arrivalPoint.position) > 0.5f)
+            if (black.transform.position.x > arrivalPoint.position.x)
             {
                 black.transform.position -= new Vector3(moveXspeed, 0) * Time.deltaTime;
             }
@@ -62,6 +62,11 @@ public class ResultSceneScript : MonoBehaviour
                     winnerText.gameObject.SetActive(true);
                 }
             }
+        }
+        else
+        {
+            winnerText.text = "Draw!";
+            winnerText.gameObject.SetActive(true);
         }
     }
 }
