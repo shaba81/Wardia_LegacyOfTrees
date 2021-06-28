@@ -17,7 +17,7 @@ public class GameManager : Manager<GameManager>
     public Action<BaseEntity> OnUnitDied;
 
     public Team myTeam;
-    private Team winner = Team.None;
+    public Team winner = Team.None;
 
     List<BaseEntity> team1Entities = new List<BaseEntity>();
     List<BaseEntity> team2Entities = new List<BaseEntity>();

@@ -449,7 +449,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Winner!
+  m_Text: 
 --- !u!222 &518184287
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1091,7 +1091,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8351881979440925848, guid: edba68772c689004db1f3b3531405b6b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edba68772c689004db1f3b3531405b6b, type: 3}
