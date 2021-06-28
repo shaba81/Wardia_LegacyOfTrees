@@ -35,6 +35,7 @@ public class GameManager : Manager<GameManager>
 
     private void Start()
     {
+        Destroy(GameObject.Find("AudioSource"));
         myTeam = TeamManager.Instance.GetTeam();
         if (myTeam == Team.Team2)
         {
