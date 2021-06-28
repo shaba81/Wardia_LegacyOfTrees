@@ -7,6 +7,7 @@ public class TreeEntity : MonoBehaviour
     public bool isConquered = false;
     private Team conquerer = Team.None;
     public Tile parent;
+    public AudioSource conquerSound;
 
     public GameObject whiteTree;
     public GameObject darkTree;
@@ -46,6 +47,7 @@ public class TreeEntity : MonoBehaviour
             normalTree.gameObject.SetActive(true);
         }
 
+        conquerSound.Play();
         isConquered = true;
         conquerer = team;
     }

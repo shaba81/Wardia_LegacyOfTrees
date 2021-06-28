@@ -62,25 +62,6 @@ public class BaseEntity : MonoBehaviour
         healthbar.Setup(this.transform, baseHealth);
     }
 
-    public void Spawn(Team team)
-    {
-
-        myTeam = team;
-        if (!isBuilding)
-        {
-            spriteRender.sprite = opponentSprite;
-        }
-
-        //this.currentNode = GridManager.Instance.GetNodeAtIndex(nodeIndex);
-        transform.position = currentNode.worldPosition;
-
-        //currentNode.SetOccupied(true);
-        //startingNode = currentNode;
-
-        healthbar = Instantiate(barPrefab, this.transform);
-        healthbar.Setup(this.transform, baseHealth);
-    }
-
     protected void Start()
     {
 

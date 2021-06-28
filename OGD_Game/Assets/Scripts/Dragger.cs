@@ -136,6 +136,7 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
                     }
                     thisEntity.SetCurrentNode(candidateNode);
                     thisEntity.SetStartingNode(candidateNode);
+                    SoundFxManager.Instance.PlaySpawn();
 
 
                     int entityIndex = GameManager.Instance.GetMyEntities(GameManager.Instance.myTeam).IndexOf(thisEntity);
@@ -165,6 +166,7 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
                     thisEntity.SetCurrentNode(candidateNode);
                     thisEntity.SetStartingNode(candidateNode);
                     candidateNode.SetOccupied(true);
+                    SoundFxManager.Instance.PlaySpawn();
 
                     thisEntity.transform.position = candidateNode.worldPosition;
 

@@ -69,4 +69,9 @@ public class ResultSceneScript : MonoBehaviour
             winnerText.gameObject.SetActive(true);
         }
     }
+
+    private void OnDestroy()
+    {
+        //GameManager.Instance.ResetAll();
+    }
 }

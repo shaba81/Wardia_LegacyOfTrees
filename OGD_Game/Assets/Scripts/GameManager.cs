@@ -73,6 +73,28 @@ public class GameManager : Manager<GameManager>
 
         newEntity.Setup(myTeam, /*GridManager.Instance.GetFreeNode(Team.Team1)*/ spawnTransform.position);
 
+        switch (newEntity.gameObject.name)
+        {
+            case "Peasant":
+                SoundFxManager.Instance.PlayBuilder();
+                break;
+            case "Avenger":
+                SoundFxManager.Instance.PlayAvenger();
+                break;
+            case "Evangelist":
+                SoundFxManager.Instance.PlayEvangelist();
+                break;
+            case "Tiger":
+                SoundFxManager.Instance.PlayTiger();
+                break;
+            case "Jaguar":
+                SoundFxManager.Instance.PlayJaguar();
+                break;
+            default:
+                SoundFxManager.Instance.PlayBuilding();
+                break;
+        }
+
         TurnManager.Instance.SetGameState(GameState.Placing);
 
     }
