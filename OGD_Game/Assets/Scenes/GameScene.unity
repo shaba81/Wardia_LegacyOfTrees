@@ -3530,6 +3530,7 @@ MonoBehaviour:
   - {fileID: 261668356}
   - {fileID: 742204211}
   money: {fileID: 229729450}
+  allCardsDb: {fileID: 11400000, guid: 8ab941f082f9f6b4bbbc27cc1a10add9, type: 2}
 --- !u!1 &571545308
 GameObject:
   m_ObjectHideFlags: 0

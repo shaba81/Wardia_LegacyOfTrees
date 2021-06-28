@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -15,6 +16,10 @@ public class DeckManager : MonoBehaviour
     public EntitiesDatabaseSO cardsDb;
     public EntitiesDatabaseSO unitsDb;
     public EntitiesDatabaseSO buildingsDb;
+
+    private List<string> unitsNames;
+    private List<string> buildingsNames;
+
 
     public GameObject unitsObject;
     public GameObject buildingsObject;
@@ -37,6 +42,9 @@ public class DeckManager : MonoBehaviour
     {
         index = 0;
         buildingsIndex = 0;
+        //Prendi i nomi da playerPrefs e salvali nelle rispettive liste
+        unitsNames = PlayerPrefsX.GetStringArray("Units").ToList<string>();
+        buildingsNames = PlayerPrefsX.GetStringArray("Buildings").ToList<string>();
         LoadCards();
     }
 
@@ -57,7 +65,23 @@ public class DeckManager : MonoBehaviour
             if (!unitsCards[i].gameObject.activeSelf)
                 unitsCards[i].gameObject.SetActive(true);
 
-            unitsCards[i].Setup(unitsDb.allEntities[i]);
+            if(unitsNames == null)
+            {
+                unitsCards[i].Setup(unitsDb.allEntities[i]);
+            }
+            else
+            {
+                //Prendi PlayerPrefsX.GetArray(i) che è il nome, prendi dal db totale i dati con quel nome e salvalo in data
+                foreach (EntitiesDatabaseSO.EntityData _data in cardsDb.allEntities)
+                {
+                    if (_data.name.Equals(unitsNames[i]))
+                    {
+                        unitsCards[i].Setup(_data);
+                    }
+                }
+            }
+
+            
         }
 
         for (int i = 0; i < buildingsCards.Count; i++)
@@ -65,10 +89,26 @@ public class DeckManager : MonoBehaviour
             if (!buildingsCards[i].gameObject.activeSelf)
                 buildingsCards[i].gameObject.SetActive(true);
 
-            buildingsCards[i].Setup(buildingsDb.allEntities[i]);
-        }
-        
+            if (unitsNames == null)
+            {
+                buildingsCards[i].Setup(buildingsDb.allEntities[i]);
+            }
+            else
+            {
 
+            }
+
+                //Prendi il nome, prendi dal db totale i dati con quel nome e salvalo in data
+                foreach (EntitiesDatabaseSO.EntityData _data in cardsDb.allEntities)
+            {
+                if (_data.name.Equals(buildingsNames[i]))
+                {
+                    buildingsCards[i].Setup(_data);
+                }
+            }
+        }
+
+        unitsNames.Clear();
     }
 
     public void AddCard(UICard card, EntitiesDatabaseSO.EntityData myData)
@@ -79,6 +119,8 @@ public class DeckManager : MonoBehaviour
             {
                 unitsCursors[index].SetActive(false);
                 unitsDb.allEntities[index] = myData;
+                //SAVE HERE
+                unitsNames.Add(myData.name);
                 unitsCards[index].gameObject.SetActive(true);
                 unitsCards[index].Setup(unitsDb.allEntities[index]);
 
@@ -96,6 +138,8 @@ public class DeckManager : MonoBehaviour
             {
                 buildingsCursors[buildingsIndex].SetActive(false);
                 buildingsDb.allEntities[buildingsIndex] = myData;
+                //SAVE HERE
+                buildingsNames.Add(myData.name);
                 buildingsCards[buildingsIndex].gameObject.SetActive(true);
                 buildingsCards[buildingsIndex].Setup(buildingsDb.allEntities[buildingsIndex]);
 
@@ -115,7 +159,9 @@ public class DeckManager : MonoBehaviour
 
     public void SaveDeck()
     {
-        //send the updated deckDb in network
+        //save data
+        PlayerPrefsX.SetStringArray("Units", unitsNames.ToArray());
+        PlayerPrefsX.SetStringArray("Buildings", buildingsNames.ToArray());
     }
 
     public void ResetDeck()
