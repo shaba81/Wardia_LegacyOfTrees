@@ -48,6 +48,10 @@ public class UIShop : MonoBehaviour
         //We should check if we have the money!
         if (PlayerData.Instance.CanAfford(cardData.cost))
         {
+            if(cardData.name.Equals("Avatar"))
+            {
+
+            }
             //We should check if we can actually place that card, some cards have requirements other than cost.
             if (!GameManager.Instance.checkTreeRequirement(cardData.treeRequirement))
             {

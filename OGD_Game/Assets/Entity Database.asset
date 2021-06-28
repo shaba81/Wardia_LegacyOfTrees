@@ -58,6 +58,24 @@ MonoBehaviour:
     treeRequirement: 0
     health: 4
     damage: 3
+  - prefab: {fileID: 4990559505339001610, guid: 2ec23c482f77409439d660f02f03e9e2, type: 3}
+    name: Charger
+    icon: {fileID: 21300000, guid: 54bea0ab4ec1412458c8d4fe0ea8117b, type: 3}
+    isBuilding: 0
+    cost: 4
+    movement: 2
+    treeRequirement: 0
+    health: 3
+    damage: 3
+  - prefab: {fileID: 7177515907236117976, guid: 1efd63e287df0644c8baf8243aae5d8d, type: 3}
+    name: Avatar
+    icon: {fileID: 21300000, guid: 912a3044618c5f34189cf551eb7b56e1, type: 3}
+    isBuilding: 0
+    cost: 7
+    movement: 1
+    treeRequirement: 1
+    health: 8
+    damage: 6
   - prefab: {fileID: 8646490322821188268, guid: 6dde4c112b0775f4c99f1762d570d2a3, type: 3}
     name: Tree
     icon: {fileID: 21300432, guid: 14aefffd3622c7347aad64f2bed35801, type: 3}
