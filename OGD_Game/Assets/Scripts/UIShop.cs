@@ -39,16 +39,22 @@ public class UIShop : MonoBehaviour
             if (!unitsCards[i].gameObject.activeSelf)
                 unitsCards[i].gameObject.SetActive(true);
 
-            /*
-            if (!unitsDb.allEntities[i].isBuilding)
-                unitsCards[i].Setup(unitsDb.allEntities[i], this);
-            */
-            foreach (EntitiesDatabaseSO.EntityData _data in allCardsDb.allEntities)
+            if(unitsNames == null)
             {
-                if (_data.name.Equals(unitsNames[i]))
+                if (!unitsDb.allEntities[i].isBuilding)
+                    unitsCards[i].Setup(unitsDb.allEntities[i], this);
+
+            }
+            else
+            {
+                foreach (EntitiesDatabaseSO.EntityData _data in allCardsDb.allEntities)
                 {
-                    unitsCards[i].Setup(_data, this);
+                    if (_data.name.Equals(unitsNames[i]))
+                    {
+                        unitsCards[i].Setup(_data, this);
+                    }
                 }
+
             }
         }
 
@@ -57,16 +63,22 @@ public class UIShop : MonoBehaviour
             if (!buildingCards[i].gameObject.activeSelf)
                 buildingCards[i].gameObject.SetActive(true);
 
-            /*
-            if(buildingsdDb.allEntities[i].isBuilding)
-                buildingCards[i].Setup(buildingsdDb.allEntities[i], this);
-            */
-            foreach (EntitiesDatabaseSO.EntityData _data in allCardsDb.allEntities)
+            if(buildingsNames == null)
             {
-                if (_data.name.Equals(buildingsNames[i]))
+                if(buildingsdDb.allEntities[i].isBuilding)
+                    buildingCards[i].Setup(buildingsdDb.allEntities[i], this);
+                
+            }
+            else
+            {
+                foreach (EntitiesDatabaseSO.EntityData _data in allCardsDb.allEntities)
                 {
-                    buildingCards[i].Setup(_data, this);
+                    if (_data.name.Equals(buildingsNames[i]))
+                    {
+                        buildingCards[i].Setup(_data, this);
+                    }
                 }
+
             }
         }
     }
