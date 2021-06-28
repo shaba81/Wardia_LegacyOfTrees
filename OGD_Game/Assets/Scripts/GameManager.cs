@@ -62,6 +62,7 @@ public class GameManager : Manager<GameManager>
         newEntity.baseHealth = entityData.health;
         newEntity.baseDamage = entityData.damage;
         newEntity.isBuilding = entityData.isBuilding;
+        newEntity.cost = entityData.cost;
 
         if (myTeam == Team.Team1)
             team1Entities.Add(newEntity);
@@ -74,6 +75,25 @@ public class GameManager : Manager<GameManager>
 
         TurnManager.Instance.SetGameState(GameState.Placing);
 
+    }
+
+    public void RevertSpawn()
+    {
+        foreach(Tile _t in GridManager.Instance.GetAllTiles())
+        {
+            _t.SetEligibleHighlight(false);
+        }
+
+        foreach(BaseEntity entity in GetMyEntities(myTeam))
+        {
+            if(entity.CurrentNode == null)
+            {
+                PlayerData.Instance.GiveMoney(entity.cost);
+                Remove(entity);
+                TurnManager.Instance.SetGameState(GameState.Buying);
+                break;
+            }
+        }
     }
 
     public Team GetOpposingTeam()
@@ -375,8 +395,24 @@ public class GameManager : Manager<GameManager>
 
     public void ResetAll()
     {
-        team1Entities.Clear();
-        team2Entities.Clear();
+        myTeam = Team.None;
+        GridManager.Instance.ResetNodes();
+
+        foreach(BaseEntity entity in GetAllEntities())
+        {
+            Remove(entity);
+        }
+        foreach(TreeEntity tree in trees)
+        {
+            tree.isConquered = false;
+            tree.SetConquerer(Team.None);
+        }
+
+        toRemove.Clear();
+        winner = Team.None;
+        currentTurn = 1;
+        opponentNaturePoints = 0;
+        PlayerData.Instance.ResetMoney();
     }
 }
 

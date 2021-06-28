@@ -13,6 +13,7 @@ public class BaseEntity : MonoBehaviour
 
     public Sprite opponentSprite;
 
+    public int cost = 0;
     public int baseDamage = 1;
     public int baseHealth = 3;
     private int originalDamage;
