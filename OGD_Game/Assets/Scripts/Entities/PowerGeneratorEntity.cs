@@ -20,6 +20,14 @@ public class PowerGeneratorEntity : BaseEntity
                 TakeDamage(1);
             }
         }
+        else
+        {
+            turnCounter++;
+            if (turnCounter == 4)
+            {               
+                TakeDamage(1);
+            }
+        }
 
     }
 

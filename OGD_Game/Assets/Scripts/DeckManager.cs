@@ -95,17 +95,16 @@ public class DeckManager : MonoBehaviour
             }
             else
             {
-
-            }
-
                 //Prendi il nome, prendi dal db totale i dati con quel nome e salvalo in data
                 foreach (EntitiesDatabaseSO.EntityData _data in cardsDb.allEntities)
-            {
-                if (_data.name.Equals(buildingsNames[i]))
                 {
-                    buildingsCards[i].Setup(_data);
+                    if (_data.name.Equals(buildingsNames[i]))
+                    {
+                        buildingsCards[i].Setup(_data);
+                    }
                 }
             }
+           
         }
 
         unitsNames.Clear();
