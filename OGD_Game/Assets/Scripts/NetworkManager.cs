@@ -63,6 +63,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnDisconnected(DisconnectCause cause)
     {
         progressLabel.SetActive(false);
+        LevelLoader.Instance.LoadMainmenu();
+        GameManager.Instance.ResetAll();
         Debug.LogWarningFormat("PUN: OnDisconnected() was called by PUN with reason {0}", cause);
     }
     public override void OnJoinRandomFailed(short returnCode, string message)
@@ -108,7 +110,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnPlayerLeftRoom(Player other)
     {
         Debug.LogFormat("OnPlayerLeftRoom() {0}", other.NickName);
-
+        Disconnect(false);
 
         if (PhotonNetwork.IsMasterClient)
         {
@@ -117,7 +119,16 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         }
     }
 
+    public void Disconnect(bool isMe)
+    {
+        if(!isMe){
+            //player left the room
+        }else{
+            //disconnected from server
+        }
 
+        PhotonNetwork.Disconnect();
+    }
     #endregion
 
     public void ChangePlayerName(string newName)
