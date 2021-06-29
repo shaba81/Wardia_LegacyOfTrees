@@ -4,14 +4,22 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
 
 
     [SerializeField]
-    private GameObject controlPanel;
-    [SerializeField]
     private GameObject progressLabel;
+
+        [SerializeField]
+    private Text opponentName;
+
+            [SerializeField]
+    private Text playerName;
+
+                [SerializeField]
+    private AnimationMatchFound matchFoundScript;
 
     string gameVersion = "1";
 
@@ -23,14 +31,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     void Start()
     {
         progressLabel.SetActive(false);
-        controlPanel.SetActive(true);
     }
 
 
     public void Connect()
     {
+        matchFoundScript.DeleteButtons();
         progressLabel.SetActive(true);
-        controlPanel.SetActive(false);
         if (PhotonNetwork.IsConnected)
         {
             PhotonNetwork.JoinRandomRoom();
@@ -55,7 +62,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnDisconnected(DisconnectCause cause)
     {
         progressLabel.SetActive(false);
-        controlPanel.SetActive(true);
         Debug.LogWarningFormat("PUN: OnDisconnected() was called by PUN with reason {0}", cause);
     }
     public override void OnJoinRandomFailed(short returnCode, string message)
@@ -70,6 +76,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         Debug.Log("PUN: OnJoinedRoom() called by PUN. Now this client is in a room.");
         if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
         {
+            
+            
             LoadArena();
             Debug.Log("2 PLAYERS REACHED, LOADING ROOM");
 
@@ -88,6 +96,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         Debug.LogFormat("OnPlayerEnteredRoom() {0}", other.NickName);
         if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
         {
+            
             LoadArena();
             Debug.Log("2 PLAYERS REACHED, LOADING ROOM");
 
@@ -115,20 +124,25 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     void LoadArena()
     {
+        playerName.text = PhotonNetwork.LocalPlayer.NickName;
+        opponentName.text = PhotonNetwork.PlayerListOthers[0].NickName;
         if (!PhotonNetwork.IsMasterClient)
         {
+            matchFoundScript.playerwhite = false;
             Debug.LogError("I'm Player 2");
             TeamManager.Instance.SetTeam(Team.Team2);
         }
         else
         {
+            matchFoundScript.playerwhite = true;
             Debug.LogError("I'm Player 1"); 
             TeamManager.Instance.SetTeam(Team.Team1);
         }
         progressLabel.SetActive(false); 
         Debug.LogFormat("LOADING GAME");
 
-        SceneManager.LoadScene("GameScene");
+        matchFoundScript.DisappearingButtons();
+        
     }
 
 

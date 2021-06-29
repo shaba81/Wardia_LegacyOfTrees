@@ -20,15 +20,20 @@ public class AnimationMatchFound : MonoBehaviour
       if (testanimation) {
         if (buttonsactive) {
           StartCoroutine(FindingMatch());
-          /*buttons.GetComponent<Animator>().Play("Buttonsdisappear");
-          buttonsactive=false;
-          AppearingHands();*/
           wardrums.Play();
         }
       }else{
         buttons.GetComponent<Animator>().Play("Buttonsdisappear");
         buttonsactive=false;
       }
+
+    }
+
+    public void DeleteButtons()
+    {
+
+        buttons.GetComponent<Animator>().Play("Buttonsdisappear");
+        buttonsactive=false;
 
     }
 
@@ -42,7 +47,7 @@ public class AnimationMatchFound : MonoBehaviour
 
     }
 
-    public void AppearingHands()
+    public IEnumerator AppearingHands()
     {
       if (playerwhite) {
         //handsrotation.transform.rotation = Quaternion.Euler(0, 90, 0);
@@ -51,6 +56,7 @@ public class AnimationMatchFound : MonoBehaviour
         rectTransform.Rotate( new Vector3( 0, 0, 180 ) );
       }
       handsanimator.GetComponent<Animator>().Play("Handsreappear");
+      yield return new WaitForSeconds(4);
     }
 
     IEnumerator FindingMatch()
