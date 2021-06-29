@@ -8,30 +8,28 @@ public class AnimationMatchFound : MonoBehaviour
     public GameObject handsanimator;
     public GameObject handsrotation;
     public AudioSource wardrums;
-
+        public GameObject rules;
+        public GameObject enterName;
+            public GameObject inputField;
     bool buttonsactive=true;
     public bool playerwhite;
     public bool testanimation;
 
 //Buttonsdisappear Buttonsreappear Handsreappear
 
-    public void DisappearingButtons()
+    
+    public void MatchFoundCoroutine()
     {
-      if (testanimation) {
-        if (buttonsactive) {
-          StartCoroutine(FindingMatch());
+          StartCoroutine(MatchFound());
           wardrums.Play();
-        }
-      }else{
-        buttons.GetComponent<Animator>().Play("Buttonsdisappear");
-        buttonsactive=false;
-      }
 
     }
 
     public void DeleteButtons()
     {
-
+        rules.gameObject.SetActive(false);
+        enterName.gameObject.SetActive(false);
+        inputField.gameObject.SetActive(false);
         buttons.GetComponent<Animator>().Play("Buttonsdisappear");
         buttonsactive=false;
 
@@ -49,6 +47,7 @@ public class AnimationMatchFound : MonoBehaviour
 
     public IEnumerator AppearingHands()
     {
+      Debug.Log("starting animation");
       if (playerwhite) {
         //handsrotation.transform.rotation = Quaternion.Euler(0, 90, 0);
         RectTransform rectTransform = handsrotation.GetComponent<RectTransform>();
@@ -56,14 +55,16 @@ public class AnimationMatchFound : MonoBehaviour
         rectTransform.Rotate( new Vector3( 0, 0, 180 ) );
       }
       handsanimator.GetComponent<Animator>().Play("Handsreappear");
-      yield return new WaitForSeconds(4);
+      Debug.Log("Finish animation");
+      yield return new WaitForSeconds(5);
+      LevelLoader.Instance.LoadGameScene();
     }
 
-    IEnumerator FindingMatch()
+    IEnumerator MatchFound()
     {
-      buttons.GetComponent<Animator>().Play("Buttonsdisappear");
+      Debug.Log("MatchFound");
       buttonsactive=false;
       yield return new WaitForSeconds(2);
-      AppearingHands();
+      StartCoroutine(AppearingHands());
     }
 }

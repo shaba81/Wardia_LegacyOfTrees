@@ -12,13 +12,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     [SerializeField]
     private GameObject progressLabel;
 
-        [SerializeField]
+    [SerializeField]
     private Text opponentName;
 
-            [SerializeField]
+    [SerializeField]
     private Text playerName;
 
-                [SerializeField]
+    [SerializeField]
     private AnimationMatchFound matchFoundScript;
 
     string gameVersion = "1";
@@ -30,6 +30,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     void Start()
     {
+        playerName.gameObject.SetActive(false);
         progressLabel.SetActive(false);
     }
 
@@ -76,8 +77,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         Debug.Log("PUN: OnJoinedRoom() called by PUN. Now this client is in a room.");
         if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
         {
-            
-            
+
             LoadArena();
             Debug.Log("2 PLAYERS REACHED, LOADING ROOM");
 
@@ -93,12 +93,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public override void OnPlayerEnteredRoom(Player other)
     {
-        Debug.LogFormat("OnPlayerEnteredRoom() {0}", other.NickName);
+        Debug.LogFormat("PlayerEnteredRoom Name:" + other.NickName);
         if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
         {
-            
-            LoadArena();
+
             Debug.Log("2 PLAYERS REACHED, LOADING ROOM");
+            LoadArena();
+
 
         }
     }
@@ -119,30 +120,39 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     #endregion
 
+    public void ChangePlayerName(string newName)
+    {
+        this.playerName.text = newName;
+    }
     #region Private Methods
 
 
     void LoadArena()
     {
         playerName.text = PhotonNetwork.LocalPlayer.NickName;
+        playerName.gameObject.SetActive(true);
         opponentName.text = PhotonNetwork.PlayerListOthers[0].NickName;
+        opponentName.gameObject.SetActive(true);
         if (!PhotonNetwork.IsMasterClient)
         {
+
             matchFoundScript.playerwhite = false;
             Debug.LogError("I'm Player 2");
             TeamManager.Instance.SetTeam(Team.Team2);
         }
         else
         {
+
             matchFoundScript.playerwhite = true;
-            Debug.LogError("I'm Player 1"); 
+
+            Debug.LogError("I'm Player 1");
             TeamManager.Instance.SetTeam(Team.Team1);
         }
-        progressLabel.SetActive(false); 
+        progressLabel.SetActive(false);
         Debug.LogFormat("LOADING GAME");
 
-        matchFoundScript.DisappearingButtons();
-        
+        matchFoundScript.MatchFoundCoroutine();
+
     }
 
 

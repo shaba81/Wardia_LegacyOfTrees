@@ -5,7 +5,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.SceneManagement;
 
-public class LevelLoader : MonoBehaviour
+public class LevelLoader  : Manager<LevelLoader>
 {
     public AudioSource page;
     public Animator transition;
@@ -49,6 +49,11 @@ public class LevelLoader : MonoBehaviour
     public void LoadResultscreen()
     {
       StartCoroutine(LoadLevel("ResultScreen"));
+      page.Play();
+    }
+    public void LoadGameScene()
+    {
+      StartCoroutine(LoadLevel("GameScene"));
       page.Play();
     }
 
