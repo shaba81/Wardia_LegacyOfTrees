@@ -30,7 +30,14 @@ public class TurnHandler : MonoBehaviour
         {
             TurnManager.Instance.SetGameState(GameState.Wait);
         }
-        turnText.text = tm.gameState.ToString();
+         if (tm.gameState != GameState.Wait)
+        {
+            turnText.text="Your Turn";
+        }
+        else
+        {
+            turnText.text="Enemy Turn";
+        }
     }
 
 
@@ -153,7 +160,15 @@ public class TurnHandler : MonoBehaviour
 
     public void HandleOnStateChange()
     {
-        turnText.text = TurnManager.Instance.gameState.ToString();
+        myTeam = GameManager.Instance.myTeam;
+        if (tm.gameState != GameState.Wait)
+        {
+            turnText.text="Your Turn";
+        }
+        else
+        {
+            turnText.text="Enemy Turn";
+        }
     }
 
     public void EndTurn()

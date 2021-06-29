@@ -19,6 +19,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     private Text playerName;
 
     [SerializeField]
+    private GameObject matchFound;
+
+    [SerializeField]
     private AnimationMatchFound matchFoundScript;
 
     string gameVersion = "1";
@@ -32,6 +35,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         playerName.gameObject.SetActive(false);
         progressLabel.SetActive(false);
+        matchFound.SetActive(false);
     }
 
 
@@ -59,12 +63,19 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinRandomRoom();
     }
 
-
-    public override void OnDisconnected(DisconnectCause cause)
+    public void ResetAll()
     {
         progressLabel.SetActive(false);
+
+        opponentName.text = "";
+        matchFound.gameObject.SetActive(false);
+
+    }
+    public override void OnDisconnected(DisconnectCause cause)
+    {
         LevelLoader.Instance.LoadMainmenu();
         GameManager.Instance.ResetAll();
+        ResetAll();
         Debug.LogWarningFormat("PUN: OnDisconnected() was called by PUN with reason {0}", cause);
     }
     public override void OnJoinRandomFailed(short returnCode, string message)
@@ -100,17 +111,22 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         {
 
             Debug.Log("2 PLAYERS REACHED, LOADING ROOM");
+            
             LoadArena();
 
 
         }
     }
 
-
+    private void OnApplicationQuit()
+    {
+        PhotonNetwork.LeaveRoom();
+        PhotonNetwork.SendAllOutgoingCommands();
+    }
     public override void OnPlayerLeftRoom(Player other)
     {
         Debug.LogFormat("OnPlayerLeftRoom() {0}", other.NickName);
-        Disconnect(false);
+        Disconnect();
 
         if (PhotonNetwork.IsMasterClient)
         {
@@ -119,13 +135,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         }
     }
 
-    public void Disconnect(bool isMe)
+    public void Disconnect()
     {
-        if(!isMe){
-            //player left the room
-        }else{
-            //disconnected from server
-        }
 
         PhotonNetwork.Disconnect();
     }
@@ -140,6 +151,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     void LoadArena()
     {
+        matchFound.SetActive(true);
         playerName.text = PhotonNetwork.LocalPlayer.NickName;
         playerName.gameObject.SetActive(true);
         opponentName.text = PhotonNetwork.PlayerListOthers[0].NickName;

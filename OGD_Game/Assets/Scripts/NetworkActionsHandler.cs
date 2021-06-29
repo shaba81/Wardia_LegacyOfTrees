@@ -19,40 +19,62 @@ public class NetworkActionsHandler : MonoBehaviourPunCallbacks
         this.photonView.RPC("SpawnEntity", RpcTarget.Others, name, index);
     }
 
-
+    private void OnApplicationQuit() {
+        Debug.Log("Disconnecting....");
+        PhotonNetwork.LeaveRoom();
+        GameManager.Instance.ResetAll();
+        Debug.Log("LeavingRoom....");
+        PhotonNetwork.Disconnect();
+        Debug.Log("Disconnected");
+        PhotonNetwork.SendAllOutgoingCommands();
+    
+    }
+     public override void OnDisconnected(DisconnectCause cause)
+    {
+        GameManager.Instance.ResetAll();
+        Debug.Log("Resetting Game Manager");
+        LevelLoader.Instance.LoadMainmenu();
+        Debug.Log("Loading Main Menu");
+        Debug.LogWarningFormat("PUN: OnDisconnected() was called by PUN with reason {0}", cause);
+    }
     [PunRPC]
     void ChangeTurn()
     {
         GameManager.Instance.FireOpponentActions();
         TurnManager.Instance.SetGameState(GameState.Start);
     }
+
+
     public void SendTurn()
     {
         this.photonView.RPC("ChangeTurn", RpcTarget.Others);
     }
 
-    // [PunRPC]
-    // void OnRoundEnd(int nodeIndex)
-    // {
-    //     GameManager.Instance.FireOnRoundEndAt(nodeIndex);
-    //     // Debug.Log("Round End");
-    // }
-    // public void FireOnRoundEnd(BaseEntity e)
-    // {
-    //     this.photonView.RPC("OnRoundEnd", RpcTarget.All, e.CurrentNode.index);
-    // }
+    public override void OnPlayerLeftRoom(Player other)
+    {
+        Debug.LogFormat("OnPlayerLeftRoom() {0}", other.NickName);
+        Disconnect(false);
 
-    // [PunRPC]
-    // void RemoveEntity(int index)
-    // {
-    //     GameManager.Instance.RemoveAt(index);
-    //     Debug.Log("REMOVED ENTITY");
-    // }
-    // public void FireRemoveEntity(BaseEntity remove)
-    // {
-    //     this.photonView.RPC("RemoveEntity", RpcTarget.Others, remove.CurrentNode.index);
-    // }
+        if (PhotonNetwork.IsMasterClient)
+        {
+            Debug.LogFormat("OnPlayerLeftRoom IsMasterClient {0}", PhotonNetwork.IsMasterClient);
 
+        }
+    }
+
+    public void Disconnect(bool isMe)
+    {
+        if (!isMe)
+        {
+            //messaggio: player left the room
+        }
+        else
+        {
+            //messaggio: disconnected from server
+        }
+
+        PhotonNetwork.Disconnect();
+    }
     [PunRPC]
     void UpdateTurn()
     {
