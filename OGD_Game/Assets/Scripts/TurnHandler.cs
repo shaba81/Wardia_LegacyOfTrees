@@ -13,6 +13,8 @@ public class TurnHandler : MonoBehaviour
     public LevelLoader levelLoader;
     [SerializeField]
     public NetworkActionsHandler networkActionsHandler;
+
+    public GameObject lastturn;
     private void Awake()
     {
         tm = TurnManager.Instance;
@@ -37,6 +39,10 @@ public class TurnHandler : MonoBehaviour
         else
         {
             turnText.text="Enemy Turn";
+        }
+        if(GameManager.Instance.currentTurn==20)
+        {
+            lastturn.SetActive(true);
         }
     }
 
