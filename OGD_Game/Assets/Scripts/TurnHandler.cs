@@ -40,27 +40,35 @@ public class TurnHandler : MonoBehaviour
         {
             turnText.text="Enemy Turn";
         }
-        if(GameManager.Instance.currentTurn==20)
-        {
-            lastturn.SetActive(true);
-        }
+        
     }
 
 
     void Update()
     {
         //CHECK IF THE PLAYER HAS ALL THE TREES
-        if (GameManager.Instance.CheckVictoryByTrees())
+        if (GameManager.Instance.CheckVictoryByTrees() == 1)
         {
-            GameManager.Instance.SetWinner(GameManager.Instance.myTeam);
+            GameManager.Instance.SetWinner(myTeam);
             Debug.Log(GameManager.Instance.GetWinner() + " won the match!");
+            GameManager.Instance.gameEnded = true;
             levelLoader.LoadResultscreen();
         }
+        if (GameManager.Instance.CheckVictoryByTrees() == 0)
+        {
+            GameManager.Instance.SetWinner(GameManager.Instance.GetOpposingTeam());
+            Debug.Log(GameManager.Instance.GetWinner() + " won the match!");
+            GameManager.Instance.gameEnded = true;
+            levelLoader.LoadResultscreen();
+        }
+
 
         //CHECK IF WE REACHED TURN LIMIT
         if (GameManager.Instance.CheckTurnLimit())
         {
+
             GameManager.Instance.SetWinner(UITreeUpdater.Instance.GetWinner());
+            GameManager.Instance.gameEnded = true;
 
             //check who has more trees
             if (GameManager.Instance.GetWinner() == GameManager.Instance.myTeam)
@@ -98,6 +106,7 @@ public class TurnHandler : MonoBehaviour
                 levelLoader.LoadResultscreen();
                 //SWITCH TO END SCREEN, variable winner is preserved.
             }
+            
         }
 
         if (tm.gameState == GameState.Start)
@@ -161,6 +170,7 @@ public class TurnHandler : MonoBehaviour
             networkActionsHandler.SendTurn();
             TurnManager.Instance.SetGameState(GameState.Wait);
         }
+   
 
     }
 
@@ -175,11 +185,13 @@ public class TurnHandler : MonoBehaviour
         {
             turnText.text="Enemy Turn";
         }
+        
     }
 
     public void EndTurn()
     {
         tm.SetGameState(GameState.EndTurn);
+        
 
     }
 
@@ -187,6 +199,10 @@ public class TurnHandler : MonoBehaviour
     {
         GameManager.Instance.currentTurn += 1;
         networkActionsHandler.SendUpdateTurn();
+        if(GameManager.Instance.currentTurn==20)
+        {
+            lastturn.SetActive(true);
+        }
     }
 
     public void UpdateEnemyTrees()

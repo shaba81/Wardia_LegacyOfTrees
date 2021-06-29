@@ -16,6 +16,7 @@ public class GameManager : Manager<GameManager>
     public Action OnRoundEnd;
     public Action<BaseEntity> OnUnitDied;
 
+    public bool gameEnded;
     public Team myTeam;
     public Team winner = Team.None;
 
@@ -35,6 +36,7 @@ public class GameManager : Manager<GameManager>
 
     private void Start()
     {
+        gameEnded = false;
         Destroy(GameObject.Find("AudioSource"));
         myTeam = TeamManager.Instance.GetTeam();
         if (myTeam == Team.Team2)
@@ -128,13 +130,15 @@ public class GameManager : Manager<GameManager>
         return Team.None;
     }
 
-    public bool CheckVictoryByTrees()
+    public int CheckVictoryByTrees()
     {
 
         if (GetTreesConquered(myTeam) == 5)
-            return true;
-
-        return false;
+            return 1;
+        else if(GetTreesConquered(GetOpposingTeam()) == 5)
+            return 0;
+        else
+            return -1;
     }
 
     public void UpdateOpponentNaturePoints(int amount)
@@ -318,7 +322,7 @@ public class GameManager : Manager<GameManager>
 
     public bool CheckTurnLimit()
     {
-        if (GetTurnCounter() == 20)
+        if (GetTurnCounter() == 21)
             return true;
         else
             return false;
@@ -417,6 +421,7 @@ public class GameManager : Manager<GameManager>
 
     public void ResetAll()
     {
+        gameEnded = false;
         myTeam = Team.None;
         GridManager.Instance.ResetNodes();
 

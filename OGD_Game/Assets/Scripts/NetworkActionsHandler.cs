@@ -48,7 +48,8 @@ public class NetworkActionsHandler : MonoBehaviourPunCallbacks
     public override void OnPlayerLeftRoom(Player other)
     {
         Debug.LogFormat("OnPlayerLeftRoom() {0}", other.NickName);
-        LevelLoader.Instance.LoadDisconnectScene();
+        if(!GameManager.Instance.gameEnded)
+            LevelLoader.Instance.LoadDisconnectScene();
         Disconnect(false);
 
         if (PhotonNetwork.IsMasterClient)
@@ -61,6 +62,12 @@ public class NetworkActionsHandler : MonoBehaviourPunCallbacks
     public void Disconnect(bool isMe)
     {
         PhotonNetwork.Disconnect();
+    }
+
+     public void DisconnectToMainMenu(bool isMe)
+    {
+        PhotonNetwork.Disconnect();
+        LevelLoader.Instance.LoadMainmenu();
     }
 
     [PunRPC]
