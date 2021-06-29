@@ -30,6 +30,10 @@ public class DeckManager : MonoBehaviour
     public Image units_button;
     public Image buildings_button;
 
+    public GameObject unitstext;
+    public GameObject buildingstext;
+    public GameObject cardseffect;
+    private bool effectvisible=false;
 
     private 
 
@@ -71,7 +75,7 @@ public class DeckManager : MonoBehaviour
             }
             else
             {
-                //Prendi PlayerPrefsX.GetArray(i) che è il nome, prendi dal db totale i dati con quel nome e salvalo in data
+                //Prendi PlayerPrefsX.GetArray(i) che ï¿½ il nome, prendi dal db totale i dati con quel nome e salvalo in data
                 foreach (EntitiesDatabaseSO.EntityData _data in cardsDb.allEntities)
                 {
                     if (_data.name.Equals(unitsNames[i]))
@@ -188,16 +192,32 @@ public class DeckManager : MonoBehaviour
     {
         units_button.color = buttonUnselectedColor;
             unitsObject.SetActive(false);
+            unitstext.SetActive(false);
         buildings_button.color = buttonSelectedColor;
             buildingsObject.SetActive(true);
+            buildingstext.SetActive(true);
     }
 
     public void SwitchToUnitsDeck()
     {
         buildings_button.color = buttonUnselectedColor;
             buildingsObject.SetActive(false);
+            buildingstext.SetActive(false);
         units_button.color = buttonSelectedColor;
             unitsObject.SetActive(true);
+            unitstext.SetActive(true);
+    }
+
+    public void CardsEffect()
+    {
+        if(effectvisible)
+        {
+            effectvisible=false;
+            cardseffect.SetActive(false);
+        }else{
+            effectvisible=true;
+            cardseffect.SetActive(true);
+        }
     }
 
 }
