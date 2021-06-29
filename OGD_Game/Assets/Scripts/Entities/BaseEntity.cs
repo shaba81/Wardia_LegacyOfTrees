@@ -13,6 +13,7 @@ public class BaseEntity : MonoBehaviour
 
     public Sprite opponentSprite;
 
+    public int cost = 0;
     public int baseDamage = 1;
     public int baseHealth = 3;
     private int originalDamage;
@@ -56,25 +57,6 @@ public class BaseEntity : MonoBehaviour
         transform.position = pos;
 
         //currentNode.SetOccupied(true);
-
-        healthbar = Instantiate(barPrefab, this.transform);
-        healthbar.Setup(this.transform, baseHealth);
-    }
-
-    public void Spawn(Team team)
-    {
-
-        myTeam = team;
-        if (!isBuilding)
-        {
-            spriteRender.sprite = opponentSprite;
-        }
-
-        //this.currentNode = GridManager.Instance.GetNodeAtIndex(nodeIndex);
-        transform.position = currentNode.worldPosition;
-
-        //currentNode.SetOccupied(true);
-        //startingNode = currentNode;
 
         healthbar = Instantiate(barPrefab, this.transform);
         healthbar.Setup(this.transform, baseHealth);

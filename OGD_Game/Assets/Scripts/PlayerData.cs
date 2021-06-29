@@ -30,4 +30,9 @@ public class PlayerData : Manager<PlayerData>
         Money += amount;
         OnUpdate?.Invoke();
     }
+
+    public void ResetMoney()
+    {
+        Money = 0;
+    }
 }

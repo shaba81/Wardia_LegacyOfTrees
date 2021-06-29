@@ -128,13 +128,17 @@ MonoBehaviour:
   barPrefab: {fileID: 9001919181559767783, guid: 73699f5e031aaaf42bcfc521411eaa14, type: 3}
   spriteRender: {fileID: 2632782113267703855}
   switchAnim: {fileID: -3782871364315961011}
+  spawnSound: {fileID: 0}
   opponentSprite: {fileID: 8791198055836843070, guid: 4a9efe2c4a32c76488a9a6a0296da2c2, type: 3}
+  cost: 0
   baseDamage: 1
   baseHealth: 1
   movement: 1
   isBuilding: 0
+  isBuilder: 0
   myTeam: 0
   isFirstTurn: 1
+  dead: 0
 --- !u!114 &4260356444977452767
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,6 +9,8 @@ public class PopUpManager : Manager<PopUpManager>
     public Transform onePointPopUp;
     public Transform fivePointsPopUp;
 
+    public AudioSource popUpSound;
+
     public void SpawnPopUp(Vector3 position, PopUpType type)
     {
         switch (type)
@@ -28,6 +30,7 @@ public class PopUpManager : Manager<PopUpManager>
             default:
                 break;
         }
+        popUpSound.Play();
     }
 }
 

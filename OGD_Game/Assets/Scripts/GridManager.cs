@@ -31,6 +31,11 @@ public class GridManager : Manager<GridManager>
         startPositionPerTeam.Add(Team.Team2, graph.Nodes.Count - 1);
     }
 
+    public List<Tile> GetAllTiles ()
+    {
+        return allTiles;
+    }
+
     public Node GetFreeNode(Team forTeam)
     {
         int startIndex = startPositionPerTeam[forTeam];
@@ -214,6 +219,14 @@ public class GridManager : Manager<GridManager>
                     graph.AddEdge(from, to);
                 }
             }
+        }
+    }
+
+    public void ResetNodes()
+    {
+        foreach(Node n in graph.Nodes)
+        {
+            n.SetOccupied(false);
         }
     }
 

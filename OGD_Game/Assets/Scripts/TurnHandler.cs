@@ -9,6 +9,7 @@ public class TurnHandler : MonoBehaviour
     public Text turnText;
     public Team myTeam;
     private int opponentNaturePoints = 0;
+    public Button trashButton;
     public LevelLoader levelLoader;
     [SerializeField]
     public NetworkActionsHandler networkActionsHandler;
@@ -88,6 +89,7 @@ public class TurnHandler : MonoBehaviour
 
         if (tm.gameState == GameState.Start)
         {
+            trashButton.interactable = false;
             UIButtonManager.Instance.EnableEndButton();
 
             
@@ -121,8 +123,19 @@ public class TurnHandler : MonoBehaviour
             tm.SetGameState(GameState.Buying);
         }
 
+        if(tm.gameState == GameState.Buying)
+        {
+            trashButton.interactable = false;
+        }
+
+        if(tm.gameState == GameState.Placing)
+        {
+            trashButton.interactable = true;
+        }
+
         if (tm.gameState == GameState.EndTurn)
         {
+            trashButton.interactable = false;
             UIButtonManager.Instance.DisableEndButton();
             GameManager.Instance.SortEntities();
             GameManager.Instance.FireRoundEndActions();
@@ -140,7 +153,7 @@ public class TurnHandler : MonoBehaviour
 
     public void HandleOnStateChange()
     {
-        turnText.text = GameManager.Instance.myTeam.ToString();
+        turnText.text = TurnManager.Instance.gameState.ToString();
     }
 
     public void EndTurn()

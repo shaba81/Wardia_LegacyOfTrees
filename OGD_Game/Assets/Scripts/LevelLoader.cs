@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
@@ -22,13 +24,13 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadMatch()
     {
-      StartCoroutine(LoadLevel("GameScene"));
-      //page.Play();
+        StartCoroutine(LoadLevel("GameScene"));
+        page.Play();
     }
 
     public void LoadMatchmaking()
     {
-      StartCoroutine(LoadLevel("MatchmakingScene"));
+      StartCoroutine(LoadLevel("Matchmaking"));
       page.Play();
     }
 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,12 +12,21 @@ public class UIShop : MonoBehaviour
 
     private EntitiesDatabaseSO unitsDb;
     private EntitiesDatabaseSO buildingsdDb;
+    public EntitiesDatabaseSO allCardsDb;
+
+    private List<string> unitsNames;
+    private List<string> buildingsNames;
+
     private int refreshCost = 1;
 
     private void Start()
     {
         unitsDb = GameManager.Instance.entitiesDatabase;
         buildingsdDb = GameManager.Instance.buildingsDatabase;
+
+        unitsNames = PlayerPrefsX.GetStringArray("Units").ToList();
+        buildingsNames = PlayerPrefsX.GetStringArray("Buildings").ToList();
+
         GenerateCard();
         PlayerData.Instance.OnUpdate += Refresh;
         Refresh();
@@ -29,17 +39,47 @@ public class UIShop : MonoBehaviour
             if (!unitsCards[i].gameObject.activeSelf)
                 unitsCards[i].gameObject.SetActive(true);
 
-            if (!unitsDb.allEntities[i].isBuilding)
-                unitsCards[i].Setup(unitsDb.allEntities[i], this);
+            if(unitsNames == null)
+            {
+                if (!unitsDb.allEntities[i].isBuilding)
+                    unitsCards[i].Setup(unitsDb.allEntities[i], this);
+
+            }
+            else
+            {
+                foreach (EntitiesDatabaseSO.EntityData _data in allCardsDb.allEntities)
+                {
+                    if (_data.name.Equals(unitsNames[i]))
+                    {
+                        unitsCards[i].Setup(_data, this);
+                    }
+                }
+
+            }
         }
 
         for (int i = 0; i < buildingCards.Count; i++)
         {
             if (!buildingCards[i].gameObject.activeSelf)
                 buildingCards[i].gameObject.SetActive(true);
-            
-            if(buildingsdDb.allEntities[i].isBuilding)
-                buildingCards[i].Setup(buildingsdDb.allEntities[i], this);
+
+            if(buildingsNames == null)
+            {
+                if(buildingsdDb.allEntities[i].isBuilding)
+                    buildingCards[i].Setup(buildingsdDb.allEntities[i], this);
+                
+            }
+            else
+            {
+                foreach (EntitiesDatabaseSO.EntityData _data in allCardsDb.allEntities)
+                {
+                    if (_data.name.Equals(buildingsNames[i]))
+                    {
+                        buildingCards[i].Setup(_data, this);
+                    }
+                }
+
+            }
         }
     }
 
@@ -48,6 +88,10 @@ public class UIShop : MonoBehaviour
         //We should check if we have the money!
         if (PlayerData.Instance.CanAfford(cardData.cost))
         {
+            if(cardData.name.Equals("Avatar"))
+            {
+
+            }
             //We should check if we can actually place that card, some cards have requirements other than cost.
             if (!GameManager.Instance.checkTreeRequirement(cardData.treeRequirement))
             {

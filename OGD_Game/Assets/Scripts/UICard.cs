@@ -29,26 +29,35 @@ public class UICard : MonoBehaviour
         health.text = myData.health.ToString();
         //movement.text = myData.movement.ToString();
 
-        if (myData.name.Equals("Tiger")) {
-            Sprite nimble = Resources.Load <Sprite>("nimble");
-            Sprite runner = Resources.Load <Sprite>("runner");
+        if (myData.name.Equals("Tiger"))
+        {
+            Sprite nimble = Resources.Load<Sprite>("nimble");
+            Sprite runner = Resources.Load<Sprite>("runner");
             abilityicon.GetComponent<Image>().sprite = nimble;
             abilityicon2.GetComponent<Image>().sprite = runner;
-        }else if (myData.name.Equals("Peasant")) {
-            Sprite builder = Resources.Load <Sprite>("builder");
+        }
+        else if (myData.name.Equals("Peasant"))
+        {
+            Sprite builder = Resources.Load<Sprite>("builder");
             abilityicon.GetComponent<Image>().sprite = builder;
-            abilityicon2.enabled=false;
-        }else if (myData.name.Equals("Avenger")) {
-            Sprite builder = Resources.Load <Sprite>("builder");
+            abilityicon2.enabled = false;
+        }
+        else if (myData.name.Equals("Avenger"))
+        {
+            Sprite builder = Resources.Load<Sprite>("builder");
             abilityicon.GetComponent<Image>().sprite = builder;
-            abilityicon2.enabled=false;
-        }else if (myData.movement==2) {
-            Sprite runner = Resources.Load <Sprite>("runner");
+            abilityicon2.enabled = false;
+        }
+        else if (myData.movement == 2)
+        {
+            Sprite runner = Resources.Load<Sprite>("runner");
             abilityicon.GetComponent<Image>().sprite = runner;
-            abilityicon2.enabled=false;
-        }else{
-          abilityicon.enabled=false;
-          abilityicon2.enabled=false;
+            abilityicon2.enabled = false;
+        }
+        else
+        {
+            abilityicon.enabled = false;
+            abilityicon2.enabled = false;
         }
 
         this.myData = myData;
