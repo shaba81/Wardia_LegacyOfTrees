@@ -13,12 +13,17 @@ public class LevelLoader  : Manager<LevelLoader>
     public void LoadMainmenu()
     {
       StartCoroutine(LoadLevel("MainMenu"));
-      page.Play();
     }
 
     public void LoadDeckmaking()
     {
       StartCoroutine(LoadLevel("DeckMakingScene"));
+      page.Play();
+    }
+
+    public void LoadDisconnectScene()
+    {
+      StartCoroutine(LoadLevel("DisconnectScene"));
       page.Play();
     }
 
@@ -47,7 +52,7 @@ public class LevelLoader  : Manager<LevelLoader>
     }
 
     public void LoadResultscreen()
-    {
+    {   
       StartCoroutine(LoadLevel("ResultScreen"));
       page.Play();
     }

@@ -22,7 +22,6 @@ public class NetworkActionsHandler : MonoBehaviourPunCallbacks
     private void OnApplicationQuit() {
         Debug.Log("Disconnecting....");
         PhotonNetwork.LeaveRoom();
-        GameManager.Instance.ResetAll();
         Debug.Log("LeavingRoom....");
         PhotonNetwork.Disconnect();
         Debug.Log("Disconnected");
@@ -31,10 +30,6 @@ public class NetworkActionsHandler : MonoBehaviourPunCallbacks
     }
      public override void OnDisconnected(DisconnectCause cause)
     {
-        GameManager.Instance.ResetAll();
-        Debug.Log("Resetting Game Manager");
-        LevelLoader.Instance.LoadMainmenu();
-        Debug.Log("Loading Main Menu");
         Debug.LogWarningFormat("PUN: OnDisconnected() was called by PUN with reason {0}", cause);
     }
     [PunRPC]
@@ -53,6 +48,7 @@ public class NetworkActionsHandler : MonoBehaviourPunCallbacks
     public override void OnPlayerLeftRoom(Player other)
     {
         Debug.LogFormat("OnPlayerLeftRoom() {0}", other.NickName);
+        LevelLoader.Instance.LoadDisconnectScene();
         Disconnect(false);
 
         if (PhotonNetwork.IsMasterClient)
@@ -64,17 +60,9 @@ public class NetworkActionsHandler : MonoBehaviourPunCallbacks
 
     public void Disconnect(bool isMe)
     {
-        if (!isMe)
-        {
-            //messaggio: player left the room
-        }
-        else
-        {
-            //messaggio: disconnected from server
-        }
-
         PhotonNetwork.Disconnect();
     }
+
     [PunRPC]
     void UpdateTurn()
     {
