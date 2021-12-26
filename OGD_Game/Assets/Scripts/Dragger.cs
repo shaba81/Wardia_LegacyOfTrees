@@ -130,6 +130,7 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
                             if(entity.CurrentNode == candidateNode)
                             {
                                 entity.TakeDamage(entity.baseHealth);
+                                entity.HideEntity();
                                 break;
                             }
                         }

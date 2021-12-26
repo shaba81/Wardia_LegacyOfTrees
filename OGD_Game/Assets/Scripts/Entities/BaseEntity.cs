@@ -229,7 +229,9 @@ public class BaseEntity : MonoBehaviour
             }
 
         }
-        StartCoroutine(MoveFunction(destination.worldPosition));
+
+        if(!dead)
+            StartCoroutine(MoveFunction(destination.worldPosition));
         //transform.position = destination.worldPosition;
 
         //Free previous node
@@ -304,6 +306,12 @@ public class BaseEntity : MonoBehaviour
         // HERE WE HAVE TO NOTIFY THE NETWORK MANAGER
 
         return false;
+    }
+
+    public void HideEntity()
+    {
+        spriteRender.gameObject.SetActive(false);
+        healthbar.gameObject.SetActive(false);
     }
 
     IEnumerator MoveFunction(Vector3 newPos)
