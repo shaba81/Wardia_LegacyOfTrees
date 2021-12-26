@@ -77,6 +77,7 @@ public class BaseEntity : MonoBehaviour
 
         if (isBuilding)
         {
+            eligibleNodes.Clear();
             foreach (BaseEntity entity in GameManager.Instance.GetMyEntities(myTeam))
             {
                 if (entity.isBuilder)
