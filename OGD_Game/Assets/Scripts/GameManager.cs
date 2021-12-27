@@ -10,7 +10,8 @@ public class GameManager : Manager<GameManager>
 
     public Transform team1Parent;
     public Transform team2Parent;
-    public Transform spawnTransform;
+    public GameObject spawnTransform;
+    private SpawnPlatformAnimation spawnFx;
 
     public Action OnRoundStart;
     public Action OnRoundEnd;
@@ -36,6 +37,7 @@ public class GameManager : Manager<GameManager>
 
     private void Start()
     {
+        spawnFx = spawnTransform.GetComponent<SpawnPlatformAnimation>();
         gameEnded = false;
         Destroy(GameObject.Find("AudioSource"));
         myTeam = TeamManager.Instance.GetTeam();
@@ -73,7 +75,7 @@ public class GameManager : Manager<GameManager>
 
 
 
-        newEntity.Setup(myTeam, /*GridManager.Instance.GetFreeNode(Team.Team1)*/ spawnTransform.position);
+        newEntity.Setup(myTeam, /*GridManager.Instance.GetFreeNode(Team.Team1)*/ spawnTransform.transform.position);
 
         switch (newEntity.gameObject.name)
         {
@@ -97,12 +99,14 @@ public class GameManager : Manager<GameManager>
                 break;
         }
 
+        spawnFx.Spawn();
         TurnManager.Instance.SetGameState(GameState.Placing);
 
     }
 
     public void RevertSpawn()
     {
+        spawnFx.Despawn();
         foreach(Tile _t in GridManager.Instance.GetAllTiles())
         {
             _t.SetEligibleHighlight(false);

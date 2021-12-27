@@ -152,6 +152,7 @@ public class TurnHandler : MonoBehaviour
 
         if(tm.gameState == GameState.Placing)
         {
+            //PlaySpawn Animation
             trashButton.interactable = true;
         }
 
