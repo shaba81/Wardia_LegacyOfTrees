@@ -5,6 +5,14 @@ using UnityEngine;
 
 public class BaseEntity : MonoBehaviour
 {
+    //Particles
+    [SerializeField]
+    ParticleSystem whiteParticles;
+    [SerializeField]
+    ParticleSystem redParticles;
+    [SerializeField]
+    ParticleSystem blueParticles;
+
 
     public HealthBar barPrefab;
     public SpriteRenderer spriteRender;
@@ -116,7 +124,7 @@ public class BaseEntity : MonoBehaviour
 
     protected virtual void OnRoundStart() { }
     public virtual void OnRoundEnd() { }
-    protected virtual void OnUnitDied(BaseEntity diedUnity) { }
+    protected virtual void OnUnitDied(BaseEntity diedUnity) { Instantiate(redParticles, this.transform); redParticles.Play(); }
     protected virtual void AddPlacingConditions() { }
 
     public void GetPositions()
@@ -341,6 +349,32 @@ public class BaseEntity : MonoBehaviour
         GameManager.Instance.OnRoundStart -= OnRoundStart;
         //GameManager.Instance.OnRoundEnd -= OnRoundEnd;
         GameManager.Instance.OnUnitDied -= OnUnitDied;
+    }
+
+    public void WhiteParticlesPlay()
+    {
+        if(whiteParticles != null)
+        {
+            ParticleSystem fx = Instantiate(whiteParticles, this.transform);
+            fx.Play();
+
+        }
+    }
+    public void RedParticlesPlay()
+    {
+        if (redParticles != null)
+        {
+            ParticleSystem fx = Instantiate(redParticles, this.transform);
+            fx.Play();
+        }
+    }
+    public void BlueParticlesPlay()
+    {
+        if (blueParticles != null)
+        {
+            ParticleSystem fx = Instantiate(blueParticles, this.transform);
+            fx.Play();
+        }
     }
 
 }

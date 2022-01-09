@@ -3,7 +3,14 @@ guid: d32690aa9ec3d4c418e6eeeb7de0501f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - whiteParticles: {fileID: 346087119468463826, guid: 531a2c3bbae95d04eabaf2cd36bdbc9b, type: 3}
+  - redParticles: {fileID: 7681771534960471262, guid: 22c6b47dab1073d49bc1243aa87a72df, type: 3}
+  - blueParticles: {fileID: 3259375593728428970, guid: 9eb54ea45a3cc024497f255ab138a0aa, type: 3}
+  - barPrefab: {instanceID: 0}
+  - spriteRender: {instanceID: 0}
+  - switchAnim: {instanceID: 0}
+  - opponentSprite: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

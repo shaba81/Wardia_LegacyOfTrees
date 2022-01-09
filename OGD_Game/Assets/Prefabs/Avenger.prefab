@@ -125,16 +125,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb6394cc40fa2e42bb15280de9b8934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  whiteParticles: {fileID: 346087119468463826, guid: 531a2c3bbae95d04eabaf2cd36bdbc9b, type: 3}
+  redParticles: {fileID: 7681771534960471262, guid: 22c6b47dab1073d49bc1243aa87a72df, type: 3}
+  blueParticles: {fileID: 3259375593728428970, guid: 9eb54ea45a3cc024497f255ab138a0aa, type: 3}
   barPrefab: {fileID: 9001919181559767783, guid: 73699f5e031aaaf42bcfc521411eaa14, type: 3}
   spriteRender: {fileID: 9143289558394253819}
   switchAnim: {fileID: -4167187335355255259}
   opponentSprite: {fileID: 1501312497998032828, guid: 4a9efe2c4a32c76488a9a6a0296da2c2, type: 3}
+  cost: 0
   baseDamage: 1
   baseHealth: 3
   movement: 1
   isBuilding: 0
+  isBuilder: 0
   myTeam: 0
   isFirstTurn: 1
+  dead: 0
 --- !u!114 &7999523726328642903
 MonoBehaviour:
   m_ObjectHideFlags: 0

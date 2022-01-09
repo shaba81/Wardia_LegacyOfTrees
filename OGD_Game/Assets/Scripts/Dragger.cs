@@ -130,6 +130,7 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
                             if(entity.CurrentNode == candidateNode)
                             {
                                 entity.TakeDamage(entity.baseHealth);
+                                entity.BlueParticlesPlay();
                                 entity.HideEntity();
                                 break;
                             }
@@ -170,6 +171,7 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
                     SoundFxManager.Instance.PlaySpawn();
 
                     thisEntity.transform.position = candidateNode.worldPosition;
+                    thisEntity.WhiteParticlesPlay();
 
                     int nodeIndex = candidateNode.index;
 

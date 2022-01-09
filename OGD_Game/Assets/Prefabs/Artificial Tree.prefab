@@ -123,17 +123,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d5f6040e010024f865db69d4277bb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  whiteParticles: {fileID: 346087119468463826, guid: 531a2c3bbae95d04eabaf2cd36bdbc9b, type: 3}
+  redParticles: {fileID: 7681771534960471262, guid: 22c6b47dab1073d49bc1243aa87a72df, type: 3}
+  blueParticles: {fileID: 3259375593728428970, guid: 9eb54ea45a3cc024497f255ab138a0aa, type: 3}
   barPrefab: {fileID: 9001919181559767783, guid: 73699f5e031aaaf42bcfc521411eaa14, type: 3}
   spriteRender: {fileID: 1263978824170606037}
-  animator: {fileID: 0}
+  switchAnim: {fileID: 0}
+  opponentSprite: {fileID: 0}
+  cost: 0
   baseDamage: 0
   baseHealth: 0
   movement: 0
   isBuilding: 1
-  range: 1
-  attackSpeed: 0
-  movementSpeed: 0
+  isBuilder: 0
+  myTeam: 0
   isFirstTurn: 1
+  dead: 0
 --- !u!114 &3879447723752390705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,3 +154,4 @@ MonoBehaviour:
   releaseMask:
     serializedVersion: 2
     m_Bits: 64
+  networkActionsHandler: {fileID: 0}

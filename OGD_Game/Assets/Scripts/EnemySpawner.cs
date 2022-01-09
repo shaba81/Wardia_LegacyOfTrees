@@ -62,6 +62,7 @@ public class EnemySpawner : Manager<EnemySpawner>
                 if (entity.CurrentNode == node)
                 {
                     entity.TakeDamage(entity.baseHealth);
+                    entity.RedParticlesPlay();
                     entity.HideEntity();
                     break;
                 }
@@ -73,5 +74,6 @@ public class EnemySpawner : Manager<EnemySpawner>
         GridManager.Instance.GetNodeAtIndex(nodeIndex).SetOccupied(true);
 
         newEntity.Setup(opposingTeam, node.worldPosition);
+        newEntity.WhiteParticlesPlay();
     }
 }
