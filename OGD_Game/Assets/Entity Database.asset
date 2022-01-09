@@ -15,7 +15,7 @@ MonoBehaviour:
   allEntities:
   - prefab: {fileID: 7738824287383524724, guid: e9514dc0707b0f9448345bd1d204bbe3, type: 3}
     name: Peasant
-    icon: {fileID: 21300000, guid: f7233729247bbaa47a271924574b0672, type: 3}
+    icon: {fileID: 21300000, guid: 0345b0923ced07b4db79eb57e055f148, type: 3}
     isBuilding: 0
     cost: 1
     movement: 1
@@ -24,7 +24,7 @@ MonoBehaviour:
     damage: 1
   - prefab: {fileID: 3766917789227410178, guid: 01900699aa773be459a3a65be7e800f4, type: 3}
     name: Evangelist
-    icon: {fileID: 21300000, guid: 15c1a8fe885b50c4781e0b68f2fe8fb7, type: 3}
+    icon: {fileID: 21300000, guid: b69e24ac95b9a2d418a490d29620e71a, type: 3}
     isBuilding: 0
     cost: 2
     movement: 1
@@ -33,7 +33,7 @@ MonoBehaviour:
     damage: 1
   - prefab: {fileID: -3526674322708097195, guid: 3477117d6df66284d95d2f16be4045a4, type: 3}
     name: Tiger
-    icon: {fileID: 21300000, guid: a0f25f1e66efff34bbd31710c8e5ade6, type: 3}
+    icon: {fileID: 21300000, guid: d5f2365e9d63b3346bc3998425a1cbc5, type: 3}
     isBuilding: 0
     cost: 2
     movement: 2
@@ -42,7 +42,7 @@ MonoBehaviour:
     damage: 2
   - prefab: {fileID: -4916706012507921732, guid: 48237aecb434fd543a5fa0c0dff62fea, type: 3}
     name: Jaguar
-    icon: {fileID: 21300000, guid: 94fce063c7de99d4db0932ea59c992c2, type: 3}
+    icon: {fileID: 21300000, guid: 6d9de1dae3606744cb32e4abca3a085f, type: 3}
     isBuilding: 0
     cost: 3
     movement: 2
@@ -51,7 +51,7 @@ MonoBehaviour:
     damage: 3
   - prefab: {fileID: 1367445283036623088, guid: ce54dcb1043d86f45b6afbe5c7829a51, type: 3}
     name: Avenger
-    icon: {fileID: 21300000, guid: 000feb883c78ef547baee73c10814214, type: 3}
+    icon: {fileID: 21300000, guid: ddcb150233389724ea0e7fefaa5a2937, type: 3}
     isBuilding: 0
     cost: 3
     movement: 1
@@ -60,7 +60,7 @@ MonoBehaviour:
     damage: 3
   - prefab: {fileID: 4990559505339001610, guid: 2ec23c482f77409439d660f02f03e9e2, type: 3}
     name: Charger
-    icon: {fileID: 21300000, guid: 54bea0ab4ec1412458c8d4fe0ea8117b, type: 3}
+    icon: {fileID: 21300000, guid: a9ab9b03d6c16f74a93e2c527b75c2bb, type: 3}
     isBuilding: 0
     cost: 4
     movement: 2
@@ -69,7 +69,7 @@ MonoBehaviour:
     damage: 3
   - prefab: {fileID: 7177515907236117976, guid: 1efd63e287df0644c8baf8243aae5d8d, type: 3}
     name: Avatar
-    icon: {fileID: 21300000, guid: 912a3044618c5f34189cf551eb7b56e1, type: 3}
+    icon: {fileID: 21300000, guid: 36dcd3667511de04c9ea53cc589fe414, type: 3}
     isBuilding: 0
     cost: 7
     movement: 1
@@ -78,7 +78,7 @@ MonoBehaviour:
     damage: 6
   - prefab: {fileID: 8646490322821188268, guid: 6dde4c112b0775f4c99f1762d570d2a3, type: 3}
     name: Tree
-    icon: {fileID: 21300432, guid: 14aefffd3622c7347aad64f2bed35801, type: 3}
+    icon: {fileID: 21300000, guid: 8626494d604b893469ba460e53650362, type: 3}
     isBuilding: 1
     cost: 5
     movement: 0
@@ -87,7 +87,7 @@ MonoBehaviour:
     damage: 0
   - prefab: {fileID: 7899903246298046516, guid: 4471fafbb45874e4caf6e4f24390c406, type: 3}
     name: Armory
-    icon: {fileID: 21300000, guid: 2694efdb3c6f22d449c444c5cc7ce35e, type: 3}
+    icon: {fileID: 21300000, guid: 1455c7c74cb689b4bb5ca3685c0a25a4, type: 3}
     isBuilding: 1
     cost: 3
     movement: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
     damage: 0
   - prefab: {fileID: 4870212959979999574, guid: 652bc6852c4d6e34483b5a1313c137fb, type: 3}
     name: Generator
-    icon: {fileID: 21300000, guid: 7a07b62366ac1cd4eadc9214761b72c1, type: 3}
+    icon: {fileID: 21300000, guid: 969c163419c49e84abe9aee4f6615fc1, type: 3}
     isBuilding: 1
     cost: 3
     movement: 0

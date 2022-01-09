@@ -7,7 +7,11 @@ public class numerini : MonoBehaviour
     public Transform bar;
     public Vector3 offset;
 
+    public TextMesh damage;
+    public TextMesh health;
+
     private float maxHealth;
+    private float maxdamage;
     Transform target;
 
     public void Setup(Transform target, float maxHealth)
@@ -19,11 +23,9 @@ public class numerini : MonoBehaviour
 
     public void UpdateBar(float newValue)
     {
-        float newScale = newValue / maxHealth;
-        if (newScale < 0)
-            newScale = 0;
+        damage.text= "" + maxdamage;
+        health.text = "" + newValue;
         Vector3 scale = bar.transform.localScale;
-        scale.x = newScale;
         bar.transform.localScale = scale;
     }
 
