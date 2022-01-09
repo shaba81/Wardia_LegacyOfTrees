@@ -124,7 +124,7 @@ public class BaseEntity : MonoBehaviour
 
     protected virtual void OnRoundStart() { }
     public virtual void OnRoundEnd() { }
-    protected virtual void OnUnitDied(BaseEntity diedUnity) { Instantiate(redParticles, this.transform); redParticles.Play(); }
+    protected virtual void OnUnitDied(BaseEntity diedUnity) { }
     protected virtual void AddPlacingConditions() { }
 
     public void GetPositions()
@@ -307,6 +307,7 @@ public class BaseEntity : MonoBehaviour
 
         if (baseHealth <= 0 && !dead)
         {
+            Instantiate(redParticles, transform.position, Quaternion.identity); redParticles.Play();
             dead = true;
             currentNode.SetOccupied(false);
             GameManager.Instance.UnitDead(this);
@@ -355,7 +356,7 @@ public class BaseEntity : MonoBehaviour
     {
         if(whiteParticles != null)
         {
-            ParticleSystem fx = Instantiate(whiteParticles, this.transform);
+            ParticleSystem fx = Instantiate(whiteParticles, transform.position, Quaternion.identity);
             fx.Play();
 
         }
@@ -364,7 +365,7 @@ public class BaseEntity : MonoBehaviour
     {
         if (redParticles != null)
         {
-            ParticleSystem fx = Instantiate(redParticles, this.transform);
+            ParticleSystem fx = Instantiate(redParticles, transform.position, Quaternion.identity);
             fx.Play();
         }
     }
@@ -372,7 +373,7 @@ public class BaseEntity : MonoBehaviour
     {
         if (blueParticles != null)
         {
-            ParticleSystem fx = Instantiate(blueParticles, this.transform);
+            ParticleSystem fx = Instantiate(blueParticles, transform.position, Quaternion.identity);
             fx.Play();
         }
     }

@@ -66,10 +66,6 @@ public class BuilderEntity : BaseEntity
 
     }
 
-    protected override void OnUnitDied(BaseEntity diedUnity)
-    {
-        
-    }
 
 
 
