@@ -55,10 +55,25 @@ public class EnemySpawner : Manager<EnemySpawner>
 
         Node node = GridManager.Instance.GetNodeAtIndex(nodeIndex);
 
+        if(node.IsOccupied)
+        {
+            foreach (BaseEntity entity in GameManager.Instance.GetEntitiesAgainst(GameManager.Instance.myTeam))
+            {
+                if (entity.CurrentNode == node)
+                {
+                    entity.TakeDamage(entity.baseHealth);
+                    entity.RedParticlesPlay();
+                    entity.HideEntity();
+                    break;
+                }
+            }
+        }
+
         newEntity.SetCurrentNode(node);
         newEntity.SetStartingNode(node);
         GridManager.Instance.GetNodeAtIndex(nodeIndex).SetOccupied(true);
 
         newEntity.Setup(opposingTeam, node.worldPosition);
+        newEntity.WhiteParticlesPlay();
     }
 }
