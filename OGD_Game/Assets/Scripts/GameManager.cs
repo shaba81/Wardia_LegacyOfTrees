@@ -71,7 +71,10 @@ public class GameManager : Manager<GameManager>
         if (myTeam == Team.Team1)
             team1Entities.Add(newEntity);
         else if (myTeam == Team.Team2)
+            {
             team2Entities.Add(newEntity);
+            newEntity.gameObject.GetComponent<SpriteRenderer>().color= Color.gray;
+            }
 
 
 

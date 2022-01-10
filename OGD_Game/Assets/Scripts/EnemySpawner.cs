@@ -51,6 +51,11 @@ public class EnemySpawner : Manager<EnemySpawner>
         newEntity.baseDamage = entityData.damage;
         newEntity.isBuilding = entityData.isBuilding;
 
+        if (TeamManager.Instance.GetTeam() == Team.Team1)
+            {
+            newEntity.gameObject.GetComponent<SpriteRenderer>().color= Color.gray;
+            }
+
         GameManager.Instance.GetEntitiesAgainst(GameManager.Instance.myTeam).Add(newEntity);
 
         Node node = GridManager.Instance.GetNodeAtIndex(nodeIndex);
