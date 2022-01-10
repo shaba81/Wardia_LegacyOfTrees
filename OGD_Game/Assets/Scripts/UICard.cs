@@ -112,6 +112,7 @@ public class UICard : MonoBehaviour
             if (SceneManager.GetActiveScene().name == "GameScene" && TurnManager.Instance.gameState == GameState.Buying)
             {
                 shopRef.OnCardClick(this, myData);
+                Debug.Log("click");
             }
             else if (SceneManager.GetActiveScene().name == "DeckMakingScene") //U can only find cards in the deck-making scene other than in the actual gamescene.
             {
